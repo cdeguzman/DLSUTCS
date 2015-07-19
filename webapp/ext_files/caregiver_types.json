@@ -1,0 +1,20 @@
+{
+	"_comment":  {
+		"comment-info": "This file contains site wide caregiver types used in physician management",
+		"name" : "Value that is displayed to the UI (Spaces must be represented by _ )",
+		"value" : "Value that is passed to the server when it is selected"
+     	
+ 	},
+    "data": [
+		{
+			"name" : "Pulmonology",
+			"value" : "Pulmonology"
+
+		},
+		{
+			"name" : "Family_Medicine",
+			"value" : "Family Medicine"
+
+		}
+    ]
+}

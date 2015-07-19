@@ -1,0 +1,248 @@
+@media (max-width: 991px){
+	html, body {
+		height: 100%;
+	}
+	
+	#mainHeader {
+		position: relative;
+		min-width: initial;
+	}
+	
+	#headerTitle{
+		font-size: 16px;
+	}
+	
+	#contentContainer {
+		padding-top: 15px;
+		height: auto;
+		overflow: hidden;
+	}
+	
+	#mainContainer {
+		height: auto;
+		min-height: 100%;
+	}
+	
+	#navBar {
+		height: auto;
+	}
+	
+	nav.navbar {
+		min-width: 950px;
+	}
+	
+	#contentContainer {
+		overflow: auto;
+	}
+	
+	
+	#profileDiv {
+		height: 53px;
+	}
+	
+	.navigationButtonBackground{
+		z-index: 2;
+	}
+	
+	.navigationButtonBackground {
+		height: 100%;
+	}
+	
+	#navContentDiv {
+		height: auto;
+		clear: both;
+	}
+	
+	#navContent{
+		padding-right: 20px;
+		overflow: initial;
+	}
+	
+	.navigationButton {
+		height: 53px;
+	}
+	
+	#lowestContent {
+		height: auto;
+		padding-bottom: initial !important;
+	}
+	
+	#infoContainerDiv {
+		height: auto;
+		float: none;
+	}
+	
+	#infoContainer {
+		height: auto;
+		float: none;
+	}
+	
+	#careTeamDiv {
+		float: none;
+	}
+	
+	#careTeamDiv .item {
+		float: none;
+	}
+	
+	#timeRangeDiv {
+		overflow: initial;
+	}
+	
+	#graphsDiv {
+		float: none;
+	}
+	
+	.graphDiv {
+		float: none;
+	}
+	
+	#loginBox {
+	  width: initial;
+	  top: initial;
+	  left: initial;
+	  transform: initial;
+	  -webkit-transform: initial;
+	  -moz-transform: initial;
+	}
+	
+	.infoLeft{
+	    overflow: initial;
+	    text-overflow: initial;
+	    max-width: 100%;
+	}
+	
+	#rightPanel{
+		margin-top: 10px;
+	}
+	
+	/*Overrided Charts*/
+	
+	.chartContainer:nth-child(2) {
+	    margin-left:0px;
+		margin-top:10px;
+	}
+	
+	/*Overrided DataTables*/
+	.dataTables_length {
+	  position: absolute;
+	  right: initial;
+	  top: initial;
+	  text-align: center;
+	  width: 100%;
+	}
+	
+	.chartContainer:nth-child(even){
+	    margin-left: 0px;
+	}
+	
+	.tab-content .tab-pane {
+		overflow: auto;
+		max-height: none;
+	}
+		
+	#contentContainerWrapper {
+		height: auto;
+		position: relative;
+		padding-top: 0px;
+	}
+	
+	.mainContent {
+		height: auto;
+	}
+	
+	#panelContainer {
+	  height: auto;
+	}
+	
+	#leftPanel, #rightPanel {
+	  height: auto;
+	  overflow: auto;
+	}
+
+	.dataTables_length {
+		position: relative;
+	}
+}
+	
+@media (max-width: 766px){
+	
+	#headerTitle{
+		display: none;
+	}
+	
+	.brandText img{
+		height: 101%;
+		top: 0px;
+		left: -3px;
+	}
+	
+	#changeLogoCover{
+		padding-left: 0px;
+	}
+	
+	nav.navbar {
+		min-width: 0;
+	}
+	
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a{
+		color: white !important;
+	}
+	
+	.cargiverDropDown{
+		margin-bottom: 5px;
+	}
+	
+	label{
+		display: inline;
+	}
+	
+	.brandText{
+		padding: 0 !important;
+		padding-left: 0 !important;
+	}
+	
+	.navbar-right{
+		position: relative;
+		top: initial;
+		right: initial;
+	}
+
+	.navbar-nav{
+	    display: block;
+	    float: initial;
+	    width: 100%;
+	}
+
+	.navbar-collapse{
+		text-align: initial;
+	}
+
+	.navbar-header{
+		position:relative;
+	}
+	
+	select.form-control{
+		display:initial;
+		width: initial !important;
+	}
+	
+	.dataTables_filter{
+		text-align: center;
+	}
+	
+	.tableTitle, #exportToCSV{
+	    display: block;
+	    width: 100%;
+	}
+
+	.multiCheckSelect button, #exportToCSV{
+		margin-bottom:10px;
+	}
+	
+	.multiCheckSelect .dropdown-menu{
+		top: 20px !important;
+		left: 0px;
+	}
+	
+}

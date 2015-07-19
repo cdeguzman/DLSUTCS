@@ -1,0 +1,1178 @@
+* {
+  position: relative;
+  color: #999999;
+}
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+h3 {
+  margin : 0;
+}
+
+table td {
+  vertical-align: middle;
+}
+
+strong {
+  color: inherit;
+}
+
+select{
+	color: #999999 !important;
+}
+
+a, a:hover{
+    color: #3fc1d7;
+}
+
+.nopaddingmargin {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#contentContainerWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 125px;
+}
+
+.middle {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.matchParent {
+  height: 100%;
+  width: 100%;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.displayTable {
+  display: table;
+  color: inherit;
+}
+
+.displayTableCell {
+  display: table-cell;
+  vertical-align: middle;
+  color: inherit;
+}
+
+.middleTd {
+  vertical-align: middle;
+}
+
+#mainContainer {
+  height: auto;
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  background: #f3f3f4;
+}
+
+.adjust_container{
+   height: 100% !important;
+}
+
+/*
+  Header
+*/
+#mainHeader {
+  width: 100%;
+  background: #f3f3f4;
+  height: 60px;
+  padding-left: 15px;
+  position: fixed;
+  z-index: 10;
+}
+
+#mainHeader #headerTable {
+  table-layout: fixed;
+}
+
+#leftPartHeader {
+  border-right: 2px solid #b8b8b8;
+  padding-right: 16px;
+  width: 272px;
+}
+
+#headerSubText {
+  font-size: 8px;
+  color: black;
+}
+
+.nav-brand.brandText{
+	line-height: 45px;
+}
+
+#headerTitle {
+    font-size: 19px;
+    color: white;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	line-height: 45px;
+}
+
+#headerTitle strong {
+    font-weight: 200;
+	margin-left: 8px;
+}
+
+#middlePartHeader {
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.others {
+  height: 100%;
+}
+
+#headerTable img {
+  height: 30px;
+  margin: 0 10px;
+}
+
+#userPhoto {
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#headerDropDown {
+  color: black;
+  cursor: pointer;
+}
+
+#rightPartHeader {
+  width: 200px;
+}
+
+#contentContainer {
+  margin: 0 15px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#navBar {
+  background: white;
+  border-top: 2px solid #d7d7d7;
+  border-bottom: 2px solid #d7d7d7;
+  height: 53px;
+
+}
+
+#searchInput {
+  border: 1px solid #ccc;
+  border-top-left-radius: 10px;
+  height: 40px;
+}
+
+.searchInput{
+	z-index: 1052;
+}
+
+#searchButton {
+  border-left: 2px solid #d7d7d7;
+  background-color: white;
+  border-top-right-radius: 10px;
+}
+
+#profileDiv, #navigationDiv {
+  height: 100%;
+}
+
+#profileSection {
+  padding-left: 7px;
+}
+
+#profilePhoto {
+  height: 30px;
+  margin-right: 14px;
+}
+
+#profileName {
+  color: #2cbdff;
+  font-size: 19px;
+  top: 2px;
+}
+
+.navigationButton {
+  height: 100%;
+  color:  #999999;
+  min-width: 170px;
+  text-align: center;
+  font-size: 18px;
+  float: left;
+  cursor: pointer;
+}
+
+.navigationButton span {
+  z-index: 2;
+  color: #999999;
+}
+
+span.active{
+	color: white;
+}
+
+.navigationButton.active {
+  color: inherit;
+}
+
+.navigationButtonBackground {
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  border-left: 2px solid #d7d7d7;
+}
+
+.navigationButton.active .navigationButtonBackground {
+  background-color: #3fc1d7;
+}
+
+#lowestContent {
+  height: 100%;
+  padding-bottom: 87px;
+}
+
+
+#allInfoDiv {
+  height: 100%;
+  width:100;
+  background-color: white;
+}
+
+.infoTable {
+  width: 100%;
+}
+
+#infoTitleDiv {
+  background-color: white;
+  height: 53px;
+  font-size: 19px;
+}
+
+#quickInfoTextDiv {
+  text-align: center;
+}
+
+#infoContainerDiv {
+  background-color: #f3f3f4;
+  padding-right: 20px;
+  float: left;
+  height: 100%;
+  min-width: 260px;
+  width: 100%;
+}
+
+#infoContainer {
+  float: left;
+  border: 2px solid #d7d7d7;
+  background-color: white;
+}
+
+.infoSection {
+  background-color: white;
+  height: 36px;
+  font-size: 14px;
+  text-align: center;
+  color: #2cbdff;
+}
+
+#contactTextDiv, #careTeamTextDiv, #patientsTextDiv {
+  border-bottom: 2px solid #d7d7d7;
+}
+
+.infoDiv {
+  float: left;
+  width: 100%;
+  border-bottom: 2px solid #d7d7d7;
+}
+
+.item {
+  padding: 15px;
+  clear: both;
+  width: 100%;
+  float: left;
+  padding: 8.5px 17px;
+}
+
+.infoLeft {
+  width: 80%;
+  float: left;
+  top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width:200px;
+}
+
+.infoRight {
+  width: 20%;
+  text-align: right;
+  float: right;
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.infoRight img {
+  height: 30px;
+}
+
+.careTeamTable, .patientsTable {
+  width: 100%;
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.careTeamButton, .patientsButton {
+  text-align: right;
+}
+
+.careTeamTable img, .patientsTable img{
+  height: 30px;
+}
+
+#navContentDiv {
+  height: 100%;
+  background-color: #3fc1d7;
+  padding: 15px;
+}
+
+#navContent {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  padding-top: 15px;
+  overflow: auto;
+}
+
+#timeRangeDiv {
+  border: 1px solid black;
+  width: 100%;
+  max-width: 665px;
+  height: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.timeRangeItem {
+  width: 20%;
+  color: black;
+  font-size: 30px;
+  float: left;
+  height: 100%;
+  border-right: 2px solid #d7d7d7;
+  cursor: pointer;
+  font-weight: 100;
+}
+
+.timeRangeItem:last-child {
+  border-right: none;
+}
+
+.timeRangeItem.active {
+  color: white;
+  background-color: #3fc1d7;
+}
+
+.timeRangeItemText {
+  text-align: center;
+}
+
+#graphsDiv {
+  float: left;
+}
+
+#graphsDiv .graphDiv:last-child {
+  padding-right: 0px;
+}
+
+.graphDiv {
+  float: left;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}
+
+.graphDiv img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+
+#loginBox{
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+	-webkit-transform: translate(-50%, -75%);
+	-moz-transform: translate(-50%, -75%);
+}
+
+#loginLabel{
+	margin-bottom:10px;
+}
+
+#loginPanel{
+    -webkit-box-shadow: 0 8px 6px -6px black;
+       -moz-box-shadow: 0 8px 6px -6px black;
+            box-shadow: 0 8px 6px -6px black;
+}
+
+.link{
+	cursor: pointer;
+}
+
+#physicianTableContainer, #patientTableContainer{
+    background-color: #f3f3f4;
+    padding: 15px;
+	border-radius: 5px;
+}
+
+.decorator_div{
+    padding: 15px;
+    margin-top: 15px;
+}
+
+#leftPanel{
+	display:none;
+}
+
+.cellData{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	width: auto !important;
+	background: white;
+}
+
+td.cellData{
+	border-left: none !important;
+	border-right: none !important;
+}
+
+.table{
+	
+}
+
+.headerRow{
+    margin-left: -15px;
+}
+
+#spinnerDiv{
+    position: fixed;
+    z-index: 2000;
+    width: auto;
+    background-color: white;
+    height: 40px;
+    font-size: 23px;
+    margin: 10px;
+    margin-right: 0px;
+    padding: 3px;
+    top: 61px;
+    right: 0;
+	border-radius: 3px;
+	display:none;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+       -moz-box-shadow: 0 8px 6px -6px black;
+            box-shadow: 0 8px 6px -6px black;
+	
+}
+
+.btnText{
+	color: inherit;
+}
+
+#searchBar{
+	padding-right: 20px;
+	min-width:260px;
+	
+}
+
+.editIcon, .deleteIcon{
+	color: #2cbdff !important;
+	cursor: pointer;
+}
+
+.spinner{
+	color:#999999 !important;
+}
+
+#spinnerText{
+	font-size: 14px;
+}
+
+button.close{
+	z-index:2;
+}
+
+.brandText{
+	padding: 0 !important;
+	padding-left: 15px !important;
+}
+
+.brandText img{
+    width: auto;
+    height: 100%;
+	display: inline !important;
+	top: -1px;
+	left: -1px;
+    max-width: 330px;
+    max-height: 60px;
+}
+
+#timeRangeContainer{
+	width: 100%;
+}
+
+#chartControlRange{
+    margin-top: 10px;
+    margin-bottom: 10px;
+	display:none;
+}
+
+#footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+    background-color: #dddddd;
+}
+
+.footerContainer{
+    height: 100%;
+    margin: 0;
+}
+
+#copyright{
+    bottom: 0px;
+    position: absolute;
+    left: 0px;
+	margin-left: 10px;
+}
+
+#copyright span{
+    color: black;
+    font-size: 11px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.mainContent{
+	padding-bottom: 0px !important; /* 150px */
+	height: 100%;
+}
+
+.viewPatientBtn, .viewPhysicianBtn{
+   font-size: 17px;
+   cursor: pointer;
+}
+
+.cellBtn{
+   text-align: center;
+}
+
+.headerIcon{
+    height: 1em !important;
+	line-height: 1em;
+}
+
+.headerIcon .fa-circle{
+	top: -7px !important;
+}
+
+.openAddDialogBtn{
+	outline: none !important;
+	color: white !important;
+}
+
+#chartGroupContainer{
+	margin-left: 10px !important;
+}
+
+.alert-danger li{
+	color: #a94442;
+}
+
+#csvDownload{
+	display: none;
+}
+
+#exportToCSV{
+	display: inline;
+	margin-right: 6px;
+}
+
+.selectedMenu{
+	font-weight: bold;
+}
+
+#changeLogoCover{
+    height: 100%;
+    width: 100%;
+    top: -1px;
+    position: absolute;
+    left: 0px;
+	z-index: 30;
+	text-align: center;
+	font-size: 14px;
+	padding-left: 12px;
+	padding-top: 3px;
+	opacity: 0;
+}
+
+#changeLogoCover:hover{
+    background-color: black;
+    opacity: 0.5;
+}
+
+.changeLogoActive{
+    background-color: black;
+    opacity: 0.5 !important;
+}
+
+#changeLogoCover span{
+	color: white;
+    display: block;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+	padding-top: 4%;
+}
+
+#logoUploadForm{
+	display: none;
+}
+
+#progress {   
+ 	position: relative;
+ 	padding: 3px;
+ 	width: 100%;
+ 	margin-bottom: 9px;
+ 	padding: 0;
+ 	border: 1px solid #9E9E9E;;
+ 	background-color: #dddddd;
+}
+
+#percent {
+ 	position: absolute;   
+ 	left: 50%;
+}
+
+#bar {
+ 	height: 7px;
+ 	background-color: #9E9E9E;
+ 	width: 0%;
+}
+
+#uploadProgressText{
+ 	color: #9E9E9E;
+	margin-bottom: 2px;
+}
+
+#uploadError{
+	font-size: 14px;
+	color: red;
+    margin-bottom: 12px;
+    display: none;
+}
+
+#progressContainer{
+	display: none;
+}
+
+#openFileSelection{
+    color: #3fc1d7;
+    text-align: center;
+    display: block;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.closeUpload.fa-times{
+	color: #999999;
+	cursor: pointer;
+}
+
+/* Overrided Datatables */
+
+th.cellData{
+	background: white;
+}
+
+.searchIcon{
+	background: white;
+	border-left: 0px;
+}
+
+.searchIcon .fa{
+	color: #999999;
+    font-size: 20px;	
+}
+
+.searchBox{
+	border-right: 0px;
+	outline: none !important;
+}
+
+.tableTitle, .panel-title{
+	font-size: 26px;
+	font-weight: 200;
+}
+
+#revertColumns{
+	text-align: right;
+}
+
+#revertColumns .option{
+	margin: 0 !important;
+	margin-right: 7px !important;
+}
+
+.panel-footer{
+	border-top: 0;
+	text-align: right;
+}
+
+.buttonContainer{
+    text-align: left;
+    margin: 0;
+    padding-left: 3px;
+}
+
+.form-group.row{
+	margin-bottom: 13px !important;
+}
+
+/* Overrided Bootstrap */
+
+.btn-default, .defaultimpt{
+    background-color: #b0b2b4 !important;
+    border-color: #adadad !important;
+}
+
+.btn-default:hover, .defaultimpt:hover{
+	color: white !important;
+	background-color: #939598 !important;
+	border-color: #939598 !important;
+}
+
+.popover{
+	border-radius: 0px;
+}
+
+.popover-title{
+	text-align: right;
+	border-bottom: none;
+}
+
+.popover-title, .popover-content, .popover{
+	background-color: rgb(243, 243, 244);
+}
+
+.popover-content table{
+	width: 190px;
+	font-size: 13px;
+}
+
+.popover-content td{
+  border-top: 0px !important;
+  padding: 0px !important;
+}
+
+.popover-title img{
+	display: block;
+    max-width: 330px;
+    max-height: 60px;
+}
+
+.popover-title span{
+    display: block;
+    text-align: left;
+    color: black;
+    font-weight: 700;
+}
+
+.tab-content{
+	margin-top: 20px;
+}
+
+
+.navbar-default .navbar-toggle .icon-bar{
+	background-color: white;
+}
+
+.dropdown-menu{
+	top: 143% !important;
+}
+
+.brand{
+	width: auto;
+	height: 30px;
+}
+
+#panelContainer {
+  height: 100%;
+}
+
+#leftPanel, #rightPanel {
+  height: 100%;
+  overflow:auto;
+}
+
+.well{
+	background-color: white;
+}
+
+.menuIcon{
+	color: #777 !important;
+}
+
+.row{
+	margin: 0;
+	padding: 0;
+}
+
+.btn-default, .btn-default .fa-times{
+	color: white;
+}
+
+h5{
+	margin: 0px !important;
+}
+
+h4{
+	margin-bottom: 5px !important;
+}
+
+#showEditPatientBtn, #showEditPhysicianBtn{
+	cursor:pointer;
+	color: #2cbdff !important;
+}
+
+.navbar{
+	background: #64bc46 !important;
+	border-color: #64bc46 !important;
+	border-radius: 0px !important;
+	font-size: 14px !important;
+}
+
+.dropdown-toggle, .caret{
+	color: white !important;
+}
+
+.dropdown-toggle{
+	background-color: #64bc46 !important;
+}
+
+.navbar-nav > li > a{
+    color: white;
+}
+
+.menuDisabled{
+    color: #a8d486 !important;
+    cursor: default;
+}
+
+.menuEnabled{
+    color: white !important;
+}
+
+.navbar-nav>li>a {
+	padding-bottom: 0px !important;
+}
+
+.navbar-header{
+    margin-left: -15px !important;
+}
+
+.navbar-right{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.navbar-nav{
+	display: inline-block;
+	float: initial;
+}
+
+.navbar-collapse{
+	text-align: center;
+}
+
+.navbar-header{
+	position:absolute;
+}
+
+.bootstrap-dialog .btn-default{
+    background: #64bc46;
+    border-color: #64bc46;
+	color: white;
+}
+
+.bootstrap-dialog .btn-default:hover{
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.panel-footer{
+	background-color: #f3f3f4;
+}
+
+
+/* Overrided Fontawesome */
+
+.fa{
+	color: white;
+}
+.fa-circle{
+	color: #3fc1d7 !important;
+}
+.cellBtn .fa-user-plus{
+	color: #3fc1d7 !important;
+}
+
+.linkBtn .fa-user-plus{
+	color: white !important;
+}
+.fa-expand{
+    color: #999999;
+    font-size: 25px;
+	cursor: pointer;
+}
+
+.pagination .fa{
+	color: #7dd0e3;
+} 
+
+/* Overrided Typeahead */
+
+.typeahead.dropdown-menu{
+  width: 100% !important;
+}
+
+.typeahead.dropdown-menu a{
+  font-size: 14px !important;
+}
+
+/*Overrided Charts*/
+text {
+    font: 12px sans-serif;
+}
+svg {
+    display: block;
+}
+#chart1, svg {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+#chartZoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.chartContainer{
+    height: 100%;
+    border: 1px solid #999999;
+    border-radius: 10px;
+	background: #EDF1F4;
+	margin-bottom: 10px;
+}
+.chartTitle{
+	margin-left: 5px;
+}
+
+.chartContainer:nth-child(n+3){
+    margin-top:10px;
+}
+
+.chartContainer:nth-child(even){
+    margin-left:10px;
+}
+
+.chartContainer:nth-child(1){
+   margin-top:0px !important;
+}
+
+.chartContainer hr{
+	border-top: 1px solid #999999;
+}
+.chartInfoTable{
+	width: 90%;
+}
+.expandContainer{
+    float: right;
+    top: -30px;
+	visibility: hidden;
+}
+
+/*Overrided Datatables*/
+.dt-responsive{
+	width: 100% !important;
+}
+
+.dataTables_length{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+div.dataTables_paginate {
+	text-align:center;
+}
+
+.pagination>li:first-child>a{
+	border: 0 !important;
+}
+
+.pagination a{
+	border-color: #f3f3f4!important;
+	background: #f3f3f4!important;
+	color: #7dd0e3 !important;
+	outline: none;
+}
+
+ul.pagination .disabled a i, ul.pagination .active a{
+	color: #d6d6d6 !important;
+}
+
+.paginate_button.previous a{
+	margin-right: 15px;
+}
+
+.paginate_button.next a{
+	margin-left: 15px;
+}
+
+li.paginate_button:not(.previous) a{
+	margin-left: 15px;
+	border-right: 3px solid #d6d6d6 !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 8px;
+	line-height: 12px;
+	padding-right: 25px;
+}
+li.paginate_button.next a{
+	border-right: none !important;
+}
+
+li.paginate_button:nth-last-child(2) a{
+	border-right: none !important;
+}
+
+.dataRow{
+	cursor: pointer;
+}
+
+.dataRow.selected td{
+	background: #f3f3f4
+}
+
+table.dataTable thead th {
+    position: relative;
+    background-image: none !important;
+}
+ 
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    display: block;
+    font-family: FontAwesome;
+}
+
+table.dataTable thead th.sorting:after {
+    content: "\f0dc";
+    color: #ddd;
+    font-size: 0.8em;
+    padding-top: 0.12em;
+}
+table.dataTable thead th.sorting_asc:after {
+    content: "\f0de";
+}
+table.dataTable thead th.sorting_desc:after {
+    content: "\f0dd";
+}
+
+
+/* Typeahead */
+.typeahead{
+	top: 40px !important;
+}
+
+/* Custom Controls */
+.multiCheckSelect{
+	display: inline;
+}
+.multiCheckSelect .btn-default{
+	background-color: white !important;
+	width: 160px;
+	text-align: right;
+}
+.multiCheckSelect .caret{
+	color: #999999 !important;
+}
+
+.multiCheckSelect .text{
+	color: #999999 !important;
+}
+
+.multiCheckSelect .dropdown-menu{
+	left: 5px;
+}
+
+.multiCheckSelect .option{
+	margin: 7px;
+}
+
+.multiCheckSelect a{
+	padding: 0 !important;
+}
+
+.tabPanel {
+	height: 100%;
+}
+
+.tab-content {
+	overflow: auto;
+	height: calc(100% - 60px);
+}

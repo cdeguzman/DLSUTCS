@@ -1,0 +1,25 @@
+{
+	"name": "COPD Dashboard",
+	"version": "1.0.0",
+	"dependencies": {
+		"jquery": "1.11.3",
+		"backbone": null,
+		"underscore": null,
+		"requirejs": null,
+		"bootstrap": null,
+		"bootstrap3-dialog": null,
+		"log4javascript": null,
+		"datatables": null,
+		"js-cookie": null,
+		"font-awesome": null,
+		"moment": null,
+		"eonasdan-bootstrap-datetimepicker": null,
+		"bootstrap3-typeahead": null,
+		"DataTables-Plugins": "https://github.com/DataTables/Plugins.git",
+		"jasmine": null,
+		"d3": null,
+		"datatables-editable": "https://github.com/ansballard/jquery-datatables-editable.git",
+		"datatables-responsive": "https://github.com/DataTables/Responsive.git",
+		"jquery-ajax-form": "https://github.com/malsup/form.git"
+	}
+}

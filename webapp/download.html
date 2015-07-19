@@ -1,0 +1,25 @@
+<html>
+	<head></head>
+	<body>
+		<form id="downloadFormCSV" method="post" action="loopbackCSV">
+			<input type="hidden" name="fileName"/>
+			<input type="hidden" name="csvData"/>
+		</form>
+		<script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="vendor/js-cookie/src/js.cookie.js"></script>
+		<script type="text/javascript">
+			$(function() {
+			    var csvData = Cookies.get("csvData");
+				var fileName = Cookies.get("fileName");
+				$('input[name="csvData"]').val(csvData);
+				$('input[name="fileName"]').val(fileName);
+				$('#downloadFormCSV').submit();
+				setTimeout(function(){
+					Cookies.remove("csvData");
+					Cookies.remove("fileName");
+					window.close();
+				}, 500);
+			});
+		</script>
+	</body>
+</html>

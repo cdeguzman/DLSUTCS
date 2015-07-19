@@ -1,0 +1,69 @@
+{
+	"_comment":  {
+		"comment-info": "This file contains the charts that appears in the patient information screen",
+ 	   	"id": "Unique identifier for a chart",
+ 	  	"name": "String that appears as the chart title",
+ 	   	"color": "Color value (hex) that the chart uses as the color of the title and data",
+ 	   	"dataSource": "Data source where the chart will pull data from / is replaced with :",
+ 	   	"unitName": "Primary unit of measure used to describe the data visualized in the chart",
+ 	   	"lowerBound": "Value that the chart will use as its floor",
+ 	   	"upperBound": "Value that the chart will use as its ceiling"
+     	
+ 	},
+    "data": [
+		{
+	 	   "id": "coughChart",
+	 	   "name": "Cough",
+	 	   "color": "#2BDDAA",
+	 	   "dataSource": "survey:dailyCOPD:cough",
+	 	   "unitName": "points",
+	 	   "lowerBound": 1,
+	 	   "upperBound": 5
+
+		},
+		{
+	 	   "id": "mucusChart",
+	 	   "name": "Mucus",
+	 	   "color": "#1DC2DF",
+	 	   "dataSource": "survey:dailyCOPD:sputum",
+	 	   "unitName": "points",
+	 	   "lowerBound": 1,
+	 	   "upperBound": 5
+		},
+		{
+	 	   "id": "shortnessOfBreathChart",
+	 	   "name": "Shortness of Breath",
+	 	   "color": "#EEB900",
+	 	   "dataSource": "survey:dailyCOPD:breath",
+	 	   "unitName": "points",
+	 	   "lowerBound": 0,
+	 	   "upperBound": 10
+		},
+		{
+	 	   "id": "peakFlowChart",
+	 	   "name": "Peak Expiratory Flow",
+	 	   "color": "#9541CC",
+	 	   "dataSource": "survey:dailyCOPD:PEF",
+	 	   "unitName": "L/min",
+	 	   "lowerBound": 0,
+	 	   "upperBound": 600
+		},
+		{
+	 	   "id": "pulseO2Chart",
+	 	   "name": "Oxygen Saturation",
+	 	   "color": "#ED3358",
+	 	   "dataSource": "survey:dailyCOPD:pulseO2",
+	 	   "unitName": "percent",
+	 	   "lowerBound": 90,
+	 	   "upperBound": 100
+		},
+		{
+	 	   "id": "stepsChart",
+	 	   "name": "Steps",
+	 	   "color": "#66BC29",
+	 	   "dataSource": "survey:dailySteps:steps",
+	 	   "unitName": "steps",
+	 	   "lowerBound": 0
+		}
+    ]
+}

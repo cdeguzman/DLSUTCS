@@ -1,0 +1,348 @@
+{
+	"_comment":  {
+		"comment-info": "This file contains site wide notification strings used by popups and inpage notification",
+     	"page": "<page name> //Page name",
+     	"status": "<actual error status> //Actual return of the server",
+     	"type": "danger | info | success | warning //Color of the warning follows bootstrap color scheme",
+     	"keyword": "<keyword> //The phrase that is found in the start of the message usually in bold",
+     	"message": "<message> //The message body"
+ 	},
+    "data": [
+        {
+            "page": "login",
+            "status": "incorrect_password",
+            "type": "danger",
+            "keyword": "Login Error",
+            "message": "The username and password combination is invalid."
+        },
+        {
+            "page": "login",
+            "status": "member_not_found",
+            "type": "danger",
+            "keyword": "Login Error",
+            "message": "The username and password combination is invalid."
+        },
+        {
+            "page": "login",
+            "status": "success",
+            "type": "success",
+            "keyword": "Success",
+            "message": "Logging in please wait..."
+        },
+        {
+            "page": "changePassword",
+            "status": "incorrect_password",
+            "type": "danger",
+            "keyword": "Change Password Failed",
+            "message": "Old Password is incorrect."
+        },
+        {
+            "page": "changePassword",
+            "status": "success",
+            "type": "success",
+            "keyword": "Success",
+            "message": "Password successfully changed.",
+            "resetFormId": "changePasswordForm"
+        },
+        {
+            "page": "changePassword",
+            "status": "password_mismatch",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "New and confirm password does not match."
+        },
+        {
+            "page": "resetPassword",
+            "status": "password_mismatch",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "New and confirm password does not match."
+        },
+        {
+            "page": "resetPassword",
+            "status": "member_not_found",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Reset token is either expired or invalid."
+        },
+        {
+            "page": "resetPassword",
+            "status": "success",
+            "type": "success",
+            "keyword": "Success",
+            "message": "Password successfully changed. Redirecting in 3 secs...",
+            "resetFormId": "changeForgetPasswordForm"
+        },
+        {
+            "page": "forgetPassword",
+            "status": "email_mismatch",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Emails does not match."
+        },
+        {
+            "page": "forgetPassword",
+            "status": "member_not_found",
+            "type": "danger",
+            "keyword": "Member not found",
+            "message": "Email does not belong to any registered user."
+        },
+        {
+            "page": "forgetPassword",
+            "status": "success",
+            "type": "success",
+            "keyword": "Success",
+            "message": "An email is sent containing information on how to reset your password."
+        },
+        {
+            "page": "forgetPassword",
+            "status": "internal_error",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Email address unverified. Please contact the System Administrator."
+        },
+        {
+            "page": "forgetPassword",
+            "status": "invalid_password_reset_url",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Your account still has an active request for password reset. Please try again in one hour."
+        },
+        {
+            "page": "addpatient",
+            "status": "password_mismatch",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "New and confirm password does not match."
+        },
+        {
+            "page": "addpatient",
+            "status": "duplicate_entry",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Email address already exists."
+        },
+        {
+            "page": "addpatient",
+            "status": "email_exists",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Email address already registered."
+        },
+        {
+            "page": "addpatient",
+            "status": "phone_number_invalid",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Phone number format invalid.<br/><br/> Valid Formats are:<ul><li>555-444-3333</li><li>5554443333</li><li>444-3333</li></ul>"
+        },
+        {
+            "page": "addpatient",
+            "status": "success",
+            "type": "success",
+            "keyword": "Success",
+            "message": "Added a new patient.",
+            "resetFormId": "addPatientForm"
+        },
+        {
+            "page": "editpatient",
+            "status": "password_mismatch",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "New and confirm password does not match."
+        },
+        {
+            "page": "editpatient",
+            "status": "duplicate_entry",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Email address already exists."
+        },
+        {
+            "page": "editpatient",
+            "status": "phone_number_invalid",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Phone number format invalid.<br/><br/> Valid Formats are:<ul><li>555-444-3333</li><li>5554443333</li><li>444-3333</li></ul>"
+        },
+        {
+            "page": "editpatient",
+            "status": "success",
+            "type": "success",
+            "keyword": "Success",
+            "message": "Edited patient information."
+        },
+        {
+            "page": "addphysician",
+            "status": "password_mismatch",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "New and confirm password does not match."
+        },
+        {
+            "page": "addphysician",
+            "status": "email_exists",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Email address already registered."
+        },
+        {
+            "page": "addphysician",
+            "status": "phone_number_invalid",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Phone number format invalid.<br/><br/> Valid Formats are:<ul><li>555-444-3333</li><li>5554443333</li><li>444-3333</li></ul>"
+        },
+        {
+            "page": "addphysician",
+            "status": "success",
+            "type": "success",
+            "keyword": "Success",
+            "message": "Added a new physician.",
+            "resetFormId": "addPhysicianForm"
+        },
+        {
+            "page": "addphysician",
+            "status": "duplicate_entry",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Email address already exists."
+        },
+        {
+            "page": "editphysician",
+            "status": "password_mismatch",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "New and confirm password does not match."
+        },
+        {
+            "page": "editphysician",
+            "status": "duplicate_entry",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Email address already exists."
+        },
+        {
+            "page": "editphysician",
+            "status": "phone_number_invalid",
+            "type": "danger",
+            "keyword": "Fail",
+            "message": "Phone number format invalid.<br/><br/> Valid Formats are:<ul><li>555-444-3333</li><li>5554443333</li><li>444-3333</li></ul>"
+        },
+        {
+            "page": "editphysician",
+            "status": "success",
+            "type": "success",
+            "keyword": "Success",
+            "message": "Edited physician information."
+        },
+        {
+            "page": "default",
+            "status": "not_authorized",
+            "type": "danger",
+            "keyword": "Not Authorized",
+            "message": "You do not have administrator priviledge which is currently required for this operation."
+        },
+        {
+            "page": "default",
+            "status": "status_not_registered",
+            "type": "danger",
+            "keyword": "Error",
+            "message": "Oops something went wrong..."
+        },
+        {
+            "page": "popup",
+            "status": "internal_error",
+            "message": "An internal error has occured. Please try the operation again in a few minutes. If the error persists please contact the System Administrator."
+        },
+        {
+            "page": "popup",
+            "status": "request_timeout",
+            "message": "Request Timeout. Cannot Reach the server. Please check your connection and try again."
+        },
+        {
+            "page": "popup",
+            "status": "not_authorized",
+            "message": "You do not have administrator priviledge which is currently required for this operation."
+        },
+        {
+            "page": "popup",
+            "status": "session_expired",
+            "message": "Your session has expired. Please log in again."
+        },
+        {
+            "page": "popup",
+            "status": "patient_delete_confirm",
+            "message": "This action will delete the record of the selected patient. Are you sure?"
+        },
+        {
+            "page": "popup",
+            "status": "patient_delete_success",
+            "message": "Selected patient information has been successfully deleted."
+        },
+        {
+            "page": "popup",
+            "status": "physician_delete_confirm",
+            "message": "This action will delete the record of the selected physician. Are you sure?"
+        },
+        {
+            "page": "popup",
+            "status": "physician_delete_success",
+            "message": "Selected physician information has been successfully deleted."
+        },
+        {
+            "page": "popup",
+            "status": "logo_uploaded",
+            "message": "New company logo has been successfully uploaded."
+        },
+        {
+            "page": "inline",
+			"name": "email",
+            "status": "empty",
+            "message": "Please enter a valid email address."
+        },
+        {
+            "page": "inline",
+			"name": "lname",
+            "status": "empty",
+            "message": "Please enter last name."
+        },
+        {
+            "page": "inline",
+			"name": "fname",
+            "status": "empty",
+            "message": "Please enter first name."
+        },
+        {
+            "page": "inline",
+			"name": "phone",
+            "status": "empty",
+            "message": "Please enter a valid phone number."
+        },
+        {
+            "page": "inline",
+			"name": "password",
+            "status": "empty",
+            "message": "Please enter password."
+        },
+        {
+            "page": "inline",
+			"name": "sex",
+            "status": "empty",
+            "message": "Please specify biological sex."
+        },
+        {
+            "page": "inline",
+			"name": "dob",
+            "status": "empty",
+            "message": "Please specify a valid date of birth."
+        },
+        {
+            "page": "inline",
+			"name": "confirmPassword",
+            "status": "passwordMismatch",
+            "message": "Password does not match."
+        }
+       
+    ]
+}

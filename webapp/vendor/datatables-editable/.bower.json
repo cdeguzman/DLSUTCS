@@ -1,0 +1,39 @@
+{
+  "name": "jquery-datatable-editable",
+  "description": "A fork of the editable plugin for Datatables",
+  "main": "jquery.dataTables.editable.js",
+  "keywords": [
+    "jQuery",
+    "DataTables",
+    "plugin"
+  ],
+  "dependencies": {
+    "jquery-validation": "1.13.1",
+    "datatables": "1.10.7",
+    "jquery": "1.11.3",
+    "jquery-ui": "1.11.4",
+    "jeditable": "1.7.3",
+    "bootstrap": "~3.3.4",
+    "datatables-tabletools": "~2.2.3"
+  },
+  "authors": [
+    "Aaron Ballard"
+  ],
+  "license": "BSD New",
+  "homepage": "https://github.com/ansballard/jquery-datatables-editable",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "_release": "91c6a85ecf",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "91c6a85ecf7238abd9370f3d88c724ff9af80227"
+  },
+  "_source": "https://github.com/ansballard/jquery-datatables-editable.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/ansballard/jquery-datatables-editable.git"
+}
