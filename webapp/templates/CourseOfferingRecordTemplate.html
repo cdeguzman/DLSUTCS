@@ -1,0 +1,323 @@
+<div class="row">
+	<div class="col-xs-5">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">Course Offering</div>
+				<div class="panel-body">
+					<div class="col-xs-5">
+						<select id="currentcourselist" multiple  class="form-control faculty">
+							<option></option>
+						</select>
+					</div>
+					<div class="col-xs-2 middle">
+						<br><br><br><br><br>
+						<button id="add"> << </button>
+						<br><br>
+						<button id="remove"> >> </button>
+					</div>
+					<div class="col-xs-5">
+						<select id="courseofferedlist" multiple  class="form-control faculty max_width">
+							<option></option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">Section</div>
+				<div class="panel-body">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<select multiple id="sectionlist" class="form-control max_width">
+								<option>S11</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<button style=" width: 100%;" id="deleteSection" class="btn btn-default">Remove Section</button>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="section">Section</label>
+							<input type="text" class="form-control" id="section">
+						</div>
+						<div class="form-group">
+							<button style=" width: 100%;" id="addSection" class="btn btn-default">Add Section</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-7">
+		<div class="panel panel-default">
+			<div class="panel-heading">Schedule</div>
+			<div class="panel-body">
+				<form id="schedule" class="form">
+					<div class="row">
+						<div class="form-group">
+							<label for="courseId">Course Code: </label>
+							<label id="courseId"><u>CT THES0</u></label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="panel panel-default">
+								<div class="panel-heading">Regular Defense</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<label >Deadline of Defense Deliverable:</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-xs-4">
+												<label for="currsched-date-form">Date & Time</label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='reg-deadline'>
+													<input type='text' name="reg-deadline" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="reg-venue">Venue: </label>
+										<input type="text" class="form-control" id="reg-venue">
+									</div>
+									<div class="form-group">
+										<label for="reg-note">Note: </label>
+										<label id="reg-note"><u>2nd Friday</u></label>
+									</div>
+									<hr>
+									<div class="form-group">
+										<label >Defense date:</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-xs-4">
+												<label for="reg-defense-to">To: </label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='reg-defense-to'>
+													<input type='text' name="reg-defense-to" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<br>
+										<div class="row">
+											<div class="col-xs-4">
+												<label for="reg-defense-from">From: </label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='reg-defense-from'>
+													<input type='text' name="reg-defense-from" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="reg-defense-note">Note: </label>
+										<label id="reg-defense-note"><u>2nd Friday</u></label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-6">
+							<div class="panel panel-default">
+								<div class="panel-heading">Redefense</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<label for="currsched-date-form">Deadline of Defense Deliverable:</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-xs-4">
+												<label for="redef">Date & Time</label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='redef'>
+													<input type='text' name="redef" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="redef-venue">Venue: </label>
+										<input type="text" class="form-control" id="redef-venue">
+									</div>
+									<div class="form-group">
+										<label for="redef-note">Note: </label>
+										<label id="redef-note"><u>2nd Friday</u></label>
+									</div>
+									<hr>
+									<div class="form-group">
+										<label >Defense date:</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-xs-4">
+												<label for="redef-defense-to">To: </label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='redef-defense-to'>
+													<input type='text' name="redef-defense-to" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<br>
+										<div class="row">
+											<div class="col-xs-4">
+												<label for="redef-defense-from">From: </label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='redef-defense-from'>
+													<input type='text' name="redef-defense-from" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="redef-note">Note: </label>
+										<label id="redef-note"><u>2nd Friday</u></label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="panel panel-default">
+								<div class="panel-heading">Most Outstanding Thesis Defense</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<label for="currsched-date-form">Deadline of Defense Deliverable:</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-xs-4">
+												<label for="outstanding">Date & Time</label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='outstanding'>
+													<input type='text' name="outstanding" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="outstanding-venue">Venue: </label>
+										<input type="text" class="form-control" id="outstanding-venue">
+									</div>
+									<div class="form-group">
+										<label for="outstanding-note">Note: </label>
+										<label id="outstanding-note"><u>2nd Friday</u></label>
+									</div>
+									<hr>
+									<div class="form-group">
+										<label >Defense date:</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-xs-4">
+												<label for="outstanding-defense-to">To: </label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='outstanding-defense-to'>
+													<input type='text' name="outstanding-defense-to" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<br>
+										<div class="row">
+											<div class="col-xs-4">
+												<label for="outstanding-defense-from">From: </label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='outstanding-defense-from'>
+													<input type='text' name="outstanding-defense-from" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="outstanding-note">Note: </label>
+										<label id="outstanding-note"><u>2nd Friday</u></label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-6">
+							<div class="panel panel-default">
+								<div class="panel-heading">Deadline of Final Deliverable</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-xs-4">
+												<label >Date & Time</label>
+											</div>
+											<div class="col-xs-8">
+												<div class='input-group date' id='deadline'>
+													<input type='text' name="deadline" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="deadline-venue">Venue: </label>
+										<input type="text" class="form-control" id="deadline-venue">
+									</div>
+									<div class="form-group">
+										<label for="deadline-note">Note: </label>
+										<label id="deadline-note"><u>2nd Friday</u></label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<button id="update" type="submit" class="btn btn-default pull-right">Update Changes</button>
+						</div>
+					</div>
+				</form>
+			</div>	
+		</div>
+	</div>
+</div>

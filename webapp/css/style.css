@@ -28,8 +28,12 @@ select{
 	color: #999999 !important;
 }
 
-a, a:hover{
-    color: #3fc1d7;
+a {
+  color: white !important;
+} 
+
+a:hover{
+    color: #a1d884 !important;
 }
 
 .nopaddingmargin {
@@ -47,7 +51,7 @@ a, a:hover{
 }
 
 #contentContainerWrapper {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -110,7 +114,6 @@ a, a:hover{
   width: 100%;
   background: #f3f3f4;
   height: 60px;
-  padding-left: 15px;
   position: fixed;
   z-index: 10;
 }
@@ -177,6 +180,7 @@ a, a:hover{
 #contentContainer {
   margin: 0 15px;
   height: 100%;
+  padding-top: 20px;
   overflow: hidden;
 }
 
@@ -429,13 +433,10 @@ span.active{
 }
 
 
-#loginBox{
-    width: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -75%);
-	-webkit-transform: translate(-50%, -75%);
-	-moz-transform: translate(-50%, -75%);
+#homeBox{
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 100px;
 }
 
 #loginLabel{
@@ -482,10 +483,6 @@ td.cellData{
 
 .table{
 	
-}
-
-.headerRow{
-    margin-left: -15px;
 }
 
 #spinnerDiv{
@@ -561,27 +558,27 @@ button.close{
 }
 
 #footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    height: 110px;
-    background-color: #dddddd;
+    height: 40px;
+    background-color: #014023;
+    z-index: 100;
 }
 
 .footerContainer{
     height: 100%;
-    margin: 0;
 }
 
 #copyright{
-    bottom: 0px;
+    bottom: 0px;`
     position: absolute;
     left: 0px;
-	margin-left: 10px;
+    text-align: center;
 }
 
 #copyright span{
-    color: black;
+    color: #FFF;
     font-size: 11px;
 }
 
@@ -778,13 +775,13 @@ th.cellData{
 /* Overrided Bootstrap */
 
 .btn-default, .defaultimpt{
-    background-color: #b0b2b4 !important;
+    background-color: #014023 !important;
     border-color: #adadad !important;
 }
 
 .btn-default:hover, .defaultimpt:hover{
 	color: white !important;
-	background-color: #939598 !important;
+	background-color: #588640  !important;
 	border-color: #939598 !important;
 }
 
@@ -833,8 +830,9 @@ th.cellData{
 	background-color: white;
 }
 
-.dropdown-menu{
+nav .dropdown-menu{
 	top: 143% !important;
+  background: #00703C !important;
 }
 
 .brand{
@@ -865,7 +863,7 @@ th.cellData{
 }
 
 .btn-default, .btn-default .fa-times{
-	color: white;
+	color: white !important;
 }
 
 h5{
@@ -882,8 +880,8 @@ h4{
 }
 
 .navbar{
-	background: #64bc46 !important;
-	border-color: #64bc46 !important;
+	background: #014023 !important;
+	border-color: #014023 !important;
 	border-radius: 0px !important;
 	font-size: 14px !important;
 }
@@ -893,7 +891,7 @@ h4{
 }
 
 .dropdown-toggle{
-	background-color: #64bc46 !important;
+	background-color: #014023 !important;
 }
 
 .navbar-nav > li > a{
@@ -1175,4 +1173,71 @@ table.dataTable thead th.sorting_desc:after {
 .tab-content {
 	overflow: auto;
 	height: calc(100% - 60px);
+}
+
+select.faculty {
+  height: 100% !important;
+  min-height: 400px !important;
+}
+
+.panel-default>.panel-heading {
+  color: white !important;
+  background-color: #014023 !important;
+}
+
+input, form select {
+  max-width: 350px !important;
+}
+
+input#middlename {
+   max-width: 50px !important;
+}
+
+.form-group {
+  margin-bottom: 7px !important;
+}
+
+select {
+  width: 100% !important;
+}
+
+.modal-header {
+  background-color: #014023 !important;
+  color: #FFF !important;
+  border-radius: 4px !important;
+}
+
+label[for] {
+  color: #000;
+}
+
+.max_width {
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+.form-group {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.form-control:focus {
+  border-color: #66E99E !important;
+}
+
+.no_padding {
+    padding: 0 !important;
+}
+
+.middle {
+  text-align: center !important;
+}
+
+.not-active {
+   pointer-events: none !important;
+   cursor: default !important;
+}
+
+.navbar-header {
+  width: 98%;
 }

@@ -1,0 +1,412 @@
+<div class="row">
+	<div class="col-xs-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Display Student form the following specialization:</div>
+			<div class="panel-body">
+				<select id="student_specialization" class="form-control">
+					<option>All</option>
+				</select>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">Student List:</div>
+			<div class="panel-body">
+				<select id="student_list_form" multiple class="faculty form-control">
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+				</select>
+			</div>
+			<div style="padding-bottom: 10px;" class="row">
+				<div class="col-xs-6">
+					<button style=" width: 100%;"  data-target="#addStudent" data-toggle="modal" class="btn btn-default">Add Student</button>
+				</div>
+				<div class="col-xs-6">
+					<button style=" width: 100%;" id="deleteStudent" class="btn btn-default">Remove Student</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-8">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">General Information</div>
+				<div class="panel-body">
+					<form class="form-horizontal">
+						<div class="row">
+							<form class="form">
+								<div style="padding-left: 30px;" class="col-xs-6">
+									<div class="form-group">
+										<label for="facultyId">Student ID: </label>
+										<label id="facultyId"><u>12345678</u></label>
+									</div>
+									<div class="form-group">
+										<label for="lastname">Last Name</label>
+										<input type="text" class="form-control" id="lastname">
+									</div>
+									<div class="form-group">
+										<label for="firstname">First Name</label>
+										<input type="text" class="form-control" id="firstname">
+									</div>
+									<div class="form-group">
+										<label for="middlename">MI</label>
+										<input type="text" maxlength="2" class="form-control" id="middlename">
+									</div>
+									<div class="form-group">
+										<label for="email">Email</label>
+										<input type="email" class="form-control" id="email">
+									</div>
+									<div class="form-group">
+										<label for="contact">Contact</label>
+										<input type="tel" maxlength="11" class="form-control" id="contact">
+									</div>
+									<div class="form-group">
+										<label for="currentrank">Current Rank</label>
+										<select id="currentrank" class="form-control">
+											<option>Instructor 1 to 8</option>
+											<option>Teaching Associate</option>
+											<option>Assistant Professor 1 to 7</option>
+											<option>Associate Professor 1 to 7</option>
+											<option>Full Professor 1 to 10</option>
+											<option>Assistant Lecturer</option>
+											<option>Lecturer 1 to 8</option>
+											<option>Assistant Professor Lecturer 1 to 7</option>
+											<option>Associate Professor Lecturer 1 to 7</option>
+											<option>Professorial Lecturer 1 – 5</option>
+											<option>Professional Lecturer</option>
+											<option>Senior Professional Lecturer</option>
+											<option>Others: Please specify</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="form-group">
+										<label for="title">Title</label>
+										<input type="text" class="form-control" id="title">
+									</div>
+									<div class="form-group">
+										<label for="passsword">Password</label>
+										<input type="text" class="form-control" id="password">
+									</div>
+									<br><br><br>
+									<div class="form-group">
+										<label for="sms">SMS no.</label>
+										<input type="tel" maxlength="11" class="form-control" id="sms">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox"> Notify Defense Schedule thru SMS
+											</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="department">Department</label>
+										<select id="department" class="form-control">
+											<option>Computer Technology</option>
+											<option>Computer Science</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="status">Status</label>
+										<select id="status" class="form-control">
+											<option>Active</option>
+											<option>Inactive</option>
+										</select>
+									</div>
+								</div>
+								<button id="update" type="submit" class="btn btn-default">Update Changes</button>
+							</form>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">Area of Specialization</div>
+				<div class="panel-body">
+					<form class="form">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-xs-5">
+									<label for="areofspecialization">Current Rank</label>
+									<select multiple id="areofspecialization" class="form-control">
+										<option>Basic Computer Science Concepts(10)</option>
+										<option>Basic Electronics(10)</option>
+									</select>
+								</div>
+								<div style="text-align: center;" class="col-xs-2">
+									<br>
+									<button id="add"> >>> </button>
+									<br><br>
+									<button id="remove"> <<< </button>
+								</div>
+								<div class="col-xs-5">
+									<label for="get-areofspecialization">Current Rank</label>
+									<select multiple id="get-areofspecialization" class="form-control">
+										<option>Algorithms and Complexity</option>
+										<option>Architecture and Organization</option>
+										<option>Computational Science</option>
+										<option>Digital Signal Processing</option>
+										<option>Discrete Structure</option>
+										<option>Embedded and Control System</option>
+										<option>General Computer Science</option>
+										<option>Robotics</option>
+										<option>Software Engineering</option>
+										<option>Graphics and Visual Computing</option>
+										<option>Human-Computer Interaction</option>
+										<option>Information Management</option>
+										<option>Intelligent Systems</option>
+										<option>Net-centric Computing</option>
+										<option>Operating Systems</option>
+										<option>Programming Languages</option>
+										<option>Social and Professional Issues</option>
+										<option>Others: Please specify</option>
+									</select>
+								</div>
+							</div>
+							<br>
+							<div style="padding-left: 15px;" class="form-group">
+								<button id="increase" class="btn btn-default">Increase Level</button>
+								<button id="decrease" class="btn btn-default">Decrease Level</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">Current Schedule</div>
+				<div class="panel-body">
+					<form class="form">
+						<div class="row">
+							<div class="col-xs-4">
+								<br>
+								<select stlye="min-width:250px;min-height:125px;" id="get-areofspecialization" class="form-control" multiple>
+								</select>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group">
+									<label for="currsched-date-form">from:</label>
+									<div class='input-group date' id='currsched-date-from'>
+										<input type='text' name="currsched-date-from" class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="currsched-date-to">To:</label>
+									<div class='input-group date' id='currsched-date-to'>
+										<input type='text' name="currsched-date-to" class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group">
+									<label for="description">Description</label>
+									<textarea id="description" class="form-control" rows="5"></textarea>
+								</div>
+							</div>
+
+						</div>
+						<div class="row">
+							<div style="padding-left: 15px;" class="form-group">
+								<button id="remove" class="btn btn-default">Remove Schedule</button>
+								<button id="add" class="btn btn-default">Add Schedule</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">Preferred Thesis Defense Schedule</div>
+					<div class="panel-body">
+						<form id="" class="form">
+							<div class="row">
+								<div class="col-xs-4">
+									<br>
+									<select stlye="min-width:250px;min-height:125px;" id="get-areofspecialization" class="form-control" multiple>
+									</select>
+								</div>
+								<div class="col-xs-4">
+									<div class="form-group">
+										<label for="prefsched-date-to">from:</label>
+										<div class='input-group date' id='prefsched-date-from'>
+											<input type='text' name="prefsched-date-from" class="form-control" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="prefsched-date-to">To:</label>
+										<div class='input-group date' id='prefsched-date-to'>
+											<input type='text' name="prefsched-date-to" class="form-control" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<div class="form-group">
+										<label for="description">Description</label>
+										<textarea id="description" class="form-control" rows="5"></textarea>
+									</div>
+								</div>
+
+							</div>
+							<div class="row">
+								<div style="padding-left: 15px;" class="form-group">
+									<button id="remove" class="btn btn-default">Remove Schedule</button>
+									<button id="add" class="btn btn-default">Add Schedule</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">Thesis Information</div>
+					<div class="panel-body">
+						<form id="" class="form">
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="thesis_title"> Thesis Title: </label>
+									<label id="thesis_title"> Mobile Robot Platform Having an Echanced Underpinning System (MoRPHEUS) </label>
+									<br><br>
+									<label for="thesis_status"> Status: </label>
+									<label id="thesis_status"> Completed in SY 2005 - 2006, 1st Term </label>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="enrollment_history">Enrollment History: </label>
+									<select stlye="min-width:250px;min-height:125px;" id="enrollment_history" class="form-control" multiple>
+										<option>SY 2005 - 2006, 1st term CTTHES2 - 4.0</option>
+										<option>SY 2004 - 2005, 3rd term CTTHES2 - 4.0</option>
+										<option>SY 2003 - 2004, 1st term CTTHES2 - 4.0</option>
+									</select>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Faculty Add form -->
+	<div class="modal fade" id="addStudent">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Add Student Record</h4>
+				</div>
+				<div class="modal-body">
+					<form id="add_student_form" class="form-horizontal">
+						<div class="row">
+							<form class="form">
+								<div class="col-xs-1"></div>
+								<div class="col-xs-4">
+									<div class="form-group">
+										<label for="facultyId">Student ID: </label>
+										<input type="tel" maxlength="8" class="form-control" id="facultyId">
+									</div>
+									<div class="form-group">
+										<label for="lastname">Last Name</label>
+										<input type="text" class="form-control" id="lastname">
+									</div>
+									<div class="form-group">
+										<label for="firstname">First Name</label>
+										<input type="text" class="form-control" id="firstname">
+									</div>
+									<div class="form-group">
+										<label for="middlename">MI</label>
+										<input type="text" maxlength="2" class="form-control" id="middlename">
+									</div>
+									<div class="form-group">
+										<label for="email">Email</label>
+										<input type="email" class="form-control" id="email">
+									</div>
+									<div class="form-group">
+										<label for="contact">Contact</label>
+										<input type="tel" maxlength="11" class="form-control" id="contact">
+									</div>
+									<div class="form-group">
+										<label for="flowchart">Flowchart</label>
+										<select id="flowchart" class="form-control">
+											<option>Instructor 1 to 8</option>
+											<option>Teaching Associate</option>
+											<option>Assistant Professor 1 to 7</option>
+											<option>Associate Professor 1 to 7</option>
+											<option>Full Professor 1 to 10</option>
+											<option>Assistant Lecturer</option>
+											<option>Lecturer 1 to 8</option>
+											<option>Assistant Professor Lecturer 1 to 7</option>
+											<option>Associate Professor Lecturer 1 to 7</option>
+											<option>Professorial Lecturer 1 – 5</option>
+											<option>Professional Lecturer</option>
+											<option>Senior Professional Lecturer</option>
+											<option>Others: Please specify</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-xs-1"></div>
+								<div class="col-xs-5">
+									<div class="form-group">
+										<label for="sms">SMS no.</label>
+										<input type="tel" maxlength="11" class="form-control" id="sms">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox"> Notify Defense Schedule thru SMS
+											</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="department">Specialization</label>
+										<select id="department" class="form-control">
+											<option>Computer Technology</option>
+											<option>Computer Science</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="status">Status</label>
+										<select id="status" class="form-control">
+											<option>Active</option>
+											<option>Inactive</option>
+										</select>
+									</div>
+								</div>
+							</form>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>

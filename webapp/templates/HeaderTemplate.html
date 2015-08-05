@@ -1,69 +1,97 @@
-<div class="headerRow">
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      
-		      <a class="navbar-brand brandText" href="#" id="changeLogo">
-				  <img alt="Brand" class="brandImage" src="img/logo.png?v=<%= Math.round(Math.random()*100)%>">
-				  <%if(Core.isAdmin()){%>
-				  	<div id="changeLogoCover"><span>Change Logo</span></div>
-				  <%}%>
-		      </a>
-		  <a class="navbar-brand brandText" href="#">
-		   <span id="headerTitle"><strong>Clinician Dashboard</strong></span>
-	      </a>
-		</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
 
-	  <% if(data.sessionId){%>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-			<%if(page){%>
-				  <li>
-					<a id="showPatientsBtn" href="#" class="openAddDialogBtn <%if(page==='patients'){%>selectedMenu<%}%>">Patients 
-						 <%if(Core.isAdmin()){%>
-						  <span id="showPatientAddModalBtn" class="fa-stack fa-sm headerIcon">
-						    <i class="fa fa-circle fa-stack-2x"></i>
-						    <i class="fa fa-plus fa-stack-1x fa-inverse"></i>
-						  </span>
-						 <%}%>
-					  </a>
-			  </li>
-			  <%if(Core.isAdmin()){%>
-			  <li>
-				  <a id="showPhysiciansBtn" href="#" class="openAddDialogBtn <%if(page==='physicians'){%>selectedMenu<%}%>">Care Team 
-					  <span id="showPhysicianAddModalBtn" class="fa-stack fa-sm headerIcon">
-					    <i class="fa fa-circle fa-stack-2x"></i>
-					    <i class="fa fa-plus fa-stack-1x fa-inverse"></i>
-					  </span>
-				  </a>
-			  </li>
-			  <%}%>
-		   <%}%>
-		  </ul>
-		  <ul class="nav navbar-nav navbar-right">
-		    <li class="dropdown">
-		      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= data.email %>  <span class="caret"></span></a>
-		      <ul class="dropdown-menu" role="menu">
-		        <%if(Core.isAdmin()){%>
-					<li class="link" id="physicians"><a>Manage Physicians</a></li>
-				<%}%>
-		        <li class="link" id="patients"><a>Manage Patients</a></li>
-		        <li class="link" data-toggle="modal" data-target="#changePasswordModal" data-backdrop="static"><a>Change Password</a></li>
-		        <li class="divider"></li>
-		        <li class="link" id="logout"><a>Logout</a></li>
-		      </ul>
-		    </li>
-		  </ul>
-		</div><!-- /.navbar-collapse -->
-	  <%}%>
-	  </div><!-- /.container-fluid -->
-	</nav>
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#" style="padding-left: 50px;">
+        DLSU TCS
+      </a>
+
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-bypass>Record <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/faculty">Faculty</a></li>
+            <li><a href="/student">Student</a></li>
+            <li><a href="/thesis">Thesis Group</a></li>
+            <li><a href="/room">Room</a></li>
+            <li><a href="/holiday">Holiday</a></li>
+            <li><a href="/administrative">Administration Position</a></li>
+            <li><a href="/generalArea">General Area</a></li>
+            <li><a href="/subArea">Sub-Area</a></li>
+            <li><a href="/rankRecord">Rank</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Exit</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-bypass>Course <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/course">Course</a></li>
+            <li><a href="/courseOffering">Course Offering</a></li>
+            <li><a href="/flowchart">Flowchart</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Exit</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-bypass>Schedule <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/general">Generak</a></li>
+            <li><a href="/schoolyear">School Year</a></li>
+            <li><a href="/studentsch">Student</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Exit</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-bypass>Thesis <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/adviser">Adviser Roster</a></li>
+            <li><a href="/panel">Panel Roster</a></li>
+            <li><a href="/enrollment">Enrollment</a></li>
+            <li><a href="/schedule">Schedule</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Exit</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-bypass>Application <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/defense">Defense History Submodule </a></li>
+            <li><a href="/update">Update Thesis Grade Submodule </a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Exit</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="/barcode" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Barcode <span class="caret"></span></a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="not-active" data-bypass>SY 2013 - 2014 3rd Term</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
 </div>
+</nav>

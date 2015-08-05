@@ -1,0 +1,230 @@
+<div class="row">
+	<div class="col-xs-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Room List:</div>
+			<div class="panel-body">
+				<select id="roomList" multiple class="faculty form-control">
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+					<option>Altura, Boyet</option>
+				</select>
+			</div>
+			<div style="padding-bottom: 10px;" class="row">
+				<div class="col-xs-6">
+					<button style=" width: 100%;"  data-target="#addRoom" data-toggle="modal" class="btn btn-default">Add Room</button>
+				</div>
+				<div class="col-xs-6">
+					<button style=" width: 100%;" id="deleteRoom" class="btn btn-default">Remove Room</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-8">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">General Information</div>
+				<div class="panel-body">
+					<form id="general" class="form-horizontal">
+						<div style="width: 50%;margin: 0 auto;" class="row">
+							<form class="form">
+								<div class="form-group">
+									<label for="roomID">Room ID: </label>
+									<label id="roomID"><u>12345678</u></label>
+								</div>
+								<div class="form-group">
+									<label for="roomname">Name</label>
+									<input type="text" class="form-control" id="roomname">
+								</div>
+								<div class="form-group">
+									<label for="roomno">Room no</label>
+									<input type="text" class="form-control" id="roomno">
+								</div>
+								<div class="form-group">
+									<label for="description">Description</label>
+									<input type="text"  class="form-control" id="description">
+								</div>
+								<div class="form-group">
+									<label for="roomlocation">Location</label>
+									<input type="text" class="form-control" id="roomlocation">
+								</div>
+								<div class="form-group">
+									<div class="checkbox">
+										<label>
+											<input id="usable" type="checkbox"> usable
+										</label>
+									</div>
+								</div>
+								<button id="update" type="submit" class="btn btn-default">Update Changes</button>
+							</form>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">Blocked Schedule</div>
+				<div class="panel-body">
+					<form id="blockedsched" class="form">
+						<div class="row">
+							<div class="col-xs-4">
+								<br>
+								<select stlye="min-width:250px;min-height:125px;" id="blockedschedlist" class="form-control" multiple>
+								</select>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group">
+									<label for="currsched-date-form">from:</label>
+									<div class='input-group date' id='currsched-date-from'>
+										<input type='text' name="currsched-date-from" class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="currsched-date-to">To:</label>
+									<div class='input-group date' id='currsched-date-to'>
+										<input type='text' name="currsched-date-to" class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group">
+									<label for="description">Description</label>
+									<textarea id="description" class="form-control" rows="5"></textarea>
+								</div>
+							</div>
+
+						</div>
+						<div class="row">
+							<div style="padding-left: 15px;" class="form-group">
+								<button id="remove" class="btn btn-default">Remove Schedule</button>
+								<button id="add" class="btn btn-default">Add Schedule</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">Preferred Thesis Defense Schedule</div>
+				<div class="panel-body">
+					<form id="preferredsched" class="form">
+						<div class="row">
+							<div class="col-xs-4">
+								<br>
+								<select stlye="min-width:250px;min-height:125px;" id="preferredschedlist" class="form-control" multiple>
+								</select>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group">
+									<label for="prefsched-date-from">from:</label>
+									<div class='input-group date' id='prefsched-date-from'>
+										<input type='text' name="prefsched-date-from" class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="prefsched-date-to">To:</label>
+									<div class='input-group date' id='prefsched-date-to'>
+										<input type='text' name="prefsched-date-to" class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group">
+									<label for="description">Description</label>
+									<textarea id="description" class="form-control" rows="5"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div style="padding-left: 15px;" class="form-group">
+								<button id="remove" class="btn btn-default">Remove Schedule</button>
+								<button id="add" class="btn btn-default">Add Schedule</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="addRoom">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Add Room Record</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div style="width: 50%;margin: 0 auto;" class="row">
+						<form class="form">
+							<div class="form-group">
+								<label for="roomID">Room ID: </label>
+								<label id="roomID"><u>12345678</u></label>
+							</div>
+							<div class="form-group">
+								<label for="roomname">Name</label>
+								<input type="text" class="form-control" id="roomname">
+							</div>
+							<div class="form-group">
+								<label for="roomno">Room no</label>
+								<input type="text" class="form-control" id="roomno">
+							</div>
+							<div class="form-group">
+								<label for="description">Description</label>
+								<input type="text"  class="form-control" id="description">
+							</div>
+							<div class="form-group">
+								<label for="roomlocation">Location</label>
+								<input type="text" class="form-control" id="roomlocation">
+							</div>
+							<div class="form-group">
+								<div class="checkbox">
+									<label>
+										<input id="usable" type="checkbox"> usable
+									</label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button id="save" type="button" class="btn btn-default">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>

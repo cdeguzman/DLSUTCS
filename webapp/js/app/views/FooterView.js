@@ -13,7 +13,7 @@ define(['jquery', 'backbone'], function($, Backbone){
 	
 		render: function(){
 			var template = _.template(Core.templates[this.templateName]);
-			this.$el.html(template({"data":this.model.toJSON()}));
+			this.$el.html(template());
 		}
 	
 	});

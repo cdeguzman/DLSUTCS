@@ -1,0 +1,234 @@
+<div class="row">
+	<div class="col-xs-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">School Year List:</div>
+			<div class="panel-body">
+				<select id="sylist" multiple class="faculty form-control">
+					<option></option>
+				</select>
+			</div>
+			<div style="padding-bottom: 10px;" class="row">
+				<div class="col-xs-6">
+					<button style=" width: 100%;"  data-target="#addSchoolYear" data-toggle="modal" class="btn btn-default">Add School Year</button>
+				</div>
+				<div class="col-xs-6">
+					<button style=" width: 100%;" id="deleteYear" class="btn btn-default">Remove School Year</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-8">
+		<div class="panel panel-default">
+			<div class="panel-heading">Schedule</div>
+			<div class="panel-body">
+				<form style="width:50%;margin:0 auto;" class="form">
+					<div class="form-group">
+						<label for="syId">School Year </label>
+						<label id="syId"><u>1980</u></label>
+					</div>
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">First Term</div>
+							<div class="panel-body">
+								<div class="col-xs-12">
+									<div class="form-group">
+										<label for="fterm-from">from:</label>
+										<div class='input-group date' id='fterm-from'>
+											<input type='text' name="fterm-from" class="form-control max_width" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="fterm-to">To:</label>
+										<div class='input-group date' id='fterm-to'>
+											<input type='text' name="fterm-to" class="form-control max_width" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Second Term</div>
+							<div class="panel-body">
+								<div class="col-xs-12">
+									<div class="form-group">
+										<label for="sterm-from">from:</label>
+										<div class='input-group date' id='sterm-from'>
+											<input type='text' name="sterm-from" class="form-control max_width" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="sterm-to">To:</label>
+										<div class='input-group date' id='sterm-to'>
+											<input type='text' name="sterm-to" class="form-control max_width" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+									<div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Third Term</div>
+							<div class="panel-body">
+								<div class="col-xs-12">
+									<div class="form-group">
+										<label for="tterm-from">from:</label>
+										<div class='input-group date' id='tterm-from'>
+											<input type='text' name="tterm-from" class="form-control max_width" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="tterm-to">To:</label>
+										<div class='input-group date' id='tterm-to'>
+											<input type='text' name="tterm-to" class="form-control max_width" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group">
+							<button id="update" class="btn btn-default">Update Changes</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="addSchoolYear">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Add School Year Schedule</h4>
+			</div>
+			<div class="modal-body">
+				<form id="add" style="width:50%;margin:0 auto;" class="form">
+					<div class="form-group">
+						<label for="syId">School Year </label>
+						<input type="text" class="form-control" id="syId">
+					</div>
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">First Term</div>
+							<div class="panel-body">
+								<div class="col-xs-12">
+									<div class="form-group">
+										<label for="fterm-from-add">from:</label>
+										<div class='input-group date' id='fterm-from-add'>
+											<input type='text' name="fterm-from-add" class="form-control" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="fterm-to-add">To:</label>
+										<div class='input-group date' id='fterm-to-add'>
+											<input type='text' name="fterm-to-add" class="form-control" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Second Term</div>
+							<div class="panel-body">
+								<div class="col-xs-12">
+									<div class="form-group">
+										<label for="sterm-from-add">from:</label>
+										<div class='input-group date' id='sterm-from-add'>
+											<input type='text' name="sterm-from-add" class="form-control" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="sterm-to-add">To:</label>
+										<div class='input-group date' id='sterm-to-add'>
+											<input type='text' name="sterm-to-add" class="form-control" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+									<div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Third Term</div>
+							<div class="panel-body">
+								<div class="col-xs-12">
+									<div class="form-group">
+										<label for="tterm-from-add">from:</label>
+										<div class='input-group date' id='tterm-from-add'>
+											<input type='text' name="tterm-from-add" class="form-control" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="tterm-to-add">To:</label>
+										<div class='input-group date' id='tterm-to-add'>
+											<input type='text' name="tterm-to-add" class="form-control" />
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button id="name" type="button" class="btn btn-default">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>

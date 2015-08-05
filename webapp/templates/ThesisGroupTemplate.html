@@ -1,0 +1,269 @@
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">Thesis Group</div>
+		<div class="panel-body">
+			<form id="thesisgroup" class="form">
+				<div class="row">
+					<label for="year">Display thesis group form the following school year: </label>
+					<select id="year" class="form-control">
+						<option>2012 - 2013</option>
+					</select>
+				</div>
+				<br>
+				<div class="row">
+					<label for="group">Thesis Group List </label>
+					<select id="group" class="form-control max_width" multiple>
+						<option>Anti-Scraping Tool</option>
+						<option>Anti-Scraping Tool</option>
+						<option>Anti-Scraping Tool</option>
+						<option>Anti-Scraping Tool</option>
+					</select>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-xs-6">
+						<button data-target="#addThesisGroup" data-toggle="modal" class="btn btn-default">Add Thesis Group</button>
+						<button id="remove" class="btn btn-default">Remove Thesis Group</button>
+					</div>
+					<div class="col-xs-6">
+						
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+<br>
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">General Information</div>
+		<div class="panel-body">
+			<form id="general" class="form">
+				<div class="row">
+					<div class="form-group">
+						<label for="thesisID">Thesis Group ID: </label>
+						<label id="thesisID"><u>12345678</u></label>
+					</div>
+					<div class="form-group">
+						<label for="thesistitle">Title: </label>
+						<input type="text" class="form-control max_width" id="thesistitle">
+					</div>
+					<div class="form-group">
+						<label for="subthesistitle">Secondary Title: </label>
+						<input type="text" class="form-control max_width" id="subthesistitle">
+					</div>
+					<div class="form-group">
+						<label for="thesisdescription">Description: </label>
+						<input type="text" class="form-control max_width" id="thesisdescription">
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-xs-4 no_padding">
+								<label for="schoolyear">School Year </label>
+								<select id="schoolyear" class="form-control" >
+								</select>
+							</div>
+							<div class="col-xs-4 no_padding">
+								<label for="termcompleted">Term Completed </label>
+								<select id="termcompleted" class="form-control" >
+								</select>
+							</div>
+							<div class="col-xs-4 no_padding">
+								<label for="adviser">Adviser: </label>
+								<select id="adviser" class="form-control" >
+									<option>Ballon, Alexie E</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<label for="proposalabstract">Proposal Abstract: </label>
+						<select style="min-width: 100%;" id="proposalabstract" class="form-control" multiple>
+						</select>
+					</div>
+					<div class="col-xs-6">
+						<label for="finalabstract">Final Abstract: </label>
+						<select style="min-width: 100%;" id="finalabstract" class="form-control" multiple>
+						</select>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="form-group">
+						<button id="update" class="btn btn-default pull-right">Update Changes</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">Proponents</div>
+		<div class="panel-body">
+			<form id="proponents" class="form">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-xs-5">
+							<label for="get-areofspecialization"></label>
+							<select multiple id="areofspecialization" class="form-control max_width">
+								<option>Basic Computer Science Concepts(10)</option>
+								<option>Basic Electronics(10)</option>
+							</select>
+						</div>
+						<div style="text-align: center;" class="col-xs-2">
+							<br>
+							<button id="add"> >> </button>
+							<br><br>
+							<button id="remove"> << </button>
+						</div>
+						<div class="col-xs-5">
+							<label for="get-areofspecialization">Display student form the following specialization: </label>
+							<select id="get-areofspecialization" class="form-control max_width">
+								<option>All</option>
+							</select>
+							<br>
+							<select multiple id="get-areofspecialization" class="form-control max_width">
+								<option>Algorithms and Complexity</option>
+								<option>Architecture and Organization</option>
+								<option>Computational Science</option>
+								<option>Digital Signal Processing</option>
+								<option>Discrete Structure</option>
+								<option>Embedded and Control System</option>
+								<option>General Computer Science</option>
+								<option>Robotics</option>
+								<option>Software Engineering</option>
+								<option>Graphics and Visual Computing</option>
+								<option>Human-Computer Interaction</option>
+								<option>Information Management</option>
+								<option>Intelligent Systems</option>
+								<option>Net-centric Computing</option>
+								<option>Operating Systems</option>
+								<option>Programming Languages</option>
+								<option>Social and Professional Issues</option>
+								<option>Others: Please specify</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">Related Area</div>
+		<div class="panel-body">
+			<form id="relatedarea" class="form">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-xs-5">
+							<select multiple id="relatedArea" class="form-control max_width">
+								<option>Basic Computer Science Concepts(10)</option>
+								<option>Basic Electronics(10)</option>
+							</select>
+						</div>
+						<div style="text-align: center;" class="col-xs-2">
+							<br>
+							<button id="add"> >> </button>
+							<br><br>
+							<button id="remove"> << </button>
+						</div>
+						<div class="col-xs-5">
+							<select multiple id="get-relatedArea" class="form-control max_width">
+								<option>Algorithms and Complexity</option>
+								<option>Architecture and Organization</option>
+								<option>Computational Science</option>
+								<option>Digital Signal Processing</option>
+								<option>Discrete Structure</option>
+								<option>Embedded and Control System</option>
+								<option>General Computer Science</option>
+								<option>Robotics</option>
+								<option>Software Engineering</option>
+								<option>Graphics and Visual Computing</option>
+								<option>Human-Computer Interaction</option>
+								<option>Information Management</option>
+								<option>Intelligent Systems</option>
+								<option>Net-centric Computing</option>
+								<option>Operating Systems</option>
+								<option>Programming Languages</option>
+								<option>Social and Professional Issues</option>
+								<option>Others: Please specify</option>
+							</select>
+						</div>
+					</div>
+					<br>
+					<div style="padding-left: 15px;" class="form-group">
+						<button id="increase" class="btn btn-default">Increase Level</button>
+						<button id="decrease" class="btn btn-default">Decrease Level</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="addThesisGroup">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Add Thesis Group Record</h4>
+			</div>
+			<div class="modal-body">
+				<form id="addThesisgroup" class="form">
+					<div class="row">
+						<div class="row">
+							<div class="col-xs-6">
+								<label for="thesisID">Thesis Group ID: </label>
+								<label id="thesisID"><u>12345678</u></label>
+							</div>
+							<div class="col-xs-6">
+								<label id="sy" class="pull-right"> SY 2013 - 2014 3rd Term</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="thesistitle">Title: </label>
+							<input type="text" class="form-control max_width" id="thesistitle">
+						</div>
+						<div class="form-group">
+							<label for="subthesistitle">Secondary Title: </label>
+							<input type="text" class="form-control max_width" id="subthesistitle">
+						</div>
+						<div class="form-group">
+							<label for="thesisdescription">Description: </label>
+							<input type="text" class="form-control max_width" id="thesisdescription">
+						</div>
+						<div class="form-group">
+							<label for="adviser">Adviser: </label>
+							<select id="adviser" class="form-control" >
+								<option>Ballon, Alexie E</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<label for="proposalabstract">Proposal Abstract: </label>
+							<select style="min-width: 100%;" id="proposalabstract" class="form-control" multiple>
+							</select>
+						</div>
+						<div class="col-xs-6">
+							<label for="finalabstract">Final Abstract: </label>
+							<select style="min-width: 100%;" id="finalabstract" class="form-control" multiple>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button id="save" type="button" class="btn btn-default">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,80 @@
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">Holiday</div>
+		<div class="panel-body">
+			<form id="holiday" class="form">
+				<div class="row">
+					<div class="col-xs-6">
+						<label for="year">Display dates related in year: </label>
+						<select id="year" class="form-control">
+							<option>2014</option>
+						</select>
+					</div>
+					<div class="col-xs-6">
+						<label id="sy" class="pull-right"> SY 2013 - 2014 3rd Term</label>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">Time</div>
+		<div class="panel-body">
+			<form class="form">
+				<div class="row">
+					<div class="col-xs-8">
+						<select id="holidaylist" multiple class="form-control max_width" style="min-height: 400px;">
+							<option></option>
+						</select>
+					</div>
+					<div class="col-xs-4">
+						<div class="panel panel-default">
+							<div class="panel-heading"> Date and Time </div>
+							<div class="panel-body">
+								<div class="form-group">
+									<label for="datetime-from">From</label>
+									<div class='input-group date' id='datetime-from'>
+										<input type='text' class="form-control max_width" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="datetime-to">To</label>
+									<div class='input-group date' id='datetime-to'>
+										<input type='text' class="form-control max_width" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+								<br>
+								<div class="form-group">
+									<label for="description">Description</label>
+									<textarea id="description" class="form-control" rows="5"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<button id="remove" class="btn btn-default">Remove Holiday</button>
+						</div>
+					</div>
+
+					<div class="col-xs-6">
+						<div class="form-group pull-right">
+							<button id="add" class="btn btn-default">Add Holiday</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

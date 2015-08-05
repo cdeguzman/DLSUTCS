@@ -1,0 +1,134 @@
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<form class="form">
+				<div id="studentSched" class="form-group">
+					<div class="row">
+						<div class="col-xs-5">
+							<label for="scheduleupdate">Students that will be affected with schedule update: </label>
+							<select multiple id="scheduleupdate" class="form-control faculty max_width">
+								<option></option>
+							</select>
+						</div>
+						<div style="text-align: center;" class="col-xs-2">
+							<br><br><br><br><br><br>
+							<button id="add"> >> </button>
+							<br><br>
+							<button id="remove"> << </button>
+						</div>
+						<div class="col-xs-5">
+							<label for="students">Display student taking the course: </label>
+							<select id="students" class="form-control max_width">
+								<option>All</option>
+							</select>
+							<br>
+							<label for="course">Students enrolled in the course: </label>
+							<select multiple id="course" class="form-control faculty max_width">
+								<option></option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">Current Schedule</div>
+		<div class="panel-body">
+			<form id="currentsched" class="form">
+				<div class="row">
+					<div class="col-xs-4">
+						<br>
+						<select stlye="min-width:250px;min-height:125px;" id="currentschedlist" class="form-control" multiple>
+						</select>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label for="currsched-date-from">from:</label>
+							<div class='input-group date' id='currsched-date-from'>
+								<input type='text' name="currsched-date-from" class="form-control max_width" />
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="currsched-date-to">To:</label>
+							<div class='input-group date' id='currsched-date-to'>
+								<input type='text' name="currsched-date-to" class="form-control max_width" />
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label for="description">Description</label>
+							<textarea id="description" class="form-control" rows="5"></textarea>
+						</div>
+					</div>
+
+				</div>
+				<div class="row">
+					<div style="padding-left: 15px;" class="form-group">
+						<button id="remove" class="btn btn-default">Remove Schedule List</button>
+						<button id="add" class="btn btn-default">Add Schedule List</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">Preferred Thesis Defense Schedule</div>
+		<div class="panel-body">
+			<form id="preferredsched" class="form">
+				<div class="row">
+					<div class="col-xs-4">
+						<br>
+						<select stlye="min-width:250px;min-height:125px;" id="preferredschedlist" class="form-control" multiple>
+						</select>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label for="prefsched-date-from">from:</label>
+							<div class='input-group date' id='prefsched-date-from'>
+								<input type='text' name="prefsched-date-from" class="form-control max_width" />
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="prefsched-date-to">To:</label>
+							<div class='input-group date' id='prefsched-date-to'>
+								<input type='text' name="prefsched-date-to" class="form-control max_width" />
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label for="description">Description</label>
+							<textarea id="description" class="form-control" rows="5"></textarea>
+						</div>
+					</div>
+
+				</div>
+				<div class="row">
+					<div style="padding-left: 15px;" class="form-group">
+						<button id="remove" class="btn btn-default">Remove Schedule List</button>
+						<button id="add" class="btn btn-default">Add Schedule List</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

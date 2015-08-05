@@ -1,0 +1,437 @@
+<div class="row">
+	<div class="col-xs-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Course List:</div>
+			<div class="panel-body">
+				<select id="courselist" multiple class="faculty form-control">
+					<option></option>
+				</select>
+			</div>
+			<div style="padding-bottom: 10px;" class="row">
+				<div class="col-xs-6">
+					<button style=" width: 100%;"  data-target="#addCourse" data-toggle="modal" class="btn btn-default">Add Course</button>
+				</div>
+				<div class="col-xs-6">
+					<button style=" width: 100%;" id="deleteFaculty" class="btn btn-default">Remove Course</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-8">
+		<div class="panel panel-default">
+			<div class="panel-heading">General Information</div>
+			<div class="panel-body">
+				<form id="general" class="form">
+					<div class="row">
+						<div class="form-group">
+							<label for="courseId">Course ID: </label>
+							<label id="courseId"><u>12345678</u></label>
+						</div>
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" id="name">
+						</div>
+						<div class="form-group">
+							<label for="description">Description</label>
+							<input type="text" class="form-control" id="description">
+						</div>
+						<div class="form-group">
+							<label for="units">Units</label>
+							<input type="text" maxlegth="3" style="width:50px;" class="form-control" id="units">
+						</div>
+						<div class="form-group">
+							<label for="proposal">Proposal</label>
+							<select id="proposal" class="form-control">
+								<option>Proposal</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="department">Department</label>
+							<select id="department" class="form-control">
+								<option>Computer Technology</option>
+							</select>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Regular Defense</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-2">
+										<label>General Schedule</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="reg-week-from" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-1 middle">
+										<label for="">To</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="reg-week-to" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-2">
+										<label >Week</label>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="reg-duration">Duration</label>
+									</div>
+									<div class="col-xs-1">
+										<input type="text"  style="width:50px;" class="form-control" id="reg-duration">
+									</div>
+									<div class="col-xs-1">
+										<label for="reg-duration">Minutes</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="checkbox">
+											<label>
+												<input id="reg-applicable" type="checkbox">applicable
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Redefense</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="lastname">General Schedule</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="redef-week-from" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-1 middle">
+										<label for="">To</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="redef-week-to" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-2">
+										<label >Week</label>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="redef-duration">Duration</label>
+									</div>
+									<div class="col-xs-1">
+										<input type="text"  style="width:50px;" class="form-control" id="redef-duration">
+									</div>
+									<div class="col-xs-1">
+										<label for="redef-duration">Minutes</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="checkbox">
+											<label>
+												<input id="redef-applicable" type="checkbox">applicable
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Most Outstanding Thesis Defense</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="lastname">General Schedule</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="out-week-from" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-1 middle">
+										<label for="">To</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="out-week-to" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-2">
+										<label >Week</label>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="out-duration">Duration</label>
+									</div>
+									<div class="col-xs-1">
+										<input type="text"  style="width:50px;" class="form-control" id="out-duration">
+									</div>
+									<div class="col-xs-1">
+										<label for="out-duration">Minutes</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="checkbox">
+											<label>
+												<input id="out-applicable" type="checkbox">applicable
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<label for="deadline-week">Deadline of Deliverables</label>
+							<div class="row">
+								<div class="col-xs-3">
+									<select id="deadline-week" style="width: 50px;" class="form-control">
+										<option>12th</option>
+									</select>
+								</div>
+								<div class="col-xs-3">
+									<label for="deadline-week">Week</label>
+								</div>
+							</div>
+							<button id="update" type="submit" class="btn btn-default pull-right">Update Changes</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="addCourse">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Add Course Record</h4>
+			</div>
+			<div class="modal-body">
+				<form id="add" class="form">
+					<div class="row">
+						<div class="form-group">
+							<label for="courseId">Course ID: </label>
+							<input type="text" class="form-control" id="courseId">
+						</div>
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" id="name">
+						</div>
+						<div class="form-group">
+							<label for="description">Description</label>
+							<input type="text" class="form-control" id="description">
+						</div>
+						<div class="form-group">
+							<label for="units">Units</label>
+							<input type="text" maxlegth="3" style="width:50px;" class="form-control" id="units">
+						</div>
+						<div class="form-group">
+							<label for="proposal">Proposal</label>
+							<select id="proposal" class="form-control">
+								<option>Proposal</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="department">Department</label>
+							<select id="department" class="form-control">
+								<option>Computer Technology</option>
+							</select>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Regular Defense</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-2">
+										<label>General Schedule</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="reg-week-from" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-1 middle">
+										<label for="">To</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="reg-week-to" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-2">
+										<label >Week</label>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="reg-duration">Duration</label>
+									</div>
+									<div class="col-xs-1">
+										<input type="text"  style="width:50px;" class="form-control" id="reg-duration">
+									</div>
+									<div class="col-xs-1">
+										<label for="reg-duration">Minutes</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="checkbox">
+											<label>
+												<input id="reg-applicable" type="checkbox">applicable
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Redefense</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="lastname">General Schedule</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="redef-week-from" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-1 middle">
+										<label for="">To</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="redef-week-to" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-2">
+										<label >Week</label>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="redef-duration">Duration</label>
+									</div>
+									<div class="col-xs-1">
+										<input type="text"  style="width:50px;" class="form-control" id="redef-duration">
+									</div>
+									<div class="col-xs-1">
+										<label for="redef-duration">Minutes</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="checkbox">
+											<label>
+												<input id="redef-applicable" type="checkbox">applicable
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">Most Outstanding Thesis Defense</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="lastname">General Schedule</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="out-week-from" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-1 middle">
+										<label for="">To</label>
+									</div>
+									<div class="col-xs-2">
+										<select style="width:90px;" id="out-week-to" class="form-control">
+											<option>12th</option>
+										</select>
+									</div>
+									<div class="col-xs-2">
+										<label >Week</label>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-xs-2">
+										<label for="out-duration">Duration</label>
+									</div>
+									<div class="col-xs-1">
+										<input type="text"  style="width:50px;" class="form-control" id="out-duration">
+									</div>
+									<div class="col-xs-1">
+										<label for="out-duration">Minutes</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="checkbox">
+											<label>
+												<input id="out-applicable" type="checkbox">applicable
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<label for="deadline-week">Deadline of Deliverables</label>
+							<div class="row">
+								<div class="col-xs-3">
+									<select id="deadline-week" style="width: 50px;" class="form-control">
+										<option>12th</option>
+									</select>
+								</div>
+								<div class="col-xs-3">
+									<label for="deadline-week">Week</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button id="add" type="button" class="btn btn-default">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,244 @@
+<div class="row">
+	<div class="col-xs-9">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<label for="displaycourse">Display Course: </label>
+					<select id="displaycourse" class="form-control">
+						<option></option>
+					</select>
+					<br>
+					<label for="thesisgrouplist">Thesis Group List: </label>
+					<select multiple id="thesisgrouplist" class="faculty form-control">
+						<option></option>
+					</select>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-xs-9">
+						<select id="action" class="form-control">
+							<option></option>
+						</select>
+					</div>
+					<div class="col-xs-3">
+						<button style=" width: 100%;" id="go" class="btn btn-default">Go</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios1"> Regular Defense
+							</label>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios2"> Redefense
+							</label>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios3"> Most Outstanding Thesis Defense
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">Panel List: </div>
+						<div class="panel-body">
+							<form id="panel" class="form">
+								<div class="form-group">
+									<div class="row">
+										<div class="col-xs-5">
+											<select multiple id="panellist" class="form-control">
+												<option></option>
+											</select>
+											<label >+Lead Panel</label>
+										</div>
+										<div style="text-align: center;" class="col-xs-2">
+											<br>
+											<button id="add">>>></button>
+											<br><br>
+											<button id="remove"><<<</button>
+										</div>
+										<div class="col-xs-5">
+											<select multiple id="adviserlist" class="form-control">
+												<option></option>
+											</select>
+											<label >+Thesis Adviser</label>
+										</div>
+									</div>
+									<br>
+									<div style="padding-left: 15px;" class="form-group">
+										<button id="assign" class="btn btn-default">Assign as Lead Panel</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-3">
+		<div class="row">
+			<div class="row">
+				<button id="refresh" class="btn btn-default max_width">Refresh</button>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-xs-6">
+					<button id="deletehistory" class="btn btn-default max_width">Delete History</button>
+				</div>
+				<div class="col-xs-6">
+					<button id="updategrade" class="btn btn-default max_width">Update Grade</button>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">Initial Verdict: </div>
+				<div class="panel-body">
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios1"> No Verdict Yet
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios2"> Pass
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios3"> Conditional Pass
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios4"> Redefense
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios5"> Fail
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">Final Verdict: </div>
+				<div class="panel-body">
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios2" id="optionsRadios1"> No Verdict Yet
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios2" id="optionsRadios2"> Routed
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios2" id="optionsRadios3"> Pass
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios2" id="optionsRadios4"> Additional
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios2" id="optionsRadios5"> Fail
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">Schedule </div>
+		<div class="panel-body">
+
+			<div class="col-xs-4">
+				<form class="form">
+					<div class="form-group">
+						<label for="scheduledate">Date & Time:</label>
+						<div class='input-group date' id='scheduledate'>
+							<input type='text' name="scheduledate" class="form-control max_width" />
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="roomlist">Room: </label>
+						<select id="roomlist" class="form-control max_width">
+							<option></option>
+						</select>
+					</div>
+					<div class="form-group">
+						<button id="update" type="submit" class="btn btn-default">Update Room</button>
+					</div>
+				</form>
+			</div>
+
+
+			<div class="col-xs-4">
+				<div class="form-group">
+					<label for="comment">Comment: </label>
+					<select id="comment" class="form-control max_width" multiple>
+						<option></option>
+					</select>
+				</div>
+			</div>
+
+			<div class="col-xs-4">
+				<div class="form-group">
+					<label for="suggestion">Suggestion: </label>
+					<select id="suggestion" class="form-control max_width" multiple>
+						<option></option>
+					</select>
+					<br>
+					<div class="row">
+						<div class="col-xs-4">
+							<button id="usesuggestion" type="submit" class="btn btn-default">Use suggestion</button>
+						</div>
+						<div class="col-xs-4">
+							<button id="refreshsuggestion" type="submit" class="btn btn-default">Refresh suggestion</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<label for="conflictlist">Schedule is in conflict with: </label>
+			<select id="conflictlist" multiple class="faculty form-control max_width">
+				<option></option>
+			</select>
+			<br>
+			<button id="refreshlist" class="btn btn-default">Refresh List</button>
+		</div>
+	</div>
+</div>

@@ -49,15 +49,32 @@ function($, Backbone, Cookie, moment){
 	
 		//add Templates here
 		templateList: [
-			'ContainerTemplate',
-			'NotificationTemplate',
-			'PasswordChangeTemplate',
-			'PasswordChangeForgetTemplate',
-			'PasswordForgetTemplate',		
+			'HomeTemplate',	
 			'HeaderTemplate',
 			'FooterTemplate',
-			'LoginTemplate',
-			'LogoUploadTemplate'
+			'FacultyRecordTemplate',
+			'StudentRecordTemplate',
+			'ThesisGroupTemplate',
+			'RoomRecordTemplate',
+			'HolidayRecordTemplate',
+			'AdministrationPositionRecordTemplate',
+			'GeneralAreaRecordTemplate',
+			'SubAreaRecordTemplate',
+			'RankRecordTemplate',
+			'CourseRecordTemplate',
+			'CourseOfferingRecordTemplate',
+			'FlowchartRecordTemplate',
+			'GeneralScheduleTemplate',
+			'SchoolYearTemplate',
+			'StudentScheduleTemplate',
+			'AdviserRosterTemplate',
+			'PanelRosterTemplate',
+			'ThesisEnrollmentTemplate',
+			'ThesisScheduleTemplate',
+			'BarcodeTemplate',
+			'DefenseHistoryTemplate',
+			'UpdateThesisGradeTemplate'
+
 		],
 		templates: [],
 		loadedTemplateCount: 0,
@@ -188,7 +205,34 @@ function($, Backbone, Cookie, moment){
 			Core.log.info("Initialized Logging Library log4javascript...");
 			//Load Templates
 			this.loadTemplates(callback);
-		
+
+			/*
+			* Prevent the page to reload when the user clicks a link
+			*/
+			$(document).on('click', 'a:not([data-bypass],[tabindex])', function (e) {
+			    var href = $(this).attr('href');
+			    var protocol = this.protocol + '//';
+
+			    if (href.slice(protocol.length) !== protocol) {
+			      e.preventDefault();
+
+					// Replace current state before triggering the next route, 
+					// storing the scrollTop in the state object
+					history.replaceState(
+						_.extend(history.state || {}, { 
+							scrollTop: document.body.scrollTop || $(document).scrollTop() 
+						}),
+						document.title,
+						window.location
+					);
+
+			      Core.router.routeTo(href);
+			    }
+			 });
+
+			 $('form').on('submit', function(e){
+      		 	e.preventDefault();
+  			 });
 		},
 	
 		// function that create a cookie to establish a user session
