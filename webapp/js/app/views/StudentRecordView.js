@@ -1,9 +1,15 @@
 /**
 	LoginView.js
 	*/
-	define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], function($, Backbone, BootstrapDialog){
+	define(['jquery', 'backbone', 'bootstrap-dialog', 'bootstrap', 'datePicker' ], function($, Backbone, BootstrapDialog){
 
 		var StudentRecordView = Backbone.View.extend({
+
+			events: {
+				'submit #update' : 'submitFormUpdate',
+				'submit #add' : 'submitFormAdd',
+				'focus input' : function(e) {  $(e.currentTarget).removeClass('error') }
+			},
 
 			templateName: 'StudentRecordTemplate',
 
@@ -11,9 +17,6 @@
 				var self = this;
 				this.render();
 				var self = this;
-				$("#mainContainer").on("click", "button#deleteFaculty", function(e){
-					self.showDeleteDialog();
-				});
 			},
 
 			render: function(){
@@ -26,28 +29,65 @@
 				$('#prefsched-date-to').datetimepicker();
 			},
 
-			showDeleteDialog: function(){
-				var self = this;
-				BootstrapDialog.show({
-					message: _.find("Do you want to delete Faculty Record", {page: 'popup', status:'faculty_delete_confirm'}).message,
-					buttons: [
-					{
-						label: 'Cancel',
-						cssClass: 'btn-default defaultimpt',
-						action: function(dialog){
-							dialog.close();
-						}  
-					},
-					{
-						label: 'OK',
-						cssClass: 'btn-success',
-						action: function(dialog){
+			submitFormUpdate: function(e){
+				var target = e.currentTarget;
+				var form = $(e.currentTarget);
+				var data = form.serializeArray();
+				var fieldsThatHasError = [];
 
-							dialog.close();
-						}
+				_.each(data, function(formElement){
+					if(formElement.value===""){
+						fieldsThatHasError.push({
+							name: formElement.name,
+							status: 'empty'
+						});
 					}
-					]
 				});
+
+				if(!fieldsThatHasError.length){
+					if(!Core.validatePhoneNumber(form.children('input[name="contact"]').val())){
+						fieldsThatHasError.push({
+							name: "contact",
+							status: 'invalid'
+						});
+					}
+					
+					if(!Core.validateEmail(form.children('input[name="email"]').val())){
+						fieldsThatHasError.push({
+							name: "email",
+							status: 'invalid'
+						});
+					}
+				}
+
+				if(fieldsThatHasError.length){
+					$.each(fieldsThatHasError, function(key, value) {
+						console.log($(form.find('input[name="'+value.name+'"]')))
+						$(form.find('input[name="'+value.name+'"]')).addClass("error")
+					})
+				}
+
+				if(fieldsThatHasError.length){
+					BootstrapDialog.show({
+						title: 'Invalid Input',
+						message: 'Please, check highligthed field/s',
+						buttons: [{
+							label: 'Ok',
+							action: function(dialog) {
+								dialog.close();
+							}
+						}]
+					});
+				} 
+			},
+
+			submitFormAdd: function(e){
+				var form = $(e.currentTarget);
+				var data = form.serializeArray();
+				console.log(data);
+
+				$('#addFaculty').modal('hide');
+
 			},
 
 			cleanUpEvents: function(){

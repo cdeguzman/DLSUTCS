@@ -26,19 +26,19 @@
 					<form id="general" class="form">
 						<div class="form-group">
 							<label for="facultyId">Flowchart Version: </label>
-							<label id="facultyId"><u>1</u></label>
+							<label name="facultyId"><u>1</u></label>
 						</div>
 						<div class="form-group">
-							<label for="lastname">Specialization: </label>
-							<label id="facultyId"><u>CSE</u></label>
+							<label for="specialization">Specialization: </label>
+							<label name="specialization"><u>CSE</u></label>
 						</div>
 						<div class="form-group">
 							<label for="firstname">Name</label>
-							<input type="text" class="form-control" id="firstname">
+							<input type="text" class="form-control" name="firstname" required>
 						</div>
 						<div class="form-group">
 							<label for="middlename">Description</label>
-							<input type="text" class="form-control" id="firstname">
+							<input type="text" class="form-control" name="firstname" required>
 						</div>
 						<div class="form-group">
 							<button id="update" type="submit" class="btn btn-default">Update Changes</button>
@@ -118,31 +118,33 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title">Add Faculty Record</h4>
 			</div>
-			<div style="width:50%; margin:0 auto;" class="modal-body">
-				<div class="form-group">
-					<label for="flowchartversion">Flowchart Version: </label>
-					<input type="text" class="form-control" id="flowchartversion">
+			<form id="add" class="form">
+				<div style="width:50%; margin:0 auto;" class="modal-body">
+					<div class="form-group">
+						<label for="flowchartversion">Flowchart Version: </label>
+						<input type="text" class="form-control" name="flowchartversion" required>
+					</div>
+					<div class="form-group">
+						<label for="specialization">Specialization: </label>
+						<select name="specialization" class="form-control">
+							<option>Computer Technology</option>
+							<option>Computer Science</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="description">Description</label>
+						<input type="text" class="form-control" name="description" required>
+					</div>
 				</div>
-				<div class="form-group">
-					<label for="specialization">Specialization: </label>
-					<select id="specialization" class="form-control">
-						<option>Computer Technology</option>
-						<option>Computer Science</option>
-					</select>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="save" type="submit" class="btn btn-default">Save changes</button>
 				</div>
-				<div class="form-group">
-					<label for="name">Name</label>
-					<input type="text" class="form-control" id="name">
-				</div>
-				<div class="form-group">
-					<label for="description">Description</label>
-					<input type="text" class="form-control" id="description">
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button id="save" type="button" class="btn btn-default">Save changes</button>
-			</div>
+			</form>
 		</div>
 	</div>
 </div>

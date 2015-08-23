@@ -1,7 +1,13 @@
 
-define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], function($, Backbone, BootstrapDialog){
+define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'datePicker'], function($, Backbone, BootstrapDialog){
 
 	var FacultyRecordView = Backbone.View.extend({
+
+		events: {
+			'submit #update' : 'submitFormUpdate',
+			'submit #add' : 'submitFormAdd',
+			'focus input' : function(e) {  $(e.currentTarget).removeClass('error') }
+		},
 
 		templateName: 'FacultyRecordTemplate',
 
@@ -9,9 +15,6 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			var self = this;
 			this.render();
 			var self = this;
-			$("#mainContainer").on("click", "button#deleteFaculty", function(e){
-				self.showDeleteDialog();
-			});
 		},
 
 		render: function(){
@@ -24,28 +27,22 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			$('#prefsched-date-to').datetimepicker();
 		},
 
-		showDeleteDialog: function(){
-			var self = this;
-			BootstrapDialog.show({
-				message: _.find("Do you want to delete Faculty Record", {page: 'popup', status:'faculty_delete_confirm'}).message,
-				buttons: [
-				{
-					label: 'Cancel',
-					cssClass: 'btn-default defaultimpt',
-					action: function(dialog){
-						dialog.close();
-					}  
-				},
-				{
-					label: 'OK',
-					cssClass: 'btn-success',
-					action: function(dialog){
 
-						dialog.close();
-					}
-				}
-				]
-			});
+		submitFormUpdate: function(e){
+			var target = e.currentTarget;
+			var form = $(e.currentTarget);
+			var data = form.serializeArray();
+
+			
+		},
+
+		submitFormAdd: function(e){
+			var form = $(e.currentTarget);
+			var data = form.serializeArray();
+			console.log(data);
+
+			$('#addFaculty').modal('hide');
+
 		},
 
 		cleanUpEvents: function(){

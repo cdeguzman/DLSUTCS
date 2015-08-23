@@ -13,22 +13,6 @@
 			<div class="panel-body">
 				<select id="student_list_form" multiple class="faculty form-control">
 					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
-					<option>Altura, Boyet</option>
 				</select>
 			</div>
 			<div style="padding-bottom: 10px;" class="row">
@@ -46,89 +30,75 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">General Information</div>
 				<div class="panel-body">
-					<form class="form-horizontal">
+					<form id="update" class="form-horizontal">
 						<div class="row">
-							<form class="form">
-								<div style="padding-left: 30px;" class="col-xs-6">
-									<div class="form-group">
-										<label for="facultyId">Student ID: </label>
-										<label id="facultyId"><u>12345678</u></label>
-									</div>
-									<div class="form-group">
-										<label for="lastname">Last Name</label>
-										<input type="text" class="form-control" id="lastname">
-									</div>
-									<div class="form-group">
-										<label for="firstname">First Name</label>
-										<input type="text" class="form-control" id="firstname">
-									</div>
-									<div class="form-group">
-										<label for="middlename">MI</label>
-										<input type="text" maxlength="2" class="form-control" id="middlename">
-									</div>
-									<div class="form-group">
-										<label for="email">Email</label>
-										<input type="email" class="form-control" id="email">
-									</div>
-									<div class="form-group">
-										<label for="contact">Contact</label>
-										<input type="tel" maxlength="11" class="form-control" id="contact">
-									</div>
-									<div class="form-group">
-										<label for="currentrank">Current Rank</label>
-										<select id="currentrank" class="form-control">
-											<option>Instructor 1 to 8</option>
-											<option>Teaching Associate</option>
-											<option>Assistant Professor 1 to 7</option>
-											<option>Associate Professor 1 to 7</option>
-											<option>Full Professor 1 to 10</option>
-											<option>Assistant Lecturer</option>
-											<option>Lecturer 1 to 8</option>
-											<option>Assistant Professor Lecturer 1 to 7</option>
-											<option>Associate Professor Lecturer 1 to 7</option>
-											<option>Professorial Lecturer 1 – 5</option>
-											<option>Professional Lecturer</option>
-											<option>Senior Professional Lecturer</option>
-											<option>Others: Please specify</option>
-										</select>
+							<div style="padding-left: 30px;" class="col-xs-6">
+								<div class="form-group">
+									<label for="facultyId">Student ID: </label>
+									<label name="facultyId"><u>12345678</u></label>
+								</div>
+								<div class="form-group">
+									<label for="lastname">Last Name</label>
+									<input type="text" class="form-control" name="lastname" required>
+								</div>
+								<div class="form-group">
+									<label for="firstname">First Name</label>
+									<input type="text" class="form-control" name="firstname" required>
+								</div>
+								<div class="form-group">
+									<label for="middlename">MI</label>
+									<input type="text" maxlength="2" class="form-control" name="middlename" required>
+								</div>
+								<div class="form-group">
+									<label for="email">Email</label>
+									<input type="email" class="form-control" name="email" required>
+								</div>
+								<div class="form-group">
+									<label for="contact">Contact</label>
+									<input type="tel" maxlength="11" class="form-control" name="contact" required pattern="[0-9]+">
+								</div>
+								<div class="form-group">
+									<label for="flowchart">Flowchart</label>
+									<select name="flowchart" class="form-control">
+										<option>n/a</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="title">Title</label>
+									<input type="text" class="form-control" name="title" required>
+								</div>
+								<div class="form-group">
+									<label for="passsword">Password</label>
+									<input type="text" class="form-control" name="password" required pattern=".{8,8}" required title="must 8 characters">
+								</div>
+								<br><br><br>
+								<div class="form-group">
+									<label for="sms">SMS no.</label>
+									<input type="tel" maxlength="11" class="form-control" name="sms" required pattern="[0-9]+">
+									<div class="checkbox">
+										<label>
+											<input name="notify" type="checkbox"> Notify Defense Schedule thru SMS
+										</label>
 									</div>
 								</div>
-								<div class="col-xs-6">
-									<div class="form-group">
-										<label for="title">Title</label>
-										<input type="text" class="form-control" id="title">
-									</div>
-									<div class="form-group">
-										<label for="passsword">Password</label>
-										<input type="text" class="form-control" id="password">
-									</div>
-									<br><br><br>
-									<div class="form-group">
-										<label for="sms">SMS no.</label>
-										<input type="tel" maxlength="11" class="form-control" id="sms">
-										<div class="checkbox">
-											<label>
-												<input type="checkbox"> Notify Defense Schedule thru SMS
-											</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="department">Department</label>
-										<select id="department" class="form-control">
-											<option>Computer Technology</option>
-											<option>Computer Science</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="status">Status</label>
-										<select id="status" class="form-control">
-											<option>Active</option>
-											<option>Inactive</option>
-										</select>
-									</div>
+								<div class="form-group">
+									<label for="department">Specialization</label>
+									<select name="department" class="form-control">
+										<option>Computer Technology</option>
+										<option>Computer Science</option>
+									</select>
 								</div>
-								<button id="update" type="submit" class="btn btn-default">Update Changes</button>
-							</form>
+								<div class="form-group">
+									<label for="status">Status</label>
+									<select name="status" class="form-control">
+										<option>Active</option>
+										<option>Inactive</option>
+									</select>
+								</div>
+							</div>
+							<button id="update" type="submit" class="btn btn-default pull-right">Update Changes</button>
 						</div>
 					</form>
 				</div>
@@ -142,7 +112,6 @@
 						<div class="form-group">
 							<div class="row">
 								<div class="col-xs-5">
-									<label for="areofspecialization">Current Rank</label>
 									<select multiple id="areofspecialization" class="form-control">
 										<option>Basic Computer Science Concepts(10)</option>
 										<option>Basic Electronics(10)</option>
@@ -155,7 +124,6 @@
 									<button id="remove"> <<< </button>
 								</div>
 								<div class="col-xs-5">
-									<label for="get-areofspecialization">Current Rank</label>
 									<select multiple id="get-areofspecialization" class="form-control">
 										<option>Algorithms and Complexity</option>
 										<option>Architecture and Organization</option>
@@ -203,7 +171,7 @@
 								<div class="form-group">
 									<label for="currsched-date-form">from:</label>
 									<div class='input-group date' id='currsched-date-from'>
-										<input type='text' name="currsched-date-from" class="form-control" />
+										<input type='text' name="currsched-date-from" class="form-control" required/>
 										<span class="input-group-addon">
 											<span class="glyphicon glyphicon-calendar"></span>
 										</span>
@@ -212,7 +180,7 @@
 								<div class="form-group">
 									<label for="currsched-date-to">To:</label>
 									<div class='input-group date' id='currsched-date-to'>
-										<input type='text' name="currsched-date-to" class="form-control" />
+										<input type='text' name="currsched-date-to" class="form-control" required/>
 										<span class="input-group-addon">
 											<span class="glyphicon glyphicon-calendar"></span>
 										</span>
@@ -251,7 +219,7 @@
 									<div class="form-group">
 										<label for="prefsched-date-to">from:</label>
 										<div class='input-group date' id='prefsched-date-from'>
-											<input type='text' name="prefsched-date-from" class="form-control" />
+											<input type='text' name="prefsched-date-from" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -260,7 +228,7 @@
 									<div class="form-group">
 										<label for="prefsched-date-to">To:</label>
 										<div class='input-group date' id='prefsched-date-to'>
-											<input type='text' name="prefsched-date-to" class="form-control" />
+											<input type='text' name="prefsched-date-to" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -324,52 +292,40 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title">Add Student Record</h4>
 				</div>
-				<div class="modal-body">
-					<form id="add_student_form" class="form-horizontal">
+				<form id="add" class="form-horizontal">
+					<div class="modal-body">
 						<div class="row">
 							<form class="form">
 								<div class="col-xs-1"></div>
 								<div class="col-xs-4">
 									<div class="form-group">
 										<label for="facultyId">Student ID: </label>
-										<input type="tel" maxlength="8" class="form-control" id="facultyId">
+										<input type="tel" maxlength="8" class="form-control" name="facultyId" required pattern=".{8,8}" required title="must 8 characters">
 									</div>
 									<div class="form-group">
 										<label for="lastname">Last Name</label>
-										<input type="text" class="form-control" id="lastname">
+										<input type="text" class="form-control" name="lastname" required>
 									</div>
 									<div class="form-group">
 										<label for="firstname">First Name</label>
-										<input type="text" class="form-control" id="firstname">
+										<input type="text" class="form-control" name="firstname" required>
 									</div>
 									<div class="form-group">
 										<label for="middlename">MI</label>
-										<input type="text" maxlength="2" class="form-control" id="middlename">
+										<input type="text" maxlength="2" class="form-control" name="middlename" required pattern="[A-Za-z]+">
 									</div>
 									<div class="form-group">
 										<label for="email">Email</label>
-										<input type="email" class="form-control" id="email">
+										<input type="email" class="form-control" name="email" required>
 									</div>
 									<div class="form-group">
 										<label for="contact">Contact</label>
-										<input type="tel" maxlength="11" class="form-control" id="contact">
+										<input type="tel" maxlength="11" class="form-control" name="contact" required pattern="[0-9]+">
 									</div>
 									<div class="form-group">
 										<label for="flowchart">Flowchart</label>
-										<select id="flowchart" class="form-control">
-											<option>Instructor 1 to 8</option>
-											<option>Teaching Associate</option>
-											<option>Assistant Professor 1 to 7</option>
-											<option>Associate Professor 1 to 7</option>
-											<option>Full Professor 1 to 10</option>
-											<option>Assistant Lecturer</option>
-											<option>Lecturer 1 to 8</option>
-											<option>Assistant Professor Lecturer 1 to 7</option>
-											<option>Associate Professor Lecturer 1 to 7</option>
-											<option>Professorial Lecturer 1 – 5</option>
-											<option>Professional Lecturer</option>
-											<option>Senior Professional Lecturer</option>
-											<option>Others: Please specify</option>
+										<select name="flowchart" class="form-control">
+											<option>n/a</option>
 										</select>
 									</div>
 								</div>
@@ -377,23 +333,24 @@
 								<div class="col-xs-5">
 									<div class="form-group">
 										<label for="sms">SMS no.</label>
-										<input type="tel" maxlength="11" class="form-control" id="sms">
+										<option>n/a</option>
+										<input type="tel" maxlength="11" class="form-control" name="sms" >
 										<div class="checkbox">
 											<label>
-												<input type="checkbox"> Notify Defense Schedule thru SMS
+												<input name="notify" type="checkbox"> Notify Defense Schedule thru SMS
 											</label>
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="department">Specialization</label>
-										<select id="department" class="form-control">
+										<label for="specialization">Specialization</label>
+										<select name="specialization" class="form-control">
 											<option>Computer Technology</option>
 											<option>Computer Science</option>
 										</select>
 									</div>
 									<div class="form-group">
 										<label for="status">Status</label>
-										<select id="status" class="form-control">
+										<select name="status" class="form-control">
 											<option>Active</option>
 											<option>Inactive</option>
 										</select>
@@ -401,12 +358,12 @@
 								</div>
 							</form>
 						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-default">Save changes</button>
-				</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-default">Save changes</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -18,21 +18,21 @@
 		</div>
 	</div>
 	<div class="col-xs-6">
-		<form id="general" class="form">
+		<form id="update" class="form">
 			<div class="panel panel-default">
 				<div class="panel-heading">General Information</div>
 				<div class="panel-body">
 					<div class="form-group">
 						<label for="areaId">Area Code: </label>
-						<label id="areaId"><u>12345678</u></label>
+						<label name="areaId"><u>12345678</u></label>
 					</div>
 					<div class="form-group">
 						<label for="name">Name</label>
-						<input type="text" class="form-control" id="name">
+						<input type="text" class="form-control" name="name" required>
 					</div>
 					<div class="form-group">
 						<label for="description">Description</label>
-						<input type="text" class="form-control" id="description">
+						<input type="text" class="form-control" name="description" required>
 					</div>
 					<button id="update" type="submit" class="btn btn-default pull-right">Update Changes</button>
 				</div>
@@ -48,26 +48,27 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title">Add Area Record</h4>
 			</div>
-			<div class="modal-body">
-				<form class="form" style="width: 67%;margin: 0 auto;">
+			<form id="add" class="form" style="width: 67%;margin: 0 auto;">
+				<div class="modal-body">
+					
 					<div class="form-group">
 						<label for="areaId">Area Code: </label>
-						<input type="text" class="form-control" id="areaId">
+						<input type="text" class="form-control" name="areaId" required>
 					</div>
 					<div class="form-group">
 						<label for="name">Name</label>
-						<input type="text" class="form-control" id="name">
+						<input type="text" class="form-control" name="name" required>
 					</div>
 					<div class="form-group">
 						<label for="description">Description</label>
-						<input type="text" class="form-control" id="description">
+						<input type="text" class="form-control" name="description" required>
 					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button id="save" type="button" class="btn btn-default">Save changes</button>
-			</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="save" type="submit" class="btn btn-default">Save changes</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

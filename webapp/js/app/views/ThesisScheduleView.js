@@ -20,30 +20,6 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			$('#scheduledate').datetimepicker();
 		},
 
-		showDeleteDialog: function(){
-			var self = this;
-			BootstrapDialog.show({
-				message: _.find("Do you want to delete Faculty Record", {page: 'popup', status:'faculty_delete_confirm'}).message,
-				buttons: [
-				{
-					label: 'Cancel',
-					cssClass: 'btn-default defaultimpt',
-					action: function(dialog){
-						dialog.close();
-					}  
-				},
-				{
-					label: 'OK',
-					cssClass: 'btn-success',
-					action: function(dialog){
-
-						dialog.close();
-					}
-				}
-				]
-			});
-		},
-
 		cleanUpEvents: function(){
 
 		}

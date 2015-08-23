@@ -39,39 +39,39 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">General Information</div>
 		<div class="panel-body">
-			<form id="general" class="form">
+			<form id="update" class="form">
 				<div class="row">
 					<div class="form-group">
 						<label for="thesisID">Thesis Group ID: </label>
-						<label id="thesisID"><u>12345678</u></label>
+						<label name="thesisID"><u>12345678</u></label>
 					</div>
 					<div class="form-group">
 						<label for="thesistitle">Title: </label>
-						<input type="text" class="form-control max_width" id="thesistitle">
+						<input type="text" class="form-control max_width" name="thesistitle" required>
 					</div>
 					<div class="form-group">
 						<label for="subthesistitle">Secondary Title: </label>
-						<input type="text" class="form-control max_width" id="subthesistitle">
+						<input type="text" class="form-control max_width" name="subthesistitle" required>
 					</div>
 					<div class="form-group">
 						<label for="thesisdescription">Description: </label>
-						<input type="text" class="form-control max_width" id="thesisdescription">
+						<input type="text" class="form-control max_width" name="thesisdescription" required>
 					</div>
 					<div class="form-group">
 						<div class="row">
 							<div class="col-xs-4 no_padding">
 								<label for="schoolyear">School Year </label>
-								<select id="schoolyear" class="form-control" >
+								<select name="schoolyear" class="form-control" >
 								</select>
 							</div>
 							<div class="col-xs-4 no_padding">
 								<label for="termcompleted">Term Completed </label>
-								<select id="termcompleted" class="form-control" >
+								<select name="termcompleted" class="form-control" >
 								</select>
 							</div>
 							<div class="col-xs-4 no_padding">
 								<label for="adviser">Adviser: </label>
-								<select id="adviser" class="form-control" >
+								<select name="adviser" class="form-control" >
 									<option>Ballon, Alexie E</option>
 								</select>
 							</div>
@@ -81,12 +81,12 @@
 				<div class="row">
 					<div class="col-xs-6">
 						<label for="proposalabstract">Proposal Abstract: </label>
-						<select style="min-width: 100%;" id="proposalabstract" class="form-control" multiple>
+						<select style="min-width: 100%;" name="proposalabstract" class="form-control" multiple>
 						</select>
 					</div>
 					<div class="col-xs-6">
 						<label for="finalabstract">Final Abstract: </label>
-						<select style="min-width: 100%;" id="finalabstract" class="form-control" multiple>
+						<select style="min-width: 100%;" name="finalabstract" class="form-control" multiple>
 						</select>
 					</div>
 				</div>
@@ -110,16 +110,16 @@
 					<div class="row">
 						<div class="col-xs-5">
 							<label for="get-areofspecialization"></label>
-							<select multiple id="areofspecialization" class="form-control max_width">
+							<select multiple name="areofspecialization" class="form-control max_width">
 								<option>Basic Computer Science Concepts(10)</option>
 								<option>Basic Electronics(10)</option>
 							</select>
 						</div>
 						<div style="text-align: center;" class="col-xs-2">
 							<br>
-							<button id="add"> >> </button>
+							<button id="add" type="submit"> >> </button>
 							<br><br>
-							<button id="remove"> << </button>
+							<button id="remove" type="submit"> << </button>
 						</div>
 						<div class="col-xs-5">
 							<label for="get-areofspecialization">Display student form the following specialization: </label>
@@ -127,7 +127,7 @@
 								<option>All</option>
 							</select>
 							<br>
-							<select multiple id="get-areofspecialization" class="form-control max_width">
+							<select multiple name="get-areofspecialization" class="form-control max_width">
 								<option>Algorithms and Complexity</option>
 								<option>Architecture and Organization</option>
 								<option>Computational Science</option>
@@ -163,7 +163,7 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-xs-5">
-							<select multiple id="relatedArea" class="form-control max_width">
+							<select multiple name="relatedArea" class="form-control max_width">
 								<option>Basic Computer Science Concepts(10)</option>
 								<option>Basic Electronics(10)</option>
 							</select>
@@ -175,7 +175,7 @@
 							<button id="remove"> << </button>
 						</div>
 						<div class="col-xs-5">
-							<select multiple id="get-relatedArea" class="form-control max_width">
+							<select multiple name="get-relatedArea" class="form-control max_width">
 								<option>Algorithms and Complexity</option>
 								<option>Architecture and Organization</option>
 								<option>Computational Science</option>
@@ -199,8 +199,8 @@
 					</div>
 					<br>
 					<div style="padding-left: 15px;" class="form-group">
-						<button id="increase" class="btn btn-default">Increase Level</button>
-						<button id="decrease" class="btn btn-default">Decrease Level</button>
+						<button id="increase" type="submit" class="btn btn-default">Increase Level</button>
+						<button id="decrease" type="submit" class="btn btn-default">Decrease Level</button>
 					</div>
 				</div>
 			</form>
@@ -215,33 +215,30 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title">Add Thesis Group Record</h4>
 			</div>
-			<div class="modal-body">
-				<form id="addThesisgroup" class="form">
+			<form id="add" class="form">
+				<div class="modal-body">
 					<div class="row">
 						<div class="row">
 							<div class="col-xs-6">
 								<label for="thesisID">Thesis Group ID: </label>
-								<label id="thesisID"><u>12345678</u></label>
-							</div>
-							<div class="col-xs-6">
-								<label id="sy" class="pull-right"> SY 2013 - 2014 3rd Term</label>
+								<label name="thesisID"><u>12345678</u></label>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="thesistitle">Title: </label>
-							<input type="text" class="form-control max_width" id="thesistitle">
+							<input type="text" class="form-control max_width" name="thesistitle" required>
 						</div>
 						<div class="form-group">
 							<label for="subthesistitle">Secondary Title: </label>
-							<input type="text" class="form-control max_width" id="subthesistitle">
+							<input type="text" class="form-control max_width" name="subthesistitle" required>
 						</div>
 						<div class="form-group">
 							<label for="thesisdescription">Description: </label>
-							<input type="text" class="form-control max_width" id="thesisdescription">
+							<input type="text" class="form-control max_width" name="thesisdescription" required>
 						</div>
 						<div class="form-group">
 							<label for="adviser">Adviser: </label>
-							<select id="adviser" class="form-control" >
+							<select name="adviser" class="form-control" >
 								<option>Ballon, Alexie E</option>
 							</select>
 						</div>
@@ -249,21 +246,22 @@
 					<div class="row">
 						<div class="col-xs-6">
 							<label for="proposalabstract">Proposal Abstract: </label>
-							<select style="min-width: 100%;" id="proposalabstract" class="form-control" multiple>
+							<select style="min-width: 100%;" name="proposalabstract" class="form-control" multiple>
 							</select>
 						</div>
 						<div class="col-xs-6">
 							<label for="finalabstract">Final Abstract: </label>
-							<select style="min-width: 100%;" id="finalabstract" class="form-control" multiple>
+							<select style="min-width: 100%;" name="finalabstract" class="form-control" multiple>
 							</select>
 						</div>
 					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button id="save" type="button" class="btn btn-default">Save changes</button>
-			</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="save" type="submit" class="btn btn-default">Save changes</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

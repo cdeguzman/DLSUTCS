@@ -22,33 +22,33 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">General Information</div>
 			<div class="panel-body">
-				<form id="general" class="form">
+				<form id="update" class="form">
 					<div class="row">
 						<div class="form-group">
 							<label for="courseId">Course ID: </label>
-							<label id="courseId"><u>12345678</u></label>
+							<label name="courseId"><u>12345678</u></label>
 						</div>
 						<div class="form-group">
 							<label for="name">Name</label>
-							<input type="text" class="form-control" id="name">
+							<input type="text" class="form-control" name="name" required>
 						</div>
 						<div class="form-group">
 							<label for="description">Description</label>
-							<input type="text" class="form-control" id="description">
+							<input type="text" class="form-control" name="description" >
 						</div>
 						<div class="form-group">
 							<label for="units">Units</label>
-							<input type="text" maxlegth="3" style="width:50px;" class="form-control" id="units">
+							<input type="text" maxlegth="3" style="width:50px;" class="form-control" name="units" required>
 						</div>
 						<div class="form-group">
 							<label for="proposal">Proposal</label>
-							<select id="proposal" class="form-control">
+							<select name="proposal" class="form-control">
 								<option>Proposal</option>
 							</select>
 						</div>
 						<div class="form-group">
 							<label for="department">Department</label>
-							<select id="department" class="form-control">
+							<select name="department" class="form-control">
 								<option>Computer Technology</option>
 							</select>
 						</div>
@@ -63,7 +63,7 @@
 										<label>General Schedule</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="reg-week-from" class="form-control">
+										<select style="width:90px;" name="reg-week-from" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -71,7 +71,7 @@
 										<label for="">To</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="reg-week-to" class="form-control">
+										<select style="width:90px;" name="reg-week-to" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -85,7 +85,7 @@
 										<label for="reg-duration">Duration</label>
 									</div>
 									<div class="col-xs-1">
-										<input type="text"  style="width:50px;" class="form-control" id="reg-duration">
+										<input type="text"  style="width:50px;" class="form-control" name="reg-duration">
 									</div>
 									<div class="col-xs-1">
 										<label for="reg-duration">Minutes</label>
@@ -95,7 +95,7 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<label>
-												<input id="reg-applicable" type="checkbox">applicable
+												<input name="reg-applicable" type="checkbox">applicable
 											</label>
 										</div>
 									</div>
@@ -109,10 +109,10 @@
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-xs-2">
-										<label for="lastname">General Schedule</label>
+										<label for="">General Schedule</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="redef-week-from" class="form-control">
+										<select style="width:90px;" name="redef-week-from" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -120,7 +120,7 @@
 										<label for="">To</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="redef-week-to" class="form-control">
+										<select style="width:90px;" name="redef-week-to" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -134,7 +134,7 @@
 										<label for="redef-duration">Duration</label>
 									</div>
 									<div class="col-xs-1">
-										<input type="text"  style="width:50px;" class="form-control" id="redef-duration">
+										<input type="text"  style="width:50px;" class="form-control" name="redef-duration">
 									</div>
 									<div class="col-xs-1">
 										<label for="redef-duration">Minutes</label>
@@ -144,7 +144,7 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<label>
-												<input id="redef-applicable" type="checkbox">applicable
+												<input name="redef-applicable" type="checkbox">applicable
 											</label>
 										</div>
 									</div>
@@ -161,7 +161,7 @@
 										<label for="lastname">General Schedule</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="out-week-from" class="form-control">
+										<select style="width:90px;" name="out-week-from" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -169,7 +169,7 @@
 										<label for="">To</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="out-week-to" class="form-control">
+										<select style="width:90px;" name="out-week-to" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -183,7 +183,7 @@
 										<label for="out-duration">Duration</label>
 									</div>
 									<div class="col-xs-1">
-										<input type="text"  style="width:50px;" class="form-control" id="out-duration">
+										<input type="text"  style="width:50px;" class="form-control" name="out-duration">
 									</div>
 									<div class="col-xs-1">
 										<label for="out-duration">Minutes</label>
@@ -193,7 +193,7 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<label>
-												<input id="out-applicable" type="checkbox">applicable
+												<input name="out-applicable" type="checkbox">applicable
 											</label>
 										</div>
 									</div>
@@ -206,7 +206,7 @@
 							<label for="deadline-week">Deadline of Deliverables</label>
 							<div class="row">
 								<div class="col-xs-3">
-									<select id="deadline-week" style="width: 50px;" class="form-control">
+									<select name="deadline-week" style="width: 50px;" class="form-control">
 										<option>12th</option>
 									</select>
 								</div>
@@ -231,34 +231,34 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title">Add Course Record</h4>
 			</div>
-			<div class="modal-body">
-				<form id="add" class="form">
+			<form id="add" class="form">
+				<div class="modal-body">
 					<div class="row">
 						<div class="form-group">
 							<label for="courseId">Course ID: </label>
-							<input type="text" class="form-control" id="courseId">
+							<input type="text" class="form-control" name="courseId" required>
 						</div>
 						<div class="form-group">
 							<label for="name">Name</label>
-							<input type="text" class="form-control" id="name">
+							<input type="text" class="form-control" name="name" required>
 						</div>
 						<div class="form-group">
 							<label for="description">Description</label>
-							<input type="text" class="form-control" id="description">
+							<input type="text" class="form-control" name="description">
 						</div>
 						<div class="form-group">
 							<label for="units">Units</label>
-							<input type="text" maxlegth="3" style="width:50px;" class="form-control" id="units">
+							<input type="text" maxlegth="3" style="width:50px;" class="form-control" name="units" required>
 						</div>
 						<div class="form-group">
 							<label for="proposal">Proposal</label>
-							<select id="proposal" class="form-control">
+							<select name="proposal" class="form-control">
 								<option>Proposal</option>
 							</select>
 						</div>
 						<div class="form-group">
 							<label for="department">Department</label>
-							<select id="department" class="form-control">
+							<select name="department" class="form-control">
 								<option>Computer Technology</option>
 							</select>
 						</div>
@@ -273,7 +273,7 @@
 										<label>General Schedule</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="reg-week-from" class="form-control">
+										<select style="width:90px;" name="reg-week-from" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -281,7 +281,7 @@
 										<label for="">To</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="reg-week-to" class="form-control">
+										<select style="width:90px;" name="reg-week-to" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -295,7 +295,7 @@
 										<label for="reg-duration">Duration</label>
 									</div>
 									<div class="col-xs-1">
-										<input type="text"  style="width:50px;" class="form-control" id="reg-duration">
+										<input type="text"  style="width:50px;" class="form-control" name="reg-duration">
 									</div>
 									<div class="col-xs-1">
 										<label for="reg-duration">Minutes</label>
@@ -305,7 +305,7 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<label>
-												<input id="reg-applicable" type="checkbox">applicable
+												<input name="reg-applicable" type="checkbox">applicable
 											</label>
 										</div>
 									</div>
@@ -322,7 +322,7 @@
 										<label for="lastname">General Schedule</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="redef-week-from" class="form-control">
+										<select style="width:90px;" name="redef-week-from" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -330,7 +330,7 @@
 										<label for="">To</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="redef-week-to" class="form-control">
+										<select style="width:90px;" name="redef-week-to" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -344,7 +344,7 @@
 										<label for="redef-duration">Duration</label>
 									</div>
 									<div class="col-xs-1">
-										<input type="text"  style="width:50px;" class="form-control" id="redef-duration">
+										<input type="text"  style="width:50px;" class="form-control" name="redef-duration">
 									</div>
 									<div class="col-xs-1">
 										<label for="redef-duration">Minutes</label>
@@ -354,7 +354,7 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<label>
-												<input id="redef-applicable" type="checkbox">applicable
+												<input name="redef-applicable" type="checkbox">applicable
 											</label>
 										</div>
 									</div>
@@ -371,7 +371,7 @@
 										<label for="lastname">General Schedule</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="out-week-from" class="form-control">
+										<select style="width:90px;" name="out-week-from" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -379,7 +379,7 @@
 										<label for="">To</label>
 									</div>
 									<div class="col-xs-2">
-										<select style="width:90px;" id="out-week-to" class="form-control">
+										<select style="width:90px;" name="out-week-to" class="form-control">
 											<option>12th</option>
 										</select>
 									</div>
@@ -393,7 +393,7 @@
 										<label for="out-duration">Duration</label>
 									</div>
 									<div class="col-xs-1">
-										<input type="text"  style="width:50px;" class="form-control" id="out-duration">
+										<input type="text"  style="width:50px;" class="form-control" name="out-duration">
 									</div>
 									<div class="col-xs-1">
 										<label for="out-duration">Minutes</label>
@@ -403,7 +403,7 @@
 									<div class="form-group">
 										<div class="checkbox">
 											<label>
-												<input id="out-applicable" type="checkbox">applicable
+												<input name="out-applicable" type="checkbox">applicable
 											</label>
 										</div>
 									</div>
@@ -416,7 +416,7 @@
 							<label for="deadline-week">Deadline of Deliverables</label>
 							<div class="row">
 								<div class="col-xs-3">
-									<select id="deadline-week" style="width: 50px;" class="form-control">
+									<select name="deadline-week" style="width: 50px;" class="form-control">
 										<option>12th</option>
 									</select>
 								</div>
@@ -426,12 +426,12 @@
 							</div>
 						</div>
 					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button id="add" type="button" class="btn btn-default">Save changes</button>
-			</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="add" type="submit" class="btn btn-default">Save changes</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

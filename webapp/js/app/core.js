@@ -230,9 +230,11 @@ function($, Backbone, Cookie, moment){
 			    }
 			 });
 
-			 $('form').on('submit', function(e){
-      		 	e.preventDefault();
-  			 });
+			$(document).on("submit", "form", function(e){
+			    e.preventDefault();
+			    return  false;
+			});
+
 		},
 	
 		// function that create a cookie to establish a user session

@@ -41,7 +41,7 @@
 					<div class="col-xs-6">
 						<div class="form-group">
 							<label for="section">Section</label>
-							<input type="text" class="form-control" id="section">
+							<input type="text" class="form-control" id="section" required>
 						</div>
 						<div class="form-group">
 							<button style=" width: 100%;" id="addSection" class="btn btn-default">Add Section</button>
@@ -60,7 +60,7 @@
 					<div class="row">
 						<div class="form-group">
 							<label for="courseId">Course Code: </label>
-							<label id="courseId"><u>CT THES0</u></label>
+							<label name="courseId"><u>CT THES0</u></label>
 						</div>
 					</div>
 
@@ -79,7 +79,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='reg-deadline'>
-													<input type='text' name="reg-deadline" class="form-control" />
+													<input type='text' name="reg-deadline" class="form-control" required/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -89,11 +89,11 @@
 									</div>
 									<div class="form-group">
 										<label for="reg-venue">Venue: </label>
-										<input type="text" class="form-control" id="reg-venue">
+										<input type="text" class="form-control" name="reg-venue" required>
 									</div>
 									<div class="form-group">
 										<label for="reg-note">Note: </label>
-										<label id="reg-note"><u>2nd Friday</u></label>
+										<label name="reg-note"><u>2nd Friday</u></label>
 									</div>
 									<hr>
 									<div class="form-group">
@@ -106,7 +106,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='reg-defense-to'>
-													<input type='text' name="reg-defense-to" class="form-control" />
+													<input type='text' name="reg-defense-to" class="form-control" required/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -120,7 +120,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='reg-defense-from'>
-													<input type='text' name="reg-defense-from" class="form-control" />
+													<input type='text' name="reg-defense-from" class="form-control" required/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -130,7 +130,7 @@
 									</div>
 									<div class="form-group">
 										<label for="reg-defense-note">Note: </label>
-										<label id="reg-defense-note"><u>2nd Friday</u></label>
+										<label name="reg-defense-note"><u>2nd Friday</u></label>
 									</div>
 								</div>
 							</div>
@@ -150,7 +150,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='redef'>
-													<input type='text' name="redef" class="form-control" />
+													<input type='text' name="redef" class="form-control" required/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -160,11 +160,11 @@
 									</div>
 									<div class="form-group">
 										<label for="redef-venue">Venue: </label>
-										<input type="text" class="form-control" id="redef-venue">
+										<input type="text" class="form-control" name="redef-venue" required>
 									</div>
 									<div class="form-group">
 										<label for="redef-note">Note: </label>
-										<label id="redef-note"><u>2nd Friday</u></label>
+										<label name="redef-note"><u>2nd Friday</u></label>
 									</div>
 									<hr>
 									<div class="form-group">
@@ -177,7 +177,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='redef-defense-to'>
-													<input type='text' name="redef-defense-to" class="form-control" />
+													<input type='text' name="redef-defense-to" class="form-control" required/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -191,7 +191,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='redef-defense-from'>
-													<input type='text' name="redef-defense-from" class="form-control" />
+													<input type='text' name="redef-defense-from" class="form-control" required/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -201,7 +201,7 @@
 									</div>
 									<div class="form-group">
 										<label for="redef-note">Note: </label>
-										<label id="redef-note"><u>2nd Friday</u></label>
+										<label name="redef-note"><u>2nd Friday</u></label>
 									</div>
 								</div>
 							</div>
@@ -223,7 +223,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='outstanding'>
-													<input type='text' name="outstanding" class="form-control" />
+													<input type='text' name="outstanding" class="form-control" reuired/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -233,7 +233,7 @@
 									</div>
 									<div class="form-group">
 										<label for="outstanding-venue">Venue: </label>
-										<input type="text" class="form-control" id="outstanding-venue">
+										<input type="text" class="form-control" name="outstanding-venue" required>
 									</div>
 									<div class="form-group">
 										<label for="outstanding-note">Note: </label>
@@ -250,7 +250,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='outstanding-defense-to'>
-													<input type='text' name="outstanding-defense-to" class="form-control" />
+													<input type='text' name="outstanding-defense-to" class="form-control" required/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -264,7 +264,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='outstanding-defense-from'>
-													<input type='text' name="outstanding-defense-from" class="form-control" />
+													<input type='text' name="outstanding-defense-from" class="form-control" required/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -291,7 +291,7 @@
 											</div>
 											<div class="col-xs-8">
 												<div class='input-group date' id='deadline'>
-													<input type='text' name="deadline" class="form-control" />
+													<input type='text' name="deadline" class="form-control" required/>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -301,7 +301,7 @@
 									</div>
 									<div class="form-group">
 										<label for="deadline-venue">Venue: </label>
-										<input type="text" class="form-control" id="deadline-venue">
+										<input type="text" class="form-control" name="deadline-venue" required>
 									</div>
 									<div class="form-group">
 										<label for="deadline-note">Note: </label>

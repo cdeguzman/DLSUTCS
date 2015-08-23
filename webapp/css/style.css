@@ -1189,7 +1189,7 @@ input, form select {
   max-width: 350px !important;
 }
 
-input#middlename {
+input[name="middlename"] {
    max-width: 50px !important;
 }
 
@@ -1240,4 +1240,8 @@ label[for] {
 
 .navbar-header {
   width: 98%;
+}
+
+.error  {
+  border-color: #d44950;
 }

@@ -24,26 +24,26 @@
 				<div class="panel-body">
 					<div class="form-group">
 						<label for="rankId">Rank Code: </label>
-						<label id="rankId"><u>12345678</u></label>
+						<label name="rankId"><u>12345678</u></label>
 					</div>
 					<div class="form-group">
 						<label for="name">Name</label>
-						<input type="text" class="form-control" id="name">
+						<input type="text" class="form-control" name="name" required>
 					</div>
 					<div class="form-group">
-						<label >Salary <span id="salaryinfo"> not updated (based from most recent salary)</span></label>
+						<label >Salary <span name="salaryinfo"> not updated (based from most recent salary)</span></label>
 						<div class="form-group">
 							<label for="fulltimepay">Full Time: PhP</label>
-							<input type="text" class="form-control" id="fulltimepay">
+							<input type="text" class="form-control" name="fulltimepay">
 						</div>
 						<div class="form-group">
 							<label for="parttimepay">Part Time: PhP</label>
-							<input type="text" class="form-control" id="parttimepay">
+							<input type="text" class="form-control" name="parttimepay">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="description">Description</label>
-						<input type="text" class="form-control" id="description">
+						<input type="text" class="form-control" name="description">
 					</div>
 					<button id="update" type="submit" class="btn btn-default pull-right">Update Changes</button>
 				</div>
@@ -59,37 +59,39 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title">Add Rank Record</h4>
 			</div>
-			<div class="modal-body">
-				<form id="add" class="form" style="width: 67%;margin: 0 auto;">
+			<form id="add" class="form" style="width: 67%;margin: 0 auto;">
+				<div class="modal-body">
+
 					<div class="form-group">
 						<label for="rankId">Rank Code: </label>
-						<input type="text" class="form-control" id="rankId">
+						<input type="text" class="form-control" name="rankId" required>
 					</div>
 					<div class="form-group">
 						<label for="name">Name</label>
-						<input type="text" class="form-control" id="name">
+						<input type="text" class="form-control" name="name" required>
 					</div>
 					<div class="form-group">
-						<label >Salary <span id="salaryinfo"> not updated (based from most recent salary)</span></label>
+						<label >Salary <span name="salaryinfo"> not updated (based from most recent salary)</span></label>
 						<div class="form-group">
 							<label for="fulltimepay">Full Time: PhP</label>
-							<input type="text" class="form-control" id="fulltimepay">
+							<input type="text" class="form-control" name="fulltimepay">
 						</div>
 						<div class="form-group">
 							<label for="parttimepay">Part Time: PhP</label>
-							<input type="text" class="form-control" id="parttimepay">
+							<input type="text" class="form-control" name="parttimepay">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="description">Description</label>
-						<input type="text" class="form-control" id="description">
+						<input type="text" class="form-control" name="description">
 					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button id="save" type="button" class="btn btn-default">Save changes</button>
-			</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="save" type="submit" class="btn btn-default">Save changes</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>
