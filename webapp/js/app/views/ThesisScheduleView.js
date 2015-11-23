@@ -1,7 +1,11 @@
 
-define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], function($, Backbone, BootstrapDialog){
+define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'datePicker'], function($, Backbone, BootstrapDialog){
 
 	var ThesisScheduleView = Backbone.View.extend({
+
+		events: {
+			'click #defensehistory' : 'gotoDefenseHostory'
+		},
 
 		templateName: 'ThesisScheduleTemplate',
 
@@ -22,9 +26,13 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 
 		cleanUpEvents: function(){
 
-		}
+		},
+
+		gotoDefenseHostory: function(){
+			Core.router.routeTo('defense');
+		},
 	});
 
-return ThesisScheduleView;
+	return ThesisScheduleView;
 
 });

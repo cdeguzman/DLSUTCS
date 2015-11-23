@@ -126,6 +126,28 @@ function($, Backbone, Cookie, moment){
 			});
 			callback();
 		},
+
+
+		get: function(request){
+			//var self = this;
+			//this.showSpinner(request);
+			 $.ajax({
+	  		  		url: request,
+				 	async: true,
+				 	type: 'GET',
+					dataType: 'JSON',
+	  		  		success: function(resp){
+						Core.log.debug("Success " + request.url);
+						console.log(resp);
+						//self.hideSpinner(request);
+	  		  		},
+					fail: function(resp){
+						self.hideSpinner();
+						Core.log.error("Request Timeout " + request.type + "-" + request.url);
+						Backbone.pubSub.trigger("requestTimeout", resp);
+					}
+				});
+		},
 	
 		/**
 			Util for requests
