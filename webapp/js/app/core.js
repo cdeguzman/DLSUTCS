@@ -127,28 +127,6 @@ function($, Backbone, Cookie, moment){
 			callback();
 		},
 
-
-		get: function(request){
-			//var self = this;
-			//this.showSpinner(request);
-			 $.ajax({
-	  		  		url: request,
-				 	async: true,
-				 	type: 'GET',
-					dataType: 'JSON',
-	  		  		success: function(resp){
-						Core.log.debug("Success " + request.url);
-						console.log(resp);
-						//self.hideSpinner(request);
-	  		  		},
-					fail: function(resp){
-						self.hideSpinner();
-						Core.log.error("Request Timeout " + request.type + "-" + request.url);
-						Backbone.pubSub.trigger("requestTimeout", resp);
-					}
-				});
-		},
-	
 		/**
 			Util for requests
 			param: request{
@@ -174,22 +152,8 @@ function($, Backbone, Cookie, moment){
 				 	headers: (request.headers) ? request.headers : {},
 					dataType: request.dataType,
 	  		  		success: function(resp){
-						if(resp.status==="not_authenticated"){
-							Core.log.error("Session Expired");
-						    Backbone.pubSub.trigger("sessionExpired", resp);
-						}else if(resp.status==="internal_error"){
-							Core.log.error("Internal Error " + request.type + "-" + request.url);
-							if(request.url===App.passwordForgetUrl){
-								Backbone.pubSub.trigger("forgetPasswordNotification", resp);
-							}else{
-								Backbone.pubSub.trigger("internalError", resp);
-							}
-						}else if(resp.status==="not_authorized"){
-							Backbone.pubSub.trigger("notAuthorized", resp);
-						}else{
-							Core.log.debug("Success " + request.url);
-							request.success(resp);
-						}
+						Core.log.debug("Success " + request.url);
+						request.success(resp);
 						self.hideSpinner(request);
 	  		  		},
 					fail: function(resp){
