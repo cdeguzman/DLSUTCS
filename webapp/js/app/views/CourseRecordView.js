@@ -1,7 +1,4 @@
-/**
-	LoginView.js
-	*/
-	define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], function($, Backbone, BootstrapDialog){
+define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], function($, Backbone, BootstrapDialog){
 
 		var CourseRecordView = Backbone.View.extend({
 
@@ -24,6 +21,8 @@
 
 				$('#prefsched-date-from').datetimepicker();
 				$('#prefsched-date-to').datetimepicker();
+
+				
 			},
 			
 			cleanUpEvents: function(){

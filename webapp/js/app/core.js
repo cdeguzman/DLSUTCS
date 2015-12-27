@@ -163,20 +163,6 @@ function($, Backbone, Cookie, moment){
 						self.hideSpinner();
 						Core.log.error("Request Timeout " + request.type + "-" + request.url);
 						Backbone.pubSub.trigger("requestTimeout", resp);
-					},
-					error: function(resp){
-						try{
-							request.error();
-						}catch(ex){}
-						self.hideSpinner(request);
-						Core.log.error("Request Timeout " + request.type + "-" + request.url);
-						if(request.url===App.patientAddUrl && resp.status===500){
-							Backbone.pubSub.trigger("patientEmailAlreadyExists", {status: "email_exists"});
-						}else if(request.url===App.physicianAddUrl && resp.status===500){
-							Backbone.pubSub.trigger("physicianEmailAlreadyExists", {status: "email_exists"});
-						}else{
-							Backbone.pubSub.trigger("requestTimeout", resp);
-						}
 					}
 				});
 		},

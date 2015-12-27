@@ -5,7 +5,7 @@
 
 /*Version of the app*/
 
-var version = "v4";
+var version = "v1";
 
 //------------------------------------------//
 
