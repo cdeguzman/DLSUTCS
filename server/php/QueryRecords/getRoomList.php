@@ -1,7 +1,7 @@
 <?php
   include("../connect.php");
     
-      $select_info = mysql_query("SELECT room_no 
+      $select_info = mysql_query("SELECT id, room_no, name 
 								  FROM room
 								  ORDER BY room_no");
  	 $list_info = array();

@@ -1,12 +1,12 @@
 <?php
   include("../connect.php");
-   $code = $_POST["code"];
+
    $name = ucwords($_POST["name"]);   
    $description = $_POST["description"];
-   $general_area_code = $_POST["general_area_code"];
+   $general_area_code = $_POST["genarea"];
    
-   mysql_query("INSERT INTO area (code, name, description, general_area_code)
-                VALUES ('$code', '$name', '$description', '$general_area_code')");
- 	 
+   $status = mysql_query("INSERT INTO area (name, description, general_area_code)
+                VALUES ('$name', '$description', '$general_area_code')");
+ 	echo $status;
    
 ?>
