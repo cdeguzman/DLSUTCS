@@ -3,7 +3,8 @@
 	This contains site-wide configuration settings
 */
 define([
-], function(){
+        './models/UserTabCategoryModel'
+], function(UserTabCategoryModel){
 	window.App = {
 		
 		/*External Files*/
@@ -57,6 +58,7 @@ define([
 		/*Initialize site wide models*/
 		initializeModels: function(){
 			//Initialize Application Models
+			App.userTabCategoryModel = new UserTabCategoryModel();
 
 		},
 		/* Function for resetting per user preference*/
