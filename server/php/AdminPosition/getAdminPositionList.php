@@ -1,9 +1,8 @@
 <?php
-  //This php code is for displaying the admin position record
+  //This php code is for displaying the admin position list
   include("../connect.php");
     
-     $select_adminPos = mysql_query("SELECT id, code, name, description
-                                	 FROM admin_position");
+     $select_adminPos = mysql_query("SELECT name FROM admin_position ORDER BY name");
  	 $list_adminPos = array();
       while($fetch_adminPos = mysql_fetch_assoc($select_adminPos)){
           $list_adminPos[] = $fetch_adminPos;
