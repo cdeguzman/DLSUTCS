@@ -73,8 +73,9 @@ function($, Backbone, Cookie, moment){
 			'ThesisScheduleTemplate',
 			'BarcodeTemplate',
 			'DefenseHistoryTemplate',
-			'UpdateThesisGradeTemplate'
-
+			'UpdateThesisGradeTemplate',
+			'StudentUserContainerTemplate',
+			'FacultyUserContainerTemplate'
 		],
 		templates: [],
 		loadedTemplateCount: 0,
