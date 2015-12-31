@@ -76,7 +76,8 @@ function($, Backbone, Cookie, moment){
 			'UpdateThesisGradeTemplate',
 			'StudentUserContainerTemplate',
 			'FacultyUserContainerTemplate',
-			'UserTabCategoryTemplate'
+			'UserTabCategoryTemplate',
+			'FacultyUserInfoTemplate'
 		],
 		templates: [],
 		loadedTemplateCount: 0,

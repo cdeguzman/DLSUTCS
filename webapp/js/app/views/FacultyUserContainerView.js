@@ -1,5 +1,5 @@
-define(['jquery', 'backbone', 'bootstrap-dialog', 'views/UserTabCategoryView','bootstrap', 'datePicker'], 
-		function($, Backbone, BootstrapDialog, UserTabCategoryView){
+define(['jquery', 'backbone', 'bootstrap-dialog', 'views/UserTabCategoryView', 'views/faculty/UserInfoView'], 
+		function($, Backbone, BootstrapDialog, UserTabCategoryView, UserInfoView){
 
 var FacultyUserContainerView = Backbone.View.extend({
 
@@ -20,6 +20,10 @@ var FacultyUserContainerView = Backbone.View.extend({
 				el: "#facultyUserContainer",
 				model: App.userTabCategoryModel,
 				page: 'faculty'
+			}));
+			
+			this.subViews.push(new UserInfoView({
+				el: "#userInfo"
 			}));
 			
 		},
