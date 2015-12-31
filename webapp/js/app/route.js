@@ -77,21 +77,7 @@ define([
 	   
 
 	   initialize: function(){
-	   	var self = this;
-		   //Initialize application models
-		   App.initializeModels();
-		   //Initialize Route behavior
-		   this.on("route", function(route, params) {
-
-		   });
-
-		   this.loadView(new HeaderView({
-		   	el: "#mainHeader",
-		   }));
-
-		   this.loadView(new FooterView({
-		   	el: "#footer",
-		   }));
+	   		App.initializeModels();
 		},
 
 		routeTo: function(route) {
@@ -104,17 +90,9 @@ define([
 			}
 		},
 
-		home : function(){
-			this.cleanView();
-			App.initializeModels();
-
-
+		loadHeaderFooterTemplate: function(){
 			this.loadView(new HeaderView({
 				el: "#mainHeader",
-			}));
-
-			this.loadView(new HomeView({
-				el: "#contentContainer",
 			}));
 
 			this.loadView(new FooterView({
@@ -122,145 +100,203 @@ define([
 			}));
 		},
 
-		facultyRecordView: function(){
-			this.loadView(new FacultyRecordView({
+		home : function(){
+			this.cleanView();
+			App.initializeModels();
+			this.loadHeaderFooterTemplate();
+			this.loadView(new HomeView({
 				el: "#contentContainer",
 			}));
 		},
 
+		facultyRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
+			this.loadView(new FacultyRecordView({
+				el: "#contentContainer",
+				model: App.facultyModel
+			}));
+		},
+
 		studentRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new StudentRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		thesisGroupView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new ThesisGroupView({
 				el: "#contentContainer",
 			}));
 		},
 
 		roomRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new RoomRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		holidayRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new HolidayRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		administrationPositionRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new AdministrationPositionRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		generalAreaRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new GeneralAreaRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		subAreaRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new SubAreaRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		rankRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new RankRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		courseRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new CourseRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		courseOfferingRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new CourseOfferingRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		flowchartRecordView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new FlowchartRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		generalScheduleView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new GeneralScheduleView({
 				el: "#contentContainer",
 			}));
 		},
 
 		schoolYearView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new SchoolYearView({
 				el: "#contentContainer",
 			}));
 		},
 
 		studentScheduleView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new StudentScheduleView({
 				el: "#contentContainer",
 			}));
 		},
 
 		adviserRosterView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new AdviserRosterView({
 				el: "#contentContainer",
 			}));
 		},
 
 		panelRosterView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new PanelRosterView({
 				el: "#contentContainer",
 			}));
 		},
 
 		thesisEnrollmentView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new ThesisEnrollmentView({
 				el: "#contentContainer",
 			}));
 		},
 
 		thesisScheduleView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new ThesisScheduleView({
 				el: "#contentContainer",
 			}));
 		},
 
 		barcodeView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new BarcodeView({
 				el: "#contentContainer",
 			}));
 		},
 
 		defenseHistoryView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new DefenseHistoryView({
 				el: "#contentContainer",
 			}));
 		},
 
 		updateThesisGradeView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new UpdateThesisGradeView({
 				el: "#contentContainer",
 			}));
 		},
 		
 		facultyUserView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new FacultyUserContainerView({
 				el: "#contentContainer",
 			}));
 		},
 		
 		studentUserView: function(){
+			this.cleanView();
+			this.loadHeaderFooterTemplate();
 			this.loadView(new StudentUserContainerView({
 				el: "#contentContainer",
 			}));

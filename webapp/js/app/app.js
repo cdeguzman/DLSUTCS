@@ -3,7 +3,7 @@
 	This contains site-wide configuration settings
 */
 define([
-        './models/UserTabCategoryModel'
+        './models/UserTabCategoryModel',
 ], function(UserTabCategoryModel){
 	window.App = {
 		
@@ -74,7 +74,6 @@ define([
 		deleteThesisAdviserUrl: '/server/php/FacultyPage/deleteThesisAdviser.php',
 		getAdviserRosterUrl: '/server/php/FacultyPage/getAdviserRoster.php',
 		getAllFacultyUrl: '/server/php/FacultyPage/getAllFaculty.php',
-		getDepartmentUrl: '/server/php/FacultyPage/getDepartment.php',
 		getFacultyAreaUrl: '/server/php/FacultyPage/getFacultyArea.php',
 		getFacultyByDeptUrl: '/server/php/FacultyPage/getFacultyByDept.php',
 		getFacultyClassSchedUrl: '/server/php/FacultyPage/getFacultyClassSched.php',
@@ -159,6 +158,7 @@ define([
 		getSchoolYearListUrl: '/server/php/SchoolYearInfo/getSchoolYearList.php',
 		getTermSchedPerSYUrl: '/server/php/SchoolYearInfo/getTermSchedPerSY.php',
 		updateTermSchedPerSYUrl: '/server/php/SchoolYearInfo/updateTermSchedPerSY.php',
+		getMaxTermUrl: '/server/php/SchoolYearInfo/getMaxTerm.php',
 		// end School Year
 		
 		// Student
