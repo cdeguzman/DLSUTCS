@@ -25,7 +25,9 @@ define([
 	'views/ThesisScheduleView',
 	'views/BarcodeView',
 	'views/DefenseHistoryView',
-	'views/UpdateThesisGradeView'
+	'views/UpdateThesisGradeView',
+	'views/FacultyUserContainerView',
+	'views/StudentUserContainerView'
 	], 
 
 	function(Backbone, HeaderView, 
@@ -33,7 +35,7 @@ define([
 		RoomRecordView, HolidayRecordView, AdministrationPositionRecordView, GeneralAreaRecordView, SubAreaRecordView, 
 		RankRecordView, CourseRecordView, CourseOfferingRecordView, FlowchartRecordView, GeneralScheduleView,
 		SchoolYearView, StudentScheduleView, AdviserRosterView, PanelRosterView, ThesisEnrollmentView, ThesisScheduleView, BarcodeView,
-		DefenseHistoryView, UpdateThesisGradeView){
+		DefenseHistoryView, UpdateThesisGradeView, FacultyUserContainerView, StudentUserContainerView){
 
 		var ApplicationRouter = Backbone.Router.extend({
 
@@ -63,7 +65,9 @@ define([
 				"schedule" : "thesisScheduleView",
 				"barcode" : "barcodeView",
 				"defense" : "defenseHistoryView",
-				"update" : "updateThesisGradeView"
+				"update" : "updateThesisGradeView",
+				"user/faculty": "facultyUserView",
+				"user/student": "studentUserView"
 			},
 
 	   //Admin only routes
@@ -246,6 +250,18 @@ define([
 
 		updateThesisGradeView: function(){
 			this.loadView(new UpdateThesisGradeView({
+				el: "#contentContainer",
+			}));
+		},
+		
+		facultyUserView: function(){
+			this.loadView(new FacultyUserContainerView({
+				el: "#contentContainer",
+			}));
+		},
+		
+		studentUserView: function(){
+			this.loadView(new StudentUserContainerView({
 				el: "#contentContainer",
 			}));
 		},

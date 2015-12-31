@@ -722,6 +722,10 @@ button.close{
 	cursor: pointer;
 }
 
+li a{
+	color: #014023 !important;
+}
+
 /* Overrided Datatables */
 
 th.cellData{
