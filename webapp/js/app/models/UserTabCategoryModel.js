@@ -14,7 +14,8 @@ define(['jquery', 'backbone', 'underscore'], function($, Backbone){
 						       {id: 'projectStatus', name: 'Project Status'},
 						       {id: 'thesisGroups', name: 'Thesis Groups'},
 						       {id: 'misc', name: 'Misc'},
-						       {id: 'search', name: 'Search'}
+						       {id: 'search', name: 'Search'},
+						       {id: 'docRoute', name: 'DRS'}
 					       ]
 				    },
 				    {
@@ -24,7 +25,8 @@ define(['jquery', 'backbone', 'underscore'], function($, Backbone){
 						       {id: 'projectStatus', name: 'Project Status'},
 						       {id: 'thesisGroups', name: 'Thesis Groups'},
 						       {id: 'misc', name: 'Misc'},
-						       {id: 'search', name: 'Search'}
+						       {id: 'search', name: 'Search'},
+						       {id: 'docRoute', name: 'DRS'}
 					       ]
 				    }
 				 ]
