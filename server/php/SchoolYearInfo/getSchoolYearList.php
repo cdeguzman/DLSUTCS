@@ -8,5 +8,4 @@
           $list_SY[] = $fetch_SY;
       }
       echo json_encode($list_SY);
-   
 ?>

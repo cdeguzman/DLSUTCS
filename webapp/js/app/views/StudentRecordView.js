@@ -123,7 +123,6 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'bootstrap', 'datePicker' ], f
 					$('.main input[name="middlename"]').val(r.mi);
 					$('.main input[name="email"]').val(r.email);
 					$('.main input[name="contact"]').val(r.contact_no);
-					$('.main input[name="title"]').val(r.title);
 					$('.main input[name="password"]').val(r.secret_password);
 					$('.main input[name="sms"]').val(r.text_no);
 					$('.main select[name="flowchart"]').val(r.flowchart_version);
@@ -154,6 +153,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'bootstrap', 'datePicker' ], f
 				}else{
 					alert("Error Occur!");
 				}
+				$('form')[0].reset();
 			}
 			Core.request(req);
 		},

@@ -13,9 +13,8 @@
   $specialization_code = $_POST["specialization"];
   $notify_thru_text = $_POST["notify"];
   $secret_password = $_POST["password"];
-  $title = $_POST["title"];
   
-  $status = mysql_query("INSERT INTO student (id, lname, fname, mi, email, text_no, contact_no, flowchart_version, specialization_code, notify_thru_text, secret_password, title)
-               VALUES ('$id','$lname','$fname','$mi','$email','$text_no','$contact_no','$flowchart_version','$specialization_code','$notify_thru_text','$secret_password','$title'");
+  $status = mysql_query("INSERT INTO student (id, lname, fname, mi, email, text_no, contact_no, flowchart_version, specialization_code, notify_thru_text, secret_password)
+               VALUES ('$id','$lname','$fname','$mi','$email','$text_no','$contact_no','$flowchart_version','$specialization_code','$notify_thru_text','$secret_password'");
   echo $status;
 ?> 
