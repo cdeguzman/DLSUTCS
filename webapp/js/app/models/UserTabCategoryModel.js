@@ -29,11 +29,28 @@ define(['jquery', 'backbone', 'underscore'], function($, Backbone){
 						       {id: 'docRoute', name: 'DRS'}
 					       ]
 				    }
-				 ]
+				 ],
+				 
+			personalInfoTab: [
+                  {
+                	  	page: 'faculty',
+				    	tabs: [
+				    	       {id: 'genInfo', name: 'General Information', active: true},
+						       {id: 'classSched', name: 'Class Schedule'},
+						       {id: 'areasExper', name: 'Areas of Expertise'},
+						       {id: 'settings', name: 'Settings'},
+						       {id: 'password', name: 'Password'}
+					       ]
+                  }
+			]
 		},
 		
 		getTabs: function(page){
 			return _.findWhere(this.get('tab'), {page: page}).tabs;
+		},
+		
+		getInfoTabs: function(page){
+			return _.findWhere(this.get('personalInfoTab'), {page: page}).tabs;
 		},
 
 

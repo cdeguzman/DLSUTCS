@@ -4,7 +4,8 @@
 */
 define([
         './models/UserTabCategoryModel',
-], function(UserTabCategoryModel){
+        './models/UserModel'
+], function(UserTabCategoryModel, UserModel){
 	window.App = {
 		
 		/*External Files*/
@@ -203,6 +204,7 @@ define([
 		initializeModels: function(){
 			//Initialize Application Models
 			App.userTabCategoryModel = new UserTabCategoryModel();
+			App.userModel = new UserModel();
 
 		},
 		/* Function for resetting per user preference*/

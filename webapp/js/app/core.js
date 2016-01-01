@@ -89,7 +89,12 @@ function($, Backbone, Cookie, moment){
 			'ProjectStatusStudentTemplate',
 			'ThesisGroupsStudentTemplate',
 			'MiscStudentTemplate',
-			'DRSTemplate'
+			'DRSTemplate',
+			'UserProfileTemplate',
+			'ClassScheduleTemplate',
+			'AreaOfExpertiseTemplate',
+			'SettingsTemplate',
+			'PasswordTemplate'
 		],
 		templates: [],
 		loadedTemplateCount: 0,

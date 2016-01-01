@@ -38,7 +38,9 @@ var FacultyUserContainerView = Backbone.View.extend({
 			}));
 			
 			this.subViews.push(new UserInfoView({
-				el: "#userInfo"
+				el: "#userInfo",
+				model: App.userTabCategoryModel,
+				page: 'faculty'
 			}));
 			
 			this.subViews.push(new ImportantDatesView({
