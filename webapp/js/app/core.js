@@ -221,7 +221,6 @@ function($, Backbone, Cookie, moment){
 			    e.preventDefault();
 			    return  false;
 			});
-
 		},
 	
 		// function that create a cookie to establish a user session
