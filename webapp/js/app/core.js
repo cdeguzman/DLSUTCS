@@ -82,7 +82,7 @@ function($, Backbone, Cookie, moment){
 			'DefenseScheduleTemplate',
 			'VerdictStatusTemplate',
 			'ProjectStatusTemplate',
-			'ThesisGroupsTemplate',
+			//'ThesisGroupsTemplate',
 			'MiscFacultyTemplate',
 			'SearchTemplate',
 			'StudentUserInfoTemplate',
@@ -384,7 +384,7 @@ function($, Backbone, Cookie, moment){
 			var link = $('<a href="download.html" target="_blank" id="csvDownload"></a>').appendTo("body");
 			$("#csvDownload")[0].click();
 			
-		}
+		},
 	}
 	return Core;
 });

@@ -84,15 +84,15 @@ define([
 		// end FacultyPage Records
 
 		// Flowchart
-		addCourseToFlowchartUrl: '/server/php/FacultyPage/addCourseToFlowchart.php',
-		addFlowchartUrl: '/server/php/FacultyPage/addFlowchart.php',
-		deleteCourseFromFlowchartUrl: '/server/php/FacultyPage/deleteCourseFromFlowchart.php',
-		deleteFlowchartUrl: '/server/php/FacultyPage/deleteFlowchart.php',
-		deletePrereqCourseFromFlowchartUrl: '/server/php/FacultyPage/deletePrereqCourseFromFlowchart.php',
-		getCourseFromFlowchartUrl: '/server/php/FacultyPage/getCourseFromFlowchart.php',
-		getFlowchartListUrl: '/server/php/FacultyPage/getFlowchartList.php',
-		getPrereqFlowchartCourseUrl: '/server/php/FacultyPage/getPrereqFlowchartCourse.php',
-		getSelectedFlowchartUrl: '/server/php/FacultyPage/getSelectedFlowchart.php',
+		addCourseToFlowchartUrl: '/server/php/FlowchartInfo/addCourseToFlowchart.php',
+		addFlowchartUrl: '/server/php/FlowchartInfo/addFlowchart.php',
+		deleteCourseFromFlowchartUrl: '/server/php/FlowchartInfo/deleteCourseFromFlowchart.php',
+		deleteFlowchartUrl: '/server/php/FlowchartInfo/deleteFlowchart.php',
+		deletePrereqCourseFromFlowchartUrl: '/server/php/FlowchartInfo/deletePrereqCourseFromFlowchart.php',
+		getCourseFromFlowchartUrl: '/server/php/FlowchartInfo/getCourseFromFlowchart.php',
+		getFlowchartListUrl: '/server/php/FlowchartInfo/getFlowchartList.php',
+		getPrereqFlowchartCourseUrl: '/server/php/FlowchartInfo/getPrereqFlowchartCourse.php',
+		getSelectedFlowchartUrl: '/server/php/FlowchartInfo/getSelectedFlowchart.php',
 		// end Flowchart
 
 		// General Area
@@ -162,16 +162,16 @@ define([
 		// end School Year
 		
 		// Student
-		addNewEnrolledStudentInThesisUrl: '/server/php/SchoolYearInfo/addNewEnrolledStudentInThesis.php',
-		addNewStudentInfoUrl: '/server/php/SchoolYearInfo/addNewStudentInfo.php',
-		deleteStudentUrl: '/server/php/SchoolYearInfo/deleteStudent.php',
-		deleteStudentFromThesisEnrollmentUrl: '/server/php/SchoolYearInfo/deleteStudentFromThesisEnrollment.php',
-		getEnrolledStudentsUrl: '/server/php/SchoolYearInfo/getEnrolledStudents.php',
-		getStudentBySpecializationUrl: '/server/php/SchoolYearInfo/getStudentBySpecialization.php',
-		getStudentClassSchedUrl: '/server/php/SchoolYearInfo/getStudentClassSched.php',
+		addNewEnrolledStudentInThesisUrl: '/server/php/StudentPage/addNewEnrolledStudentInThesis.php',
+		addNewStudentInfoUrl: '/server/php/StudentPage/addNewStudentInfo.php',
+		deleteStudentUrl: '/server/php/StudentPage/deleteStudent.php',
+		deleteStudentFromThesisEnrollmentUrl: '/server/php/StudentPage/deleteStudentFromThesisEnrollment.php',
+		getEnrolledStudentsUrl: '/server/php/StudentPage/getEnrolledStudents.php',
+		getStudentBySpecializationUrl: '/server/php/StudentPage/getStudentBySpecialization.php',
+		getStudentClassSchedUrl: '/server/php/StudentPage/getStudentClassSched.php',
 		getStudentInfoUrl: '/server/php/StudentPage/getStudentInfo.php',
-		getStudentThesisTitleUrl: '/server/php/SchoolYearInfo/getStudentThesisTitle.php',
-		updateStudentInfoUrl: '/server/php/SchoolYearInfo/updateStudentInfo.php',
+		getStudentThesisTitleUrl: '/server/php/StudentPage/getStudentThesisTitle.php',
+		updateStudentInfoUrl: '/server/php/StudentPage/updateStudentInfo.php',
 		// end Student
 
 		// SubArea

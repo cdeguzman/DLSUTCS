@@ -3,7 +3,7 @@
   include("../connect.php");
   $dept_code = $_GET["dept"];
   
-     $select_facultyByDept = mysql_query("SELECT CONCAT(lname, ', ' ,fname, ' ', mi) as faculty_name FROM faculty 
+     $select_facultyByDept = mysql_query("SELECT id, lname, fname, mi FROM faculty 
 	                                      WHERE department_code = '$dept_code' ORDER BY lname");
  	 $list_facultyByDept = array();
       while($fetch_facultyByDept = mysql_fetch_assoc($select_facultyByDept)){

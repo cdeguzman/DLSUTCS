@@ -5,6 +5,6 @@
   $id = $_POST["id"];
   
   $removeStudent = "DELETE FROM student WHERE id = '$id'";
-  mysql_query($removeStudent);
-  
+  $status = mysql_query($removeStudent);
+  echo $status;
 ?> 

@@ -4,7 +4,7 @@
 			<div class="panel-heading">Display Student form the following specialization:</div>
 			<div class="panel-body">
 				<select id="student_specialization" class="form-control">
-					<option>All</option>
+					
 				</select>
 			</div>
 		</div>
@@ -35,7 +35,8 @@
 							<div style="padding-left: 30px;" class="col-xs-6">
 								<div class="form-group">
 									<label for="studentId">Student ID: </label>
-									<label name="studentId"></label>
+									<label name="studentIdDummy"></label>
+									<input type="hidden" name="studentId">
 								</div>
 								<div class="form-group">
 									<label for="lastname">Last Name</label>
@@ -60,7 +61,7 @@
 								<div class="form-group">
 									<label for="flowchart">Flowchart</label>
 									<select name="flowchart" class="form-control">
-										<option>n/a</option>
+										
 									</select>
 								</div>
 							</div>
@@ -79,78 +80,26 @@
 									<input type="tel" maxlength="11" class="form-control" name="sms" required pattern="[0-9]+">
 									<div class="checkbox">
 										<label>
+											<input type='hidden' value='0' name='notify'>
 											<input name="notify" type="checkbox"> Notify Defense Schedule thru SMS
 										</label>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="department">Specialization</label>
-									<select name="department" class="form-control">
-										<option>Computer Technology</option>
-										<option>Computer Science</option>
+									<label for="specialization">Specialization</label>
+									<select name="specialization" class="form-control">
+
 									</select>
 								</div>
 								<div class="form-group">
 									<label for="status">Status</label>
-									<select name="status" class="form-control">
+									<select name="" class="form-control">
 										<option>Active</option>
 										<option>Inactive</option>
 									</select>
 								</div>
 							</div>
 							<button id="update" type="submit" class="btn btn-default pull-right">Update Changes</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="panel panel-default">
-				<div class="panel-heading">Area of Specialization</div>
-				<div class="panel-body">
-					<form class="form">
-						<div class="form-group">
-							<div class="row">
-								<div class="col-xs-5">
-									<select multiple id="areofspecialization" class="form-control">
-										<option>Basic Computer Science Concepts(10)</option>
-										<option>Basic Electronics(10)</option>
-									</select>
-								</div>
-								<div style="text-align: center;" class="col-xs-2">
-									<br>
-									<button id="add"> >>> </button>
-									<br><br>
-									<button id="remove"> <<< </button>
-								</div>
-								<div class="col-xs-5">
-									<select multiple id="get-areofspecialization" class="form-control">
-										<option>Algorithms and Complexity</option>
-										<option>Architecture and Organization</option>
-										<option>Computational Science</option>
-										<option>Digital Signal Processing</option>
-										<option>Discrete Structure</option>
-										<option>Embedded and Control System</option>
-										<option>General Computer Science</option>
-										<option>Robotics</option>
-										<option>Software Engineering</option>
-										<option>Graphics and Visual Computing</option>
-										<option>Human-Computer Interaction</option>
-										<option>Information Management</option>
-										<option>Intelligent Systems</option>
-										<option>Net-centric Computing</option>
-										<option>Operating Systems</option>
-										<option>Programming Languages</option>
-										<option>Social and Professional Issues</option>
-										<option>Others: Please specify</option>
-									</select>
-								</div>
-							</div>
-							<br>
-							<div style="padding-left: 15px;" class="form-group">
-								<button id="increase" class="btn btn-default">Increase Level</button>
-								<button id="decrease" class="btn btn-default">Decrease Level</button>
-							</div>
 						</div>
 					</form>
 				</div>
@@ -212,19 +161,17 @@
 							<div class="col-xs-6">
 								<div class="form-group">
 									<label for="thesis_title"> Thesis Title: </label>
-									<label id="thesis_title"> Mobile Robot Platform Having an Echanced Underpinning System (MoRPHEUS) </label>
+									<label id="thesis_title"> </label>
 									<br><br>
 									<label for="thesis_status"> Status: </label>
-									<label id="thesis_status"> Completed in SY 2005 - 2006, 1st Term </label>
+									<label id="thesis_status"> </label>
 								</div>
 							</div>
 							<div class="col-xs-6">
 								<div class="form-group">
 									<label for="enrollment_history">Enrollment History: </label>
 									<select stlye="min-width:250px;min-height:125px;" id="enrollment_history" class="form-control" multiple>
-										<option>SY 2005 - 2006, 1st term CTTHES2 - 4.0</option>
-										<option>SY 2004 - 2005, 3rd term CTTHES2 - 4.0</option>
-										<option>SY 2003 - 2004, 1st term CTTHES2 - 4.0</option>
+										
 									</select>
 								</div>
 							</div>
@@ -246,68 +193,74 @@
 				<form id="add" class="form-horizontal">
 					<div class="modal-body">
 						<div class="row">
-							<form class="form">
-								<div class="col-xs-1"></div>
-								<div class="col-xs-4">
-									<div class="form-group">
-										<label for="facultyId">Student ID: </label>
-										<input type="tel" maxlength="8" class="form-control" name="facultyId" required pattern=".{8,8}" required title="must 8 characters">
-									</div>
-									<div class="form-group">
-										<label for="lastname">Last Name</label>
-										<input type="text" class="form-control" name="lastname" required>
-									</div>
-									<div class="form-group">
-										<label for="firstname">First Name</label>
-										<input type="text" class="form-control" name="firstname" required>
-									</div>
-									<div class="form-group">
-										<label for="middlename">MI</label>
-										<input type="text" maxlength="2" class="form-control" name="middlename" required pattern="[A-Za-z]+">
-									</div>
-									<div class="form-group">
-										<label for="email">Email</label>
-										<input type="email" class="form-control" name="email" required>
-									</div>
-									<div class="form-group">
-										<label for="contact">Contact</label>
-										<input type="tel" maxlength="11" class="form-control" name="contact" required pattern="[0-9]+">
-									</div>
-									<div class="form-group">
-										<label for="flowchart">Flowchart</label>
-										<select name="flowchart" class="form-control">
-											<option>n/a</option>
-										</select>
+							<div class="col-xs-1"></div>
+							<div class="col-xs-4">
+								<div class="form-group">
+									<label for="studentId">Student ID: </label>
+									<input type="tel" maxlength="8" class="form-control" name="studentId" required pattern=".{8,8}" required title="must 8 characters">
+								</div>
+								<div class="form-group">
+									<label for="lastname">Last Name</label>
+									<input type="text" class="form-control" name="lastname" required>
+								</div>
+								<div class="form-group">
+									<label for="firstname">First Name</label>
+									<input type="text" class="form-control" name="firstname" required>
+								</div>
+								<div class="form-group">
+									<label for="middlename">MI</label>
+									<input type="text" maxlength="2" class="form-control" name="middlename" required pattern="[A-Za-z.]+">
+								</div>
+								<div class="form-group">
+									<label for="email">Email</label>
+									<input type="email" class="form-control" name="email" required>
+								</div>
+								<div class="form-group">
+									<label for="contact">Contact</label>
+									<input type="tel" maxlength="11" class="form-control" name="contact" required pattern="[0-9]+">
+								</div>
+								<div class="form-group">
+									<label for="flowchart">Flowchart</label>
+									<select name="flowchart" class="form-control">
+
+									</select>
+								</div>
+							</div>
+							<div class="col-xs-1"></div>
+							<div class="col-xs-5">
+								<div class="form-group">
+									<label for="title">Title</label>
+									<input type="text" class="form-control" name="title" required>
+								</div>
+								<div class="form-group">
+									<label for="passsword">Password</label>
+									<input type="text" class="form-control" name="password" required pattern=".{8,8}" required title="must 8 characters">
+								</div>
+								<br><br>
+								<div class="form-group">
+									<label for="sms">SMS no.</label>
+									<input type="tel" maxlength="11" class="form-control" name="sms" >
+									<div class="checkbox">
+										<label>
+											<input type='hidden' value='0' name='notify'>
+											<input name="notify" type="checkbox"> Notify Defense Schedule thru SMS
+										</label>
 									</div>
 								</div>
-								<div class="col-xs-1"></div>
-								<div class="col-xs-5">
-									<div class="form-group">
-										<label for="sms">SMS no.</label>
-										<option>n/a</option>
-										<input type="tel" maxlength="11" class="form-control" name="sms" >
-										<div class="checkbox">
-											<label>
-												<input name="notify" type="checkbox"> Notify Defense Schedule thru SMS
-											</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="specialization">Specialization</label>
-										<select name="specialization" class="form-control">
-											<option>Computer Technology</option>
-											<option>Computer Science</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="status">Status</label>
-										<select name="status" class="form-control">
-											<option>Active</option>
-											<option>Inactive</option>
-										</select>
-									</div>
+								<div class="form-group">
+									<label for="specialization">Specialization</label>
+									<select name="specialization" class="form-control">
+
+									</select>
 								</div>
-							</form>
+								<div class="form-group">
+									<label for="status">Status</label>
+									<select name="" class="form-control">
+										<option>Active</option>
+										<option>Inactive</option>
+									</select>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="modal-footer">

@@ -53,11 +53,11 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		},
 
 		fillForm: function(){
-			var tid = $('.main #group :selected').val();
+			var id = $('.main #group :selected').val();
 			var req = new Array();
 			req.url = App.getThesisGroupInfoUrl;
 			req.type = "GET"
-			req.data = {'tid': tid};
+			req.data = {'id': id};
 			req.dataType = "JSON";
 			req.success = function(res){
 				_.each(res, function(r) { 

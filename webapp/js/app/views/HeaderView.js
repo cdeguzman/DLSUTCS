@@ -19,12 +19,12 @@ define(['jquery', 'backbone', 'jscookie', 'jquery-ajax-form', 'bootstrap'], func
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
 			this.renderMaxTerm();
-			this.renderYear();
 		},
 
 		renderYear: function(){
 			var req = new Array();
 			req.url = App.getSchoolYearListUrl;
+			req.async = false;
 			req.dataType = "JSON";
 			var self = this;
 			var temp = new Array();
@@ -47,6 +47,7 @@ define(['jquery', 'backbone', 'jscookie', 'jquery-ajax-form', 'bootstrap'], func
 		renderMaxTerm: function(){
 			var req = new Array();
 			req.url = App.getMaxTermUrl;
+			req.async = false;
 			req.dataType = "JSON";
 			var self = this;
 			req.success = function(res){
@@ -58,6 +59,7 @@ define(['jquery', 'backbone', 'jscookie', 'jquery-ajax-form', 'bootstrap'], func
 				$('.top-drop select#term').append(_.template(tmp)({termList:res}));
 	  		}
 			Core.request(req);
+			this.renderYear();
 		},
 		
 		cleanUpEvents: function(){

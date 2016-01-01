@@ -6,7 +6,9 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 			'submit #update' : 'submitFormUpdate',
 			'submit #add' : 'submitFormAdd',
 			'focus input' : function(e) {  $(e.currentTarget).removeClass('error') },
-			'click .main #facultyList option' : 'fillForm'
+			'click .main #facultyList option' : 'fillForm',
+			'change .main #facultyDepartment' : 'refreshFacultyList',
+			'click button#deleteFaculty' : 'deleteFaculty',
 		},
 
 		templateName: 'FacultyRecordTemplate',
@@ -27,7 +29,31 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 			this.renderRankList();
 		},
 
+		refreshFacultyList: function(){
+			$('form')[0].reset();
+			var dep = $('select#facultyDepartment :selected').val();
+
+			if(dep == "all") {
+				this.renderFacultyList();
+				return false;
+			} 
+			$('.main #facultyList').empty();
+			var req = new Array();
+			req.url = App.getFacultyByDeptUrl;
+			req.dataType = "JSON";
+			req.data = {'dept':dep};
+			var self = this;
+			req.success = function(res){
+				var tmp = '<% _.each(facultyList, function(r) { %>\
+							<option value="<%- r.id %>"><%- r.lname+", "+r.fname+" "+r.mi %></option>\
+						<% }); %>';
+				$('.main #facultyList').append(_.template(tmp)({facultyList:res}));
+	  		}
+			Core.request(req);
+		},
+
 		renderFacultyList: function(){
+			$('form')[0].reset();
 			$('.main #facultyList').empty();
 			var req = new Array();
 			req.url = App.getFacultyListUrl;
@@ -44,6 +70,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 
 		renderDeptList: function(){
 			$('select[name="department"]').empty();
+			$('select#facultyDepartment').empty();
 			var req = new Array();
 			req.url = App.getDeptListUrl;
 			req.dataType = "JSON";
@@ -53,6 +80,8 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 								<option value="<%- r.code %>"><%- r.name %></option>\
 							<% }); %>';
 				$('select[name="department"]').append(_.template(tmp)({deptList:res}));
+				$('select#facultyDepartment').append('<option value="all">All</option>');
+				$('select#facultyDepartment').append(_.template(tmp)({deptList:res}));
 				
 	  		}
 			Core.request(req);
@@ -99,10 +128,8 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 		},
 
 		submitFormUpdate: function(e){
-			var target = e.currentTarget;
 			var form = $(e.currentTarget);
 			var data = form.serialize();
-			var id = $('.main #facultyList :selected').val();
 
 			var req = new Array();
 			req.url = App.updateFacultyInfoUrl;
@@ -121,7 +148,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 			Core.request(req);
 		},
 
-		submitFormAdd: function(e){
+		submitFormAdd: function(e) {
 			var form = $(e.currentTarget);
 			var data = form.serialize();
 			
@@ -141,6 +168,35 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 				}
 			}
 			Core.request(req);
+			$('form')[0].reset();
+		},
+
+		deleteFaculty: function() {
+			$('form')[0].reset();
+			var id = $('.main #facultyList :selected').val();
+			if(id == undefined){
+				alert('No selected faculty.');
+				return false;
+			}
+
+			var action = confirm("Are you sure?");
+			if (action) {
+				var req = new Array();
+				req.url = App.deleteFacultyUrl;
+				req.type = "POST";
+				req.data = {'id': id};
+				req.dataType = "JSON";
+				var self = this;
+				req.success = function(res){
+					if(res == 1){
+						alert("Success!");
+						self.renderFacultyList();
+					}else{
+						alert("Error Occur!");
+					}
+				}
+				Core.request(req);
+			}
 		},
 
 		cleanUpEvents: function(){
