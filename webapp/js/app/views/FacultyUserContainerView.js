@@ -26,6 +26,8 @@ var FacultyUserContainerView = Backbone.View.extend({
 		},
 
 		render: function(){
+			$(".navbar-header .navbar-left").remove();
+			$(".navbar-header .navbar-right").remove();
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
 			
