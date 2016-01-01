@@ -82,7 +82,7 @@ function($, Backbone, Cookie, moment){
 			'DefenseScheduleTemplate',
 			'VerdictStatusTemplate',
 			'ProjectStatusTemplate',
-			//'ThesisGroupsTemplate',
+			'ThesisGroupsTemplate',
 			'MiscFacultyTemplate',
 			'SearchTemplate',
 			'StudentUserInfoTemplate',
