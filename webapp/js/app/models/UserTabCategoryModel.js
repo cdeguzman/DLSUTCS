@@ -37,7 +37,16 @@ define(['jquery', 'backbone', 'underscore'], function($, Backbone){
 						       {id: 'settings', name: 'Settings'},
 						       {id: 'password', name: 'Password'}
 					       ]
-                  }
+                  },
+                  {
+              	  		page: 'student',
+				    	tabs: [
+				    	       {id: 'genInfo', name: 'General Information', active: true},
+						       {id: 'classSched', name: 'Class Schedule'},
+						       {id: 'settings', name: 'Settings'},
+						       {id: 'password', name: 'Password'}
+					       ]
+                }
 			]
 		},
 		

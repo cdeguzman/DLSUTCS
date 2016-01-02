@@ -2,17 +2,10 @@ define(['jquery', 'backbone', 'bootstrap-dialog',
         'views/UserTabCategoryView', 
         'views/faculty/UserInfoView', 
         'views/faculty/TableView',
-        'views/faculty/DefenseScheduleView',
-        'views/faculty/VerdictStatusView',
-        'views/faculty/ProjectStatusView',
-        'views/faculty/ThesisGroupsView',
-        'views/faculty/MiscView',
         'views/SearchView',
         'views/DRSView'], 
 		function($, Backbone, BootstrapDialog, 
-				UserTabCategoryView, UserInfoView, TableView, 
-				DefenseScheduleView, VerdictStatusView, ProjectStatusView,
-				ThesisGroupsView, MiscView, SearchView, DRSView){
+				UserTabCategoryView, UserInfoView, TableView, SearchView, DRSView){
 
 var FacultyUserContainerView = Backbone.View.extend({
 
