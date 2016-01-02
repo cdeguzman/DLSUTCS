@@ -1,14 +1,11 @@
-define(['jquery', 'backbone', 'views/UserTabCategoryView',
-        'views/student/UserInfoView',
-        'views/student/ProjectStatusView',
-        'views/student/ThesisGroupsView',
-        'views/student/MiscView',
+define(['jquery', 'backbone', 'bootstrap-dialog', 
+        'views/UserTabCategoryView', 
+        'views/faculty/UserInfoView', 
+        'views/faculty/TableView',
         'views/SearchView',
         'views/DRSView'], 
-		function($, Backbone, UserTabCategoryView, 
-				UserInfoView, ProjectStatusView,
-				ThesisGroupsView, MiscView,
-				SearchView, DRSView){
+		function($, Backbone, BootstrapDialog, 
+				UserTabCategoryView, UserInfoView, TableView, SearchView, DRSView){
 
 var StudentUserContainerView = Backbone.View.extend({
 
@@ -34,19 +31,16 @@ var StudentUserContainerView = Backbone.View.extend({
 			}));
 			
 			this.subViews.push(new UserInfoView({
-				el: "#userInfo"
+				el: "#userInfo",
+				model: App.userTabCategoryModel,
+				page: 'student'
 			}));
 			
-			this.subViews.push(new ProjectStatusView({
-				el: "#projectStatus"
-			}));
-			
-			this.subViews.push(new ThesisGroupsView({
-				el: "#thesisGroups"
-			}));
-			
-			this.subViews.push(new MiscView({
-				el: "#misc"
+			this.subViews.push(new TableView({
+				el: "#thesisGroups",
+				tableId: "thesisGroupsTable",
+				tableTitle: "Thesis Groups",
+				model: App.userModel
 			}));
 			
 			this.subViews.push(new SearchView({
