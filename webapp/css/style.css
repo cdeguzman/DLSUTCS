@@ -752,6 +752,19 @@ th.cellData{
 	font-weight: 200;
 }
 
+.bs-example {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #fff;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px 4px 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
 #revertColumns{
 	text-align: right;
 }
@@ -829,6 +842,9 @@ th.cellData{
 	margin-top: 20px;
 }
 
+.icon-white{
+	color: white !important;
+}
 
 .navbar-default .navbar-toggle .icon-bar{
 	background-color: white;
@@ -1051,7 +1067,7 @@ svg {
 
 .dataTables_length{
     position: absolute;
-    right: 0;
+    right: 105px;
     top: 0;
 }
 
@@ -1064,8 +1080,8 @@ div.dataTables_paginate {
 }
 
 .pagination a{
-	border-color: #f3f3f4!important;
-	background: #f3f3f4!important;
+	border-color: white!important;
+	background: white!important;
 	color: #7dd0e3 !important;
 	outline: none;
 }
@@ -1133,6 +1149,10 @@ table.dataTable thead th.sorting_asc:after {
 }
 table.dataTable thead th.sorting_desc:after {
     content: "\f0dd";
+}
+
+.pagination>li>a, .pagination>li>span{
+	border: none;
 }
 
 

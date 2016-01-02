@@ -18,6 +18,8 @@ var UserTabCategoryView = Backbone.View.extend({
 		render: function(){
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template({"data": this.model.getTabs(this.page)}));
+			
+			
 		},
 
 		cleanUpEvents: function(){

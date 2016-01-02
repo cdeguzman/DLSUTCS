@@ -1,0 +1,79 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Existing Schedules</div>
+	<div class="panel-body">
+		<table class="table table-bordered">
+			<tr>
+				<td>Time</td>
+				<td>Day</td>
+				<td>Description</td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+				<td>20:00-21:00</td>
+				<td>MWF</td>
+				<td>CS223</td>
+				<td><button class="btn btn-danger" ><span class="glyphicon glyphicon-remove icon-white"></span></button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading">Add new Schedule</div>
+	<div class="panel-body">
+		<div class="row">
+		<form class="form" id="addScheduleForm">
+			<div class="col-xs-4">
+				<div class="checkbox">
+				  <label>
+				    <input type="radio" name="dayFreq" checked="checked" value="">
+				    Weekly
+				  </label>
+				</div>
+				<div class="form-group">
+					<label for="facultyId">Day </label>
+					<select id="daylist" style="height: 177px;" class="form-control max_width" multiple="">
+						<option>Monday</option>
+						<option>Tuesday</option>
+						<option>Wensday</option>
+						<option>Thursday</option>
+						<option>Friday</option>
+						<option>Saturday</option>
+						<option>Sunday</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="checkbox">
+				  <label>
+				    <input type="radio" name="dayFreq" value="">
+				    Specific Date
+				  </label>
+				</div>
+				<div class="form-group">
+					<label for="">Date: </label>
+   					<input type="date" class="form-control" placeholder="Date">
+				</div>
+			</div>
+			<div class="col-md-10">
+				<div class="form-group">
+					<label for="">Time: </label>
+   					<input type="time" id="time_start" class="form-control">
+   					TO
+   					<input type="time" id="time_end" class="form-control">
+				</div>
+			</div>
+			<div class="col-md-10">
+				<div class="form-group">
+					<label for="">Description: </label>
+   					<input type="text" class="form-control" placeholder="Description">
+				</div>
+			</div>
+				<div class="col-md-10">
+				<div class="form-group">
+   					<input type="submit" class="btn btn-default" value="Add Schedule">
+				</div>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>

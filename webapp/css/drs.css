@@ -1,11 +1,15 @@
+.message-user-list li{
+	height: 56px;
+}
+
+ul{
+	padding: 0px;
+}
+
 .bubble-left {
 	float: left;
 	clear: both;
-	background: #B7CC90;
-}
-
-.bubble-left:hover {
-	background: #A9C07F;
+	background: white;
 }
 
 .bubble-left:before {
@@ -29,11 +33,7 @@
 	float: right;
 	clear: both;
 	text-align: right;
-	background: #90B2CC;;
-}
-
-.bubble-right:hover {
-	background: #82A6C1;
+	background: #014023;
 }
 
 .bubble-right:before {
@@ -57,9 +57,7 @@
 	margin: auto;
 	margin-top: 2.5%;
 	height: 620px; /*Global Height of Widget*/
-	width: 1000px; /*Global Width of Widget*/
-	background: #E1E1E1;
-	box-shadow: 0px 0px 50px #1E1E1E;
+	width: 100%; /*Global Width of Widget*/
 }
 
 .message-container > .message-north {
@@ -90,13 +88,15 @@
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
+.message-container > .message-north > .message-user-list a span, .message-container > .message-north > .message-user-list a p{
+	color: #014023;
+}
 
 .message-container > .message-north > .message-user-list a {
 	display: block;
 	padding: 10px;
-	height: 40px; /*Keep height same as img thumbnail height*/
+	height: 60px; /*Keep height same as img thumbnail height*/
 	text-decoration: none;
-	color: #313131;
 
 	-webkit-transition: all ease .2s;
 	   -moz-transition: all ease .2s;
@@ -106,8 +106,7 @@
 }
 
 .message-container > .message-north > .message-user-list a:hover {
-	background: #9E9E9E;
-
+	background: white;
 	-webkit-transition: all ease .2s;
 	   -moz-transition: all ease .2s;
 	    -ms-transition: all ease .2s;
@@ -120,7 +119,7 @@
 	float: left;
 	height: 40px;
 	width: 40px;
-	background: #6A8BBA;
+	background: #014023;
 }
 
 .message-container > .message-north > .message-user-list a .user-title {
@@ -131,14 +130,13 @@
 	padding-left: 5px;
 	padding-top: 5px;
 	font-size: 12px;
-	color: #5A5A5A;
     white-space: nowrap;
 	overflow: hidden;    
     text-overflow: ellipsis;
 }
 
 .message-container > .message-north > .message-user-list a.active {
-	background: #BFBFBF;
+	background: white;
 }
 
 .message-container > .message-north > .message-user-list a.highlight {
@@ -181,13 +179,28 @@
 	margin-right: 3px;
 	font-size: 15px;
 }
+.message.bubble-left > p{
+	color: #014023 !important;
+}
+
+.message.bubble-right > p{
+	color: white !important;
+}
 
 .message-container > .message-north > .message-thread > .message label {
 	margin-top: -13px;
 	font-size: 13px;
 	font-weight: bold;
-	color: #5A5A5A;
 	cursor: pointer;
+}
+
+
+.message-container > .message-north > .message-thread > .bubble-right label{
+	color: white;
+}
+
+.message-container > .message-north > .message-thread > .bubble-left label{
+	color: #014023;
 }
 
 .message-container > .message-north > .message-thread > .message .message-user {
@@ -233,26 +246,5 @@
 	height: 35px;
 	width: 80px;
 	color: #000000;
-	background: -webkit-linear-gradient(#F5F5F5, #E9E9E9);
-	background:    -moz-linear-gradient(#F5F5F5, #E9E9E9);
-	background:      -o-linear-gradient(#F5F5F5, #E9E9E9);
-	background:         linear-gradient(#F5F5F5, #E9E9E9);
-	border: 2px solid #CCC;
-	box-shadow: 0px 1px 2px #C6C6C6;
 	cursor: pointer;
-}
-
-.message-container > .message-south > button:hover {
-	background: -webkit-linear-gradient(#FFFFFF, #DFDFDF);
-	background:    -moz-linear-gradient(#FFFFFF, #DFDFDF);
-	background:      -o-linear-gradient(#FFFFFF, #DFDFDF);
-	background:         linear-gradient(#FFFFFF, #DFDFDF);
-}
-
-.message-container > .message-south > button:active {
-	box-shadow: inset 0px 0px 10px #5A5A5A;
-	background: -webkit-linear-gradient(#E9E9E9, #F5F5F5);
-	background:    -moz-linear-gradient(#E9E9E9, #F5F5F5);
-	background:      -o-linear-gradient(#E9E9E9, #F5F5F5);
-	background:         linear-gradient(#E9E9E9, #F5F5F5);
 }

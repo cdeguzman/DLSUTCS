@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+	<div class="panel-heading"><%= data.tableTitle %></div>
+		<div class="panel-body">
+			<table id="<%= data.tableId %>" class="dt-responsive table table-bordered">
+				<thead>
+					<tr role="row">
+						<% _.each(tableData.cols, function(col){ %>
+							<th class="cellData"><%= col %></th>
+						<% }); %>
+					</tr>
+				</thead>
+				<tbody id="<%= data.tableId %>Body">
+					<% _.each(tableData.rows, function(row){ %>
+						<tr role="row" class="dataRow">
+							<% _.each(row, function(data){ %>
+								<td class="cellData"><%= data %></td>
+							<% }); %>
+						</tr>
+					<% }); %>
+				</tbody>
+			</table>
+		</div>
+</div>

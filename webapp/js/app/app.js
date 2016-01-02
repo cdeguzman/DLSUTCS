@@ -4,7 +4,8 @@
 */
 define([
         './models/UserTabCategoryModel',
-], function(UserTabCategoryModel){
+        './models/UserModel'
+], function(UserTabCategoryModel, UserModel){
 	window.App = {
 		
 		/*External Files*/
@@ -139,9 +140,12 @@ define([
 		// Room
 		addNewRoomUrl: '/server/php/RoomInfo/addNewRoom.php',
 		addRoomScheduleUrl: '/server/php/RoomInfo/addRoomSchedule.php',
+		deleteRoomUrl: '/server/php/RoomInfo/deleteRoom.php',
 		deleteRoomSchedUrl: '/server/php/RoomInfo/deleteRoomSched.php',
 		getRoomListUrl: '/server/php/RoomInfo/getRoomList.php',
+		getRoomInfoUrl: '/server/php/RoomInfo/getRoomInfo.php',
 		getRoomScheduleUrl: '/server/php/RoomInfo/getRoomSchedule.php',
+		getRoomSchedListUrl: '/server/php/RoomInfo/getRoomSchedList.php',
 		updateRoomInfoUrl: '/server/php/RoomInfo/updateRoomInfo.php',
 		// end Room
 
@@ -203,6 +207,7 @@ define([
 		initializeModels: function(){
 			//Initialize Application Models
 			App.userTabCategoryModel = new UserTabCategoryModel();
+			App.userModel = new UserModel();
 
 		},
 		/* Function for resetting per user preference*/

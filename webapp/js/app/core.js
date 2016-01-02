@@ -78,7 +78,7 @@ function($, Backbone, Cookie, moment){
 			'FacultyUserContainerTemplate',
 			'UserTabCategoryTemplate',
 			'FacultyUserInfoTemplate',
-			'ImportantDatesTemplate',
+			'TableViewTemplate',
 			'DefenseScheduleTemplate',
 			'VerdictStatusTemplate',
 			'ProjectStatusTemplate',
@@ -89,6 +89,13 @@ function($, Backbone, Cookie, moment){
 			'ProjectStatusStudentTemplate',
 			'ThesisGroupsStudentTemplate',
 			'MiscStudentTemplate',
+			'DRSTemplate',
+			'UserProfileTemplate',
+			'ClassScheduleTemplate',
+			'AreaOfExpertiseTemplate',
+			'SettingsTemplate',
+			'PasswordTemplate',
+			'custom_controls/MultiCheckSelectBoxTemplate',
 			'DRSTemplate'
 		],
 		templates: [],
@@ -384,6 +391,18 @@ function($, Backbone, Cookie, moment){
 			var link = $('<a href="download.html" target="_blank" id="csvDownload"></a>').appendTo("body");
 			$("#csvDownload")[0].click();
 			
+		},
+
+		getDay: function(number){
+			var weekday = new Array(7);
+			weekday[0]=  "Sun";
+			weekday[1] = "Mon";
+			weekday[2] = "Tue";
+			weekday[3] = "Wed";
+			weekday[4] = "Thu";
+			weekday[5] = "Fri";
+			weekday[6] = "Sat";
+			return weekday[number];
 		},
 	}
 	return Core;

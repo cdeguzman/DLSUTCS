@@ -1,1 +1,16 @@
-<h1>Faculty User Template put the subsections below each other</h1>
+<div role="tabpanel" class="tabPanel">
+	<!-- Nav tabs -->
+	<ul id="navTabs" class="nav nav-tabs" role="tablist">
+		<%_.each(data, function(cat){%>
+			<li role="presentation" <% if(cat.active){%> class="active" <%}%> <% if(cat.disabled){%> class="disabled" <%}%>>
+				<a href="#<%= cat.id %>" aria-controls="<%= cat.name %>" role="tab"<% if(cat.disabled!==true){%> <%}%>><%= cat.name %></a></li>
+		<%});%>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<%_.each(data, function(cat){%>
+			<div role="tabpanel" class="tab-pane <% if(cat.active){%> active <%}%>" id="<%= cat.id %>"></div>
+		<%});%>
+
+	</div>

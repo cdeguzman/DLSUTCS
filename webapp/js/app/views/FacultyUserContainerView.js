@@ -1,7 +1,7 @@
 define(['jquery', 'backbone', 'bootstrap-dialog', 
         'views/UserTabCategoryView', 
         'views/faculty/UserInfoView', 
-        'views/faculty/ImportantDatesView',
+        'views/faculty/TableView',
         'views/faculty/DefenseScheduleView',
         'views/faculty/VerdictStatusView',
         'views/faculty/ProjectStatusView',
@@ -10,7 +10,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog',
         'views/SearchView',
         'views/DRSView'], 
 		function($, Backbone, BootstrapDialog, 
-				UserTabCategoryView, UserInfoView, ImportantDatesView, 
+				UserTabCategoryView, UserInfoView, TableView, 
 				DefenseScheduleView, VerdictStatusView, ProjectStatusView,
 				ThesisGroupsView, MiscView, SearchView, DRSView){
 
@@ -26,6 +26,8 @@ var FacultyUserContainerView = Backbone.View.extend({
 		},
 
 		render: function(){
+			$(".navbar-header .navbar-left").remove();
+			$(".navbar-header .navbar-right").remove();
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
 			
@@ -36,31 +38,37 @@ var FacultyUserContainerView = Backbone.View.extend({
 			}));
 			
 			this.subViews.push(new UserInfoView({
-				el: "#userInfo"
+				el: "#userInfo",
+				model: App.userTabCategoryModel,
+				page: 'faculty'
 			}));
 			
-			this.subViews.push(new ImportantDatesView({
-				el: "#imptDate"
+			this.subViews.push(new TableView({
+				el: "#imptDate",
+				tableId: "importantDatesTable",
+				tableTitle: "Important Dates",
+				model: App.userModel
 			}));
 			
-			this.subViews.push(new DefenseScheduleView({
-				el: "#defenseSched"
+			this.subViews.push(new TableView({
+				el: "#defenseSched",
+				tableId: "defenseScheduleTable",
+				tableTitle: "Defense Schedules",
+				model: App.userModel
 			}));
 			
-			this.subViews.push(new VerdictStatusView({
-				el: "#verdictStatus"
+			this.subViews.push(new TableView({
+				el: "#verdictStatus",
+				tableId: "verdictStatusTable",
+				tableTitle: "Verdict Status",
+				model: App.userModel
 			}));
 			
-			this.subViews.push(new ProjectStatusView({
-				el: "#projectStatus"
-			}));
-			
-			this.subViews.push(new ThesisGroupsView({
-				el: "#thesisGroups"
-			}));
-			
-			this.subViews.push(new MiscView({
-				el: "#misc"
+			this.subViews.push(new TableView({
+				el: "#thesisGroups",
+				tableId: "thesisGroupsTable",
+				tableTitle: "Thesis Groups",
+				model: App.userModel
 			}));
 			
 			this.subViews.push(new SearchView({

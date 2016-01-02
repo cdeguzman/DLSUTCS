@@ -1,8 +1,8 @@
 define(['jquery', 'backbone'], function($, Backbone){
 
-var ImportantDatesView = Backbone.View.extend({
+var SettingsView = Backbone.View.extend({
 
-		templateName: 'ImportantDatesTemplate',
+		templateName: 'SettingsTemplate',
 		
 		subViews: [],
 
@@ -22,6 +22,6 @@ var ImportantDatesView = Backbone.View.extend({
 		}
 	});
 
-	return ImportantDatesView;
+	return SettingsView;
 
 });
