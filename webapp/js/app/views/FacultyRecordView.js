@@ -153,7 +153,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 			var data = form.serialize();
 			
 			var req = new Array();
-			req.url = App.addNewFacultyInfoUrl;
+			req.url = App.addNewRoomUrl;
 			req.type = "POST";
 			req.data = data;
 			req.dataType = "JSON";

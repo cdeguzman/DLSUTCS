@@ -4,7 +4,7 @@
 			<div class="panel-heading">Room List:</div>
 			<div class="panel-body">
 				<select id="roomList" multiple class="faculty form-control">
-				
+
 				</select>
 			</div>
 			<div style="padding-bottom: 10px;" class="row">
@@ -25,28 +25,28 @@
 				<div class="panel-body">
 					<form id="update" class="form-horizontal">
 						<div style="width: 50%;margin: 0 auto;" class="row">
-							<form class="form">
-								<div class="form-group">
-									<label for="roomID">Room ID: </label>
-									<label name="roomID"><u>12345678</u></label>
+							<div class="form-group">
+								<label for="roomId">Room ID: </label>
+								<label name="roomId"></label>
+								<input type="hidden" name="roomId" >
+							</div>
+							<div class="form-group">
+								<label for="roomname">Name</label>
+								<input type="text" class="form-control" name="roomname" required>
+							</div>
+							<div class="form-group">
+								<label for="roomno">Room no</label>
+								<input type="text" class="form-control" name="roomno" required>
+							</div>
+							<div class="form-group">
+								<div class="checkbox">
+									<label>
+										<input name="usable" type="hidden" value="0">
+										<input name="usable" type="checkbox"> usable
+									</label>
 								</div>
-								<div class="form-group">
-									<label for="roomname">Name</label>
-									<input type="text" class="form-control" name="roomname" required>
-								</div>
-								<div class="form-group">
-									<label for="roomno">Room no</label>
-									<input type="text" class="form-control" name="roomno" required>
-								</div>
-								<div class="form-group">
-									<div class="checkbox">
-										<label>
-											<input name="usable" type="checkbox"> usable
-										</label>
-									</div>
-								</div>
-								<button id="update" type="submit" class="btn btn-default">Update Changes</button>
-							</form>
+							</div>
+							<button id="update" type="submit" class="btn btn-default">Update Changes</button>
 						</div>
 					</form>
 				</div>
@@ -66,18 +66,18 @@
 							</div>
 							<div class="col-xs-4">
 								<div class="form-group">
-									<label for="currsched-date-form">from:</label>
-									<div class='input-group date' id='currsched-date-from'>
-										<input type='text' name="currsched-date-from" class="form-control" required/>
+									<label for="date_form">from:</label>
+									<div class='input-group date' id='date_from'>
+										<input type='text' name="date_from" class="form-control" required/>
 										<span class="input-group-addon">
 											<span class="glyphicon glyphicon-calendar"></span>
 										</span>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="currsched-date-to">To:</label>
-									<div class='input-group date' id='currsched-date-to'>
-										<input type='text' name="currsched-date-to" class="form-control" required/>
+									<label for="date_to">To:</label>
+									<div class='input-group date' id='date_to'>
+										<input type='text' name="date_to" class="form-control" required/>
 										<span class="input-group-addon">
 											<span class="glyphicon glyphicon-calendar"></span>
 										</span>
@@ -106,7 +106,6 @@
 	</div>
 </div>
 
-
 <div class="modal fade" id="addRoom">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -114,28 +113,30 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title">Add Room Record</h4>
 			</div>
-			<form class="form-horizontal">
+			<form id="add" class="form-horizontal">
 				<div class="modal-body">
 					<div style="width: 50%;margin: 0 auto;" class="row">
-						<form class="form">
-							<div class="form-group">
-								<label for="roomID">Room ID: </label>
-								<label name="roomID"><u>12345678</u></label>
+						<div class="form-group">
+							<label for="roomname">Name</label>
+							<input type="text" class="form-control" name="roomname" required>
+						</div>
+						<div class="form-group">
+							<label for="roomno">Room no</label>
+							<input type="text" class="form-control" name="roomno" required>
+						</div>
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<input name="usable" type="hidden" value="0">
+									<input name="usable" type="checkbox"> usable
+								</label>
 							</div>
-							<div class="form-group">
-								<label for="roomname">Name</label>
-								<input type="text" class="form-control" name="roomname" required>
-							</div>
-							<div class="form-group">
-								<label for="roomno">Room no</label>
-								<input type="text" class="form-control" name="roomno" required>
-							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button id="save" type="submit" class="btn btn-default">Save changes</button>
+					<button type="submit" class="btn btn-default">Save changes</button>
 				</div>
 			</form>
 		</div>
