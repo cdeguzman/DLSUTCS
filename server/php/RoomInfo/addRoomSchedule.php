@@ -11,9 +11,8 @@
   $spec_date = $_POST["spec_date"];
   $start_time = $_POST["start_time"];
   $end_time = $_POST["end_time"];
-  $preferred_thesis_schedule = $_POST["preferred_thesis_schedule"];
   $description = $_POST["description"];
   
-  mysql_query("INSERT INTO room_schedule (start_sy, end_sy, term, room_id, schedule_code, day, spec_date, start_time, end_time, preferred_thesis_schedule, description)
-               VALUES('$start_sy', '$end_sy', '$term', '$room_id', '$schedule_code', '$day', '$spec_date', '$start_time', '$end_time', '$preferred_thesis_schedule', '$description')");  
+  mysql_query("INSERT INTO room_schedule (start_sy, end_sy, term, room_id, schedule_code, day, spec_date, start_time, end_time, description)
+               VALUES('$start_sy', '$end_sy', '$term', '$room_id', '$schedule_code', '$day', '$spec_date', '$start_time', '$end_time', '$description')");  
 ?> 

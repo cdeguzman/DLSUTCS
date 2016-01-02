@@ -1,7 +1,7 @@
 <?php
   //This code will display the schedule of a specific room
   include("../connect.php");
-    $id = $_GET["id"];
+  $id = $_GET["id"];
 	$start_sy = $_GET["start_sy"];
 	$end_sy = $_GET["end_sy"];
 	
