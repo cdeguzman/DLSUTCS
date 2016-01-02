@@ -78,7 +78,7 @@ function($, Backbone, Cookie, moment){
 			'FacultyUserContainerTemplate',
 			'UserTabCategoryTemplate',
 			'FacultyUserInfoTemplate',
-			'ImportantDatesTemplate',
+			'TableViewTemplate',
 			'DefenseScheduleTemplate',
 			'VerdictStatusTemplate',
 			'ProjectStatusTemplate',
@@ -94,7 +94,8 @@ function($, Backbone, Cookie, moment){
 			'ClassScheduleTemplate',
 			'AreaOfExpertiseTemplate',
 			'SettingsTemplate',
-			'PasswordTemplate'
+			'PasswordTemplate',
+			'custom_controls/MultiCheckSelectBoxTemplate'
 		],
 		templates: [],
 		loadedTemplateCount: 0,

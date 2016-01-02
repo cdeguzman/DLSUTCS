@@ -1,0 +1,27 @@
+<div class="button-group multiCheckSelect">
+        <button type="button" class="btn btn-default btn-md dropdown-toggle" data-toggle="dropdown"><span class="text pull-left">Columns</span> <span class="caret"></span></button>
+<ul class="dropdown-menu">
+    <%if(showResetButton){%>
+    <li class="revertColumnsContainer">
+  	  <a href="#" data-value="-1" tabIndex="-1" id="revertColumns">
+  		  <div class="checkbox option">
+  		    <label>
+				<i>revert to default</i>
+  		    </label>
+  		  </div>
+    	 </a>
+    </li>
+	<%}%>
+	<%_.each(selection, function(option, idx){%>
+    <li>
+  	  <a href="#" data-value="<%= idx %>" tabIndex="-1">
+  		  <div class="checkbox option">
+  		    <label>
+  		      <input type="checkbox" data-value="<%= idx %>"  <%if(option.visible){%> checked="checked"<%}%>  id="blankCheckbox" value="<%= option.colName%>" aria-label=""> <%= option.colName%>
+  		    </label>
+  		  </div>
+    	 </a>
+    </li>
+	<%});%>
+</ul>
+  </div>
