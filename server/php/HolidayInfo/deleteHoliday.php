@@ -5,6 +5,6 @@
   $id = $_POST["id"];
   
   $removeHoliday = "DELETE FROM holiday WHERE id = '$id'";
-  mysql_query($removeHoliday);
-  
+  $status = mysql_query($removeHoliday);
+  echo $status;
 ?> 

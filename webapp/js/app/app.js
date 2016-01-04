@@ -108,6 +108,7 @@ define([
 		addNewHolidayUrl: '/server/php/HolidayInfo/addNewHoliday.php',
 		deleteHolidayUrl: '/server/php/HolidayInfo/deleteHoliday.php',
 		getHolidayInfoUrl: '/server/php/HolidayInfo/getHolidayInfo.php',
+		getHolidayListByYearUrl: '/server/php/HolidayInfo/getHolidayListByYear.php',
 		// end Holiday
 
 		// Query Records
@@ -163,6 +164,7 @@ define([
 		getTermSchedPerSYUrl: '/server/php/SchoolYearInfo/getTermSchedPerSY.php',
 		updateTermSchedPerSYUrl: '/server/php/SchoolYearInfo/updateTermSchedPerSY.php',
 		getMaxTermUrl: '/server/php/SchoolYearInfo/getMaxTerm.php',
+		getMaxTermByYearUrl: '/server/php/SchoolYearInfo/getMaxTermByYear.php',
 		// end School Year
 		
 		// Student

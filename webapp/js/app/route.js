@@ -92,6 +92,7 @@ define([
 		},
 
 		loadHeaderFooterTemplate: function(){
+			this.cleanView();
 			this.loadView(new HeaderView({
 				el: "#mainHeader",
 			}));
@@ -102,17 +103,12 @@ define([
 		},
 
 		home : function(){
-			this.cleanView();
-			App.initializeModels();
-			this.loadHeaderFooterTemplate();
 			this.loadView(new HomeView({
 				el: "#contentContainer",
 			}));
 		},
 
 		facultyRecordView: function(){
-			this.cleanView();
-			this.loadHeaderFooterTemplate();
 			this.loadView(new FacultyRecordView({
 				el: "#contentContainer",
 				model: App.facultyModel

@@ -1,14 +1,14 @@
 /**
 	HeaderView.js
 */
-define(['jquery', 'backbone', 'jscookie', 'jquery-ajax-form', 'bootstrap'], function($, Backbone, Cookie){
+define(['jquery', 'backbone', 'jscookie', 'jquery-ajax-form', 'bootstrap', 'underscore'], function($, Backbone, Cookie){
 	
 	var HeaderView = Backbone.View.extend({
 	
 		templateName: 'HeaderTemplate',
 	
 		events:{
-
+			'change .top-drop select#schoolyear' : 'selectTermByYear',
 		},
 	
 		initialize: function(){
@@ -19,12 +19,12 @@ define(['jquery', 'backbone', 'jscookie', 'jquery-ajax-form', 'bootstrap'], func
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
 			this.renderMaxTerm();
+			this.renderYear();
 		},
 
 		renderYear: function(){
 			var req = new Array();
 			req.url = App.getSchoolYearListUrl;
-			req.async = false;
 			req.dataType = "JSON";
 			var self = this;
 			var temp = new Array();
@@ -34,12 +34,10 @@ define(['jquery', 'backbone', 'jscookie', 'jquery-ajax-form', 'bootstrap'], func
 					if(i==0) isYearExist = true;
 					if(isYearExist){
 						if($.inArray(r.start_sy, temp) === -1) temp.push(r.start_sy);
-						$('.top-drop select#schoolyear').append('<option value='+r.start_date+','+r.end_date+'>'+r.start_sy+' - '+r.end_sy+'</option>');
-						if(i == 0) {
-							$('.top-drop select#term').val(r.term);
-						}
+						$('.top-drop select#schoolyear').append('<option value='+r.start_sy+'>'+r.start_sy+' - '+r.end_sy+'</option>');
 					}
 				});
+				self.selectTermByYear();
 	  		}
 			Core.request(req);
 		},
@@ -47,7 +45,6 @@ define(['jquery', 'backbone', 'jscookie', 'jquery-ajax-form', 'bootstrap'], func
 		renderMaxTerm: function(){
 			var req = new Array();
 			req.url = App.getMaxTermUrl;
-			req.async = false;
 			req.dataType = "JSON";
 			var self = this;
 			req.success = function(res){
@@ -59,7 +56,22 @@ define(['jquery', 'backbone', 'jscookie', 'jquery-ajax-form', 'bootstrap'], func
 				$('.top-drop select#term').append(_.template(tmp)({termList:res}));
 	  		}
 			Core.request(req);
-			this.renderYear();
+			
+		},
+
+		selectTermByYear: function(){
+			var year = $('.top-drop select#schoolyear :selected').val();
+			var req = new Array();
+			req.url = App.getMaxTermByYearUrl;
+			req.dataType = "JSON";
+			req.data = {'year':year};
+			var self = this;
+			req.success = function(res){
+				_.each(res, function(r) {
+					$('.top-drop select#term').val(r.max);	 	
+				}); 
+	  		}
+			Core.request(req);
 		},
 		
 		cleanUpEvents: function(){

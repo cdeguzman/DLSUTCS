@@ -9,7 +9,7 @@
   $end_sy = $_POST["end_sy"];
   $term = $_POST["term"];
   
-  mysql_query("INSERT INTO holiday (start_date, end_date, description, start_sy, end_sy, term)
+  $status = mysql_query("INSERT INTO holiday (start_date, end_date, description, start_sy, end_sy, term)
                VALUES ('$start_date', '$end_date', '$description', '$start_sy', '$end_sy', '$term')");
-  
+  echo $status;
 ?>
