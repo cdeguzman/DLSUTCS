@@ -96,7 +96,7 @@ define([
 		// General Area
 		addNewGenAreaUrl: '/server/php/GeneralAreaInfo/addNewGenArea.php',
 		deleteGenAreaUrl: '/server/php/GeneralAreaInfo/deleteGenArea.php',
-		getGeneralAreaListUrl: '/server/php/GeneralAreaInfo/getGeneralAreaList.php',
+		getGeneralAreaInfoUrl: '/server/php/GeneralAreaInfo/getGenAreaInfo.php',
 		updateGenAreaUrl: '/server/php/GeneralAreaInfo/updateGenArea.php',
 		// end General Area
 

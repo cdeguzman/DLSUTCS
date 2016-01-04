@@ -5,26 +5,21 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog', 'un
 		events: {
 			'click .main #arealist option' : 'fillForm',
 			'submit form#add' : 'submitFormAdd',
+			'submit form#update' : 'submitFormUpdate',
+			'click button#deleteArea' : 'deleteArea',
 		},
 
 		templateName: 'GeneralAreaRecordTemplate',
 
 		initialize: function(){
 			this.render();
-			$("#mainContainer").on("click", "button#deleteFaculty", function(e){
-				self.showDeleteDialog();
-			});
 			this.renderGeneralAreList();
 		},
 
 		render: function(){
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
-			$('#currsched-date-from').datetimepicker();
-			$('#currsched-date-to').datetimepicker();
 
-			$('#prefsched-date-from').datetimepicker();
-			$('#prefsched-date-to').datetimepicker();
 		},
 
 		renderGeneralAreList: function(){
@@ -44,7 +39,21 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog', 'un
 		},
 
 		fillForm: function(){
-			alert()
+			var id = $('.main #arealist :selected').val();
+			var req = new Array();
+			req.url = App.getGeneralAreaInfoUrl;
+			req.type = "GET"
+			req.data = {'id': id};
+			req.dataType = "JSON";
+			req.success = function(res){
+				_.each(res, function(r) { 
+					$('.main label[name="areaId"]').text(r.code);
+					$('.main input[name="areaId"]').val(r.code);
+					$('.main input[name="name"]').val(r.name);
+					$('.main input[name="description"]').val(r.description);
+				});
+			}
+			Core.request(req);
 		},
 
 		submitFormAdd: function(e){
@@ -65,13 +74,62 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog', 'un
 				}else{
 					alert("Error occur!");
 				}
-				
+				$('form#add')[0].reset();
+				$('#addArea').modal('hide');
 	  		}
 			Core.request(req);
 
-			$('form#add')[0].reset();
-			$('#addArea').modal('hide');
+			
 
+		},
+
+		submitFormUpdate: function(e){
+			var form = $(e.currentTarget);
+			var data = form.serialize();
+
+			var req = new Array();
+			req.url = App.updateGenAreaUrl;
+			req.type = "POST";
+			req.data = data;
+			req.dataType = "JSON";
+			var self = this;
+			req.success = function(res){
+				if(res == 1){
+					alert("Success!");
+					self.renderGeneralAreList();
+				}else{
+					alert("Error Occur!");
+				}
+			}
+			Core.request(req);
+		},
+
+		deleteArea: function(){
+			$('form')[0].reset();
+			var id = $('.main #arealist :selected').val();
+			if(id == undefined){
+				alert('No selected Area.');
+				return false;
+			}
+
+			var action = confirm("Are you sure?");
+			if (action) {
+				var req = new Array();
+				req.url = App.deleteGenAreaUrl;
+				req.type = "POST";
+				req.data = {'id': id};
+				req.dataType = "JSON";
+				var self = this;
+				req.success = function(res){
+					if(res == 1){
+						alert("Success!");
+						self.renderGeneralAreList();
+					}else{
+						alert("Error Occur!");
+					}
+				}
+				Core.request(req);
+			}
 		},
 
 		cleanUpEvents: function(){
