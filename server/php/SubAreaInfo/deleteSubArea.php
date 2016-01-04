@@ -5,6 +5,6 @@
   $id = $_POST["id"];
   
   $removeSubArea = "DELETE FROM area WHERE code = '$id'";
-  mysql_query($removeSubArea);
-  
+  $status = mysql_query($removeSubArea);
+  echo $status;
 ?> 
