@@ -5,6 +5,6 @@
   $id = $_POST["id"];
   
   $removeRank = "DELETE FROM rank WHERE id = '$id'";
-  mysql_query($removeRank);
-  
+  $status = mysql_query($removeRank);
+  echo $status;
 ?> 

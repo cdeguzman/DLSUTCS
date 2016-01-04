@@ -1,13 +1,13 @@
 <?php
   //This php code will add rank area
   include("../connect.php");
-  $code = $_POST["code"];
+  $code = $_POST["rankCode"];
   $name = $_POST["name"];
-  $ft_amount = $_POST["ft_amount"];
-  $pt_amount = $_POST["pt_amount"];
+  $ft_amount = $_POST["fulltimepay"];
+  $pt_amount = $_POST["parttimepay"];
   $description = $_POST["description"];
   
-  mysql_query("INSERT INTO rank (code, name, description, ft_amount, pt_amount)
+  $status = mysql_query("INSERT INTO rank (code, name, description, ft_amount, pt_amount)
                VALUES ('$code', '$name', '$description', '$ft_amount', '$pt_amount')");
-  
+  echo $status;
 ?>

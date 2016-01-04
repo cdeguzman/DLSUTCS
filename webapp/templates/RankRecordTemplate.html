@@ -18,13 +18,14 @@
 		</div>
 	</div>
 	<div class="col-xs-6">
-		<form id="general" class="form">
+		<form id="update" class="form">
 			<div class="panel panel-default">
 				<div class="panel-heading">General Information</div>
 				<div class="panel-body">
 					<div class="form-group">
-						<label for="rankId">Rank Code: </label>
-						<label name="rankId"><u>12345678</u></label>
+						<label for="rankCode">Rank Code: </label>
+						<input type="text" class="form-control" name="rankCode" required>
+						<input name="rankId" type="hidden"></label>
 					</div>
 					<div class="form-group">
 						<label for="name">Name</label>
@@ -45,7 +46,7 @@
 						<label for="description">Description</label>
 						<input type="text" class="form-control" name="description">
 					</div>
-					<button id="update" type="submit" class="btn btn-default pull-right">Update Changes</button>
+					<button type="submit" class="btn btn-default pull-right">Update Changes</button>
 				</div>
 			</div>
 		</form>
@@ -63,14 +64,14 @@
 				<div class="modal-body">
 
 					<div class="form-group">
-						<label for="rankId">Rank Code: </label>
-						<input type="text" class="form-control" name="rankId" required>
+						<label for="rankCode">Rank Code: </label>
+						<input type="text" class="form-control" name="rankCode" required>
 					</div>
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input type="text" class="form-control" name="name" required>
 					</div>
-					<!--<div class="form-group">
+					<div class="form-group">
 						<label >Salary <span name="salaryinfo"> not updated (based from most recent salary)</span></label>
 						<div class="form-group">
 							<label for="fulltimepay">Full Time: PhP</label>
@@ -80,7 +81,7 @@
 							<label for="parttimepay">Part Time: PhP</label>
 							<input type="text" class="form-control" name="parttimepay">
 						</div>
-					</div>-->
+					</div>
 					<div class="form-group">
 						<label for="description">Description</label>
 						<input type="text" class="form-control" name="description">
