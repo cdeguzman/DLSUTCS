@@ -17,7 +17,6 @@ define([
 
 		// Add Records
 		addDeptUrl: '/server/php/AddRecords/AddDept.php',
-		addFacAdminPositionUrl: '/server/php/AddRecords/addFacAdminPosition.php',
 		addGeneralAreaUrl: '/server/php/AddRecords/AddGeneralArea.php',
 		addPhaseUrl: '/server/php/AddRecords/addPhase.php',
 		addRankUrl: '/server/php/AddRecords/AddRank.php',
@@ -26,14 +25,12 @@ define([
 		addVerdictUrl: '/server/php/AddRecords/AddVerdict.php',
 		// end Add Records
 
-		// Delete Records
-		deletePositionUrl: '/server/php/DeleteRecords/deletePosition.php',
-		// end Delete Records
-
 		// Admin Position
+		addFacAdminPositionUrl: '/server/php/AdminPosition/addFacAdminPosition.php',
 		deleteAdminPosUrl: '/server/php/AdminPosition/deleteAdminPos.php',
 		getAdminPosByFacultyUrl: '/server/php/AdminPosition/getAdminPosByFaculty.php',
 		getAdminPositionListUrl: '/server/php/AdminPosition/getAdminPositionList.php',
+		getAdminPositionInfoUrl: '/server/php/AdminPosition/getAdminPositionInfo.php',
 		updateAdminPositionUrl: '/server/php/AdminPosition/updateAdminPosition.php',
 		// end Admin Position
 
@@ -104,7 +101,6 @@ define([
 		// end General Area
 
 		// Holiday
-		addNewAdminPosUrl: '/server/php/HolidayInfo/addNewAdminPos.php',
 		addNewHolidayUrl: '/server/php/HolidayInfo/addNewHoliday.php',
 		deleteHolidayUrl: '/server/php/HolidayInfo/deleteHoliday.php',
 		getHolidayInfoUrl: '/server/php/HolidayInfo/getHolidayInfo.php',

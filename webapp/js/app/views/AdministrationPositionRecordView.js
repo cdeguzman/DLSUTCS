@@ -5,6 +5,8 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog', 'un
 		events: {
 			'click .main #positionList option' : 'fillForm',
 			'submit #add' : 'submitFormAdd',
+			'click button#deleteAdmin' : 'deleteAdmin',
+			'submit #update' : 'submitFormUpdate',
 		},
 
 		templateName: 'AdministrationPositionRecordTemplate',
@@ -75,7 +77,6 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog', 'un
 			req.dataType = "JSON";
 			var self = this;
 			req.success = function(res){
-
 				if(res == 1){
 					alert("Sucess!");
 					self.renderPositionList();
@@ -89,6 +90,74 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog', 'un
 			$('form#add')[0].reset();
 			$('#addPosition').modal('hide');
 
+		},
+
+		deleteAdmin: function(){
+			$('form')[0].reset();
+			var id = $('.main #positionList :selected').val();
+			if(id == undefined){
+				alert('No selected faculty.');
+				return false;
+			}
+
+			var action = confirm("Are you sure?");
+			if (action) {
+				var req = new Array();
+				req.url = App.deleteAdminPosUrl;
+				req.type = "POST";
+				req.data = {'id': id};
+				req.dataType = "JSON";
+				var self = this;
+				req.success = function(res){
+					if(res == 1){
+						alert("Success!");
+						self.renderPositionList();
+					}else{
+						alert("Error Occur!");
+					}
+				}
+				Core.request(req);
+			}
+		},
+
+		fillForm: function(){
+			var id = $('.main #positionList :selected').val();
+			var req = new Array();
+			req.url = App.getAdminPositionInfoUrl;
+			req.type = "GET"
+			req.data = {'id': id};
+			req.dataType = "JSON";
+			req.success = function(res){
+				_.each(res, function(r) { 
+					$('.main input[name="adminCode"]').val(r.code);
+					$('.main input[name="adminId"]').val(r.id);
+					$('.main input[name="name"]').val(r.name);
+					$('.main input[name="description"]').val(r.description);
+					$('.main select[name="faculty"]').val(r.faculty_id);
+				});
+			}
+			Core.request(req);
+		},
+
+		submitFormUpdate: function(e){
+			var form = $(e.currentTarget);
+			var data = form.serialize();
+
+			var req = new Array();
+			req.url = App.updateAdminPositionUrl;
+			req.type = "POST";
+			req.data = data;
+			req.dataType = "JSON";
+			var self = this;
+			req.success = function(res){
+				if(res == 1){
+					alert("Success!");
+					self.renderPositionList();
+				}else{
+					alert("Error Occur!");
+				}
+			}
+			Core.request(req);
 		},
 
 		cleanUpEvents: function(){

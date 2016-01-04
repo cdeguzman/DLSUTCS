@@ -5,6 +5,6 @@
   $id = $_POST["id"];
   
   $removeAdminPos = "DELETE FROM admin_position WHERE id = '$id'";
-  mysql_query($removeAdminPos);
-  
+  $status = mysql_query($removeAdminPos);
+  echo $status;
 ?> 

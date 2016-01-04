@@ -12,7 +12,7 @@
 					<button style=" width: 100%;"  data-target="#addPosition" data-toggle="modal" class="btn btn-default">Add Position</button>
 				</div>
 				<div class="col-xs-6">
-					<button style=" width: 100%;" id="deleteFaculty" class="btn btn-default">Remove Posisiton</button>
+					<button style=" width: 100%;" id="deleteAdmin" class="btn btn-default">Remove Position</button>
 				</div>
 			</div>
 		</div>
@@ -23,8 +23,9 @@
 				<div class="panel-heading">General Information</div>
 				<div class="panel-body">
 					<div class="form-group">
-						<label for="adminId">Admin Code: </label>
-						<label name="adminId"><u>12345678</u></label>
+						<label for="adminCode">Admin Code: </label>
+						<input type="text" class="form-control" name="adminCode" required>
+						<input type="hidden" name="adminId">
 					</div>
 					<div class="form-group">
 						<label for="name">Name</label>
