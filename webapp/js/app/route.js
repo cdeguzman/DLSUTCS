@@ -103,12 +103,14 @@ define([
 		},
 
 		home : function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new HomeView({
 				el: "#contentContainer",
 			}));
 		},
 
 		facultyRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new FacultyRecordView({
 				el: "#contentContainer",
 				model: App.facultyModel
@@ -116,149 +118,172 @@ define([
 		},
 
 		studentRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new StudentRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		thesisGroupView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new ThesisGroupView({
 				el: "#contentContainer",
 			}));
 		},
 
 		roomRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new RoomRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		holidayRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new HolidayRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		administrationPositionRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new AdministrationPositionRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		generalAreaRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new GeneralAreaRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		subAreaRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new SubAreaRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		rankRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new RankRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		courseRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new CourseRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		courseOfferingRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new CourseOfferingRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		flowchartRecordView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new FlowchartRecordView({
 				el: "#contentContainer",
 			}));
 		},
 
 		generalScheduleView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new GeneralScheduleView({
 				el: "#contentContainer",
 			}));
 		},
 
 		schoolYearView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new SchoolYearView({
 				el: "#contentContainer",
 			}));
 		},
 
 		studentScheduleView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new StudentScheduleView({
 				el: "#contentContainer",
 			}));
 		},
 
 		adviserRosterView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new AdviserRosterView({
 				el: "#contentContainer",
 			}));
 		},
 
 		panelRosterView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new PanelRosterView({
 				el: "#contentContainer",
 			}));
 		},
 
 		thesisEnrollmentView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new ThesisEnrollmentView({
 				el: "#contentContainer",
 			}));
 		},
 
 		thesisScheduleView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new ThesisScheduleView({
 				el: "#contentContainer",
 			}));
 		},
 
 		barcodeView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new BarcodeView({
 				el: "#contentContainer",
 			}));
 		},
 
 		defenseHistoryView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new DefenseHistoryView({
 				el: "#contentContainer",
 			}));
 		},
 
 		updateThesisGradeView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new UpdateThesisGradeView({
 				el: "#contentContainer",
 			}));
 		},
 		
 		facultyUserView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new FacultyUserContainerView({
 				el: "#contentContainer",
 			}));
 		},
 		
 		studentUserView: function(){
+			this.loadHeaderFooterTemplate();
 			this.loadView(new StudentUserContainerView({
 				el: "#contentContainer",
 			}));
 		},
-
 
 		loadView: function(view){
 			this.views.push(view);
 		},
 
 		cleanView: function(){
+			console.log(this.views);
 			_.each(this.views, function(view){
 				view.close();
 			});

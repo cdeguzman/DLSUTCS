@@ -1269,3 +1269,10 @@ label[for] {
 .error  {
   border-color: #d44950;
 }
+
+.top-drop {
+  position: relative;
+  width: 250px;
+  z-index: 11;
+  float: right;
+}
