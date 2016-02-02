@@ -3,7 +3,7 @@
   include("../connect.php");
   $fid = $_GET["fid"];  
   $scode = $_GET["scode"]; // display will depend on the value of the schedule code
-     $select_facultyClassSched = mysql_query("SELECT fs.day, fs.start_time, fs.end_time, fs.description 
+     $select_facultyClassSched = mysql_query("SELECT fs.day, fs.start_time, fs.end_time, fs.description, fs.id
 	                                          FROM faculty_schedule fs, faculty f, schedule s
    	                                          WHERE fs.faculty_id =  f.id AND
 									          fs.schedule_code = s.code 

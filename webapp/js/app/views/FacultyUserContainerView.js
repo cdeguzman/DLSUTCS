@@ -14,7 +14,8 @@ var FacultyUserContainerView = Backbone.View.extend({
 		subViews: [],
 
 		initialize: function(){
-			var self = this;
+			this.userid = '97063932';
+			this.scode = '1';
 			this.render();
 		},
 
@@ -27,13 +28,16 @@ var FacultyUserContainerView = Backbone.View.extend({
 			this.subViews.push(new UserTabCategoryView({
 				el: "#facultyUserContainer",
 				model: App.userTabCategoryModel,
-				page: 'faculty'
+				page: 'faculty',
+
 			}));
 			
 			this.subViews.push(new UserInfoView({
 				el: "#userInfo",
 				model: App.userTabCategoryModel,
-				page: 'faculty'
+				page: 'faculty',
+				userid: this.userid,
+				scode: this.scode
 			}));
 			
 			this.subViews.push(new TableView({

@@ -512,6 +512,16 @@ function($, Backbone, Cookie, moment){
 	  		}
 			Core.request(req);
 		},
+
+		formatTime: function(time){
+			var minute = time.slice(-2);
+			var hour = time.slice(0, -2);
+			return hour + ":" + minute;
+		},
+
+		removeNonNumeric: function(string){
+			return string.replace(/[^0-9]+/g, '');
+		}
 	}
 	return Core;
 });

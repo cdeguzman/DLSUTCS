@@ -41,11 +41,25 @@ define(['jquery', 'backbone', 'underscore'], function($, Backbone){
 							]
 						}
 			        }
+			],
+			titles: [
+				{
+					page: 'faculty',
+					title: 'Areas and Percentages of Expertise'
+				},
+				{
+					page: 'student',
+					title: 'Name of Thesis Project'
+				}
 			]
 		},
 		
 		getTableData: function(tableId){
 			return _.findWhere(this.get("tables"), {tableId: tableId}).tableData;
+		},
+
+		getExtraTitle: function(page){
+			return _.findWhere(this.get('titles'), {page: page}).title;
 		}
 
 	});

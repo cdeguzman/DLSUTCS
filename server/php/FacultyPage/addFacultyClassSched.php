@@ -18,4 +18,5 @@
 			  VALUES
 			  ('$start_sy', '$end_sy', '$term', '$faculty_id', '$schedule_code', '$day', '$spec_date', '$start_time', 
 			   '$end_time', '$preferred_thesis_schedule', '$description')");
+  echo json_encode(mysql_insert_id());
 ?>

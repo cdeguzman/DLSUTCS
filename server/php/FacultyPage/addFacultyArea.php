@@ -7,5 +7,5 @@
    
    mysql_query("INSERT INTO faculty_area (faculty_id, area_code, area_level)
                 VALUES ('$faculty_id', '$area_code', '$area_level')");
-   
+   echo mysql_insert_id();
 ?>

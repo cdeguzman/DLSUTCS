@@ -17,7 +17,8 @@ var UserInfoView = Backbone.View.extend({
 
 		initialize: function(options){
 			this.page = options.page;
-			var self = this;
+			this.userid = options.userid;
+			this.scode = options.scode;
 			this.render();
 			$('#navTabs a').click(function (e) {
 				e.preventDefault();
@@ -32,32 +33,38 @@ var UserInfoView = Backbone.View.extend({
 			
 			this.subViews.push(new UserProfileView({
 				el: "#genInfo",
-				model: App.userModel
+				model: App.userModel,
+				userid: this.userid,
+				page: this.page
 			}));
 			
 			this.subViews.push(new ClassScheduleView({
 				el: "#classSched",
-				model: App.userModel
+				model: App.userModel,
+				userid: this.userid,
+				page: this.page,
+				scode: this.scode
 			}));
 			
 			this.subViews.push(new AreaOfExpertiseView({
 				el: "#areasExper",
-				model: App.userModel
-			}));
-			
-			this.subViews.push(new AreaOfExpertiseView({
-				el: "#areasExper",
-				model: App.userModel
+				model: App.userModel,
+				page: this.page,
+				userid: this.userid
 			}));
 			
 			this.subViews.push(new SettingsView({
 				el: "#settings",
-				model: App.userModel
+				model: App.userModel,
+				page: this.page,
+				userid: this.userid
 			}));
 			
 			this.subViews.push(new PasswordView({
 				el: "#password",
-				model: App.userModel
+				model: App.userModel,
+				page: this.page,
+				userid: this.userid
 			}));
 		},
 
