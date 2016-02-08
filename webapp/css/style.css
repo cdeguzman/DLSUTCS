@@ -1209,10 +1209,6 @@ select.faculty {
   background-color: #014023 !important;
 }
 
-input, form select {
-  max-width: 350px !important;
-}
-
 input[name="middlename"] {
    max-width: 50px !important;
 }

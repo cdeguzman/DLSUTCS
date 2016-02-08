@@ -21,7 +21,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Schedule</div>
 			<div class="panel-body">
-				<form style="width:50%;margin:0 auto;" class="form main">
+				<form style="width:50%;margin:0 auto;" class="form main" id="update">
 					<div class="form-group">
 						<label for="syId">School Year:  </label>
 						<label name="syId"></label>
@@ -34,7 +34,7 @@
 								<div class="col-xs-12">
 									<div class="form-group">
 										<label for="fterm-from-add">from:</label>
-										<div class='input-group date' id='fterm-from-add'>
+										<div class='input-group date' id='fterm_from_add'>
 											<input type='text' name="fterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -43,7 +43,7 @@
 									</div>
 									<div class="form-group">
 										<label for="fterm-to-add">To:</label>
-										<div class='input-group date' id='fterm-to-add'>
+										<div class='input-group date' id='fterm_to_add'>
 											<input type='text' name="fterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -62,7 +62,7 @@
 								<div class="col-xs-12">
 									<div class="form-group">
 										<label for="sterm-from-add">from:</label>
-										<div class='input-group date' id='sterm-from-add'>
+										<div class='input-group date' id='sterm_from_add'>
 											<input type='text' name="sterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -71,7 +71,7 @@
 									</div>
 									<div class="form-group">
 										<label for="sterm-to-add">To:</label>
-										<div class='input-group date' id='sterm-to-add'>
+										<div class='input-group date' id='sterm_to_add'>
 											<input type='text' name="sterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -92,7 +92,7 @@
 								<div class="col-xs-12">
 									<div class="form-group">
 										<label for="tterm-from-add">from:</label>
-										<div class='input-group date' id='tterm-from-add'>
+										<div class='input-group date' id='tterm_from_add'>
 											<input type='text' name="tterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -101,7 +101,7 @@
 									</div>
 									<div class="form-group">
 										<label for="tterm-to-add">To:</label>
-										<div class='input-group date' id='tterm-to-add'>
+										<div class='input-group date' id='tterm_to_add'>
 											<input type='text' name="tterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -115,7 +115,7 @@
 
 					<div class="row">
 						<div class="form-group">
-							<button id="update" type="submit" class="btn btn-default">Update Changes</button>
+							<button type="submit" class="btn btn-default">Update changes</button>
 						</div>
 					</div>
 				</form>
@@ -147,7 +147,7 @@
 								<div class="col-xs-12">
 									<div class="form-group">
 										<label for="fterm-from-add">from:</label>
-										<div class='input-group date' id='fterm-from-add'>
+										<div class='input-group date' id='fterm_from_add'>
 											<input type='text' name="fterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -156,7 +156,7 @@
 									</div>
 									<div class="form-group">
 										<label for="fterm-to-add">To:</label>
-										<div class='input-group date' id='fterm-to-add'>
+										<div class='input-group date' id='fterm_to_add'>
 											<input type='text' name="fterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -175,7 +175,7 @@
 								<div class="col-xs-12">
 									<div class="form-group">
 										<label for="sterm-from-add">from:</label>
-										<div class='input-group date' id='sterm-from-add'>
+										<div class='input-group date' id='sterm_from_add'>
 											<input type='text' name="sterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -184,14 +184,12 @@
 									</div>
 									<div class="form-group">
 										<label for="sterm-to-add">To:</label>
-										<div class='input-group date' id='sterm-to-add'>
+										<div class='input-group date' id='sterm_to_add'>
 											<input type='text' name="sterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
 										</div>
-									</div>
-									<div>
 									</div>
 								</div>
 							</div>
@@ -205,7 +203,7 @@
 								<div class="col-xs-12">
 									<div class="form-group">
 										<label for="tterm-from-add">from:</label>
-										<div class='input-group date' id='tterm-from-add'>
+										<div class='input-group date' id='tterm_from_add'>
 											<input type='text' name="tterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -214,7 +212,7 @@
 									</div>
 									<div class="form-group">
 										<label for="tterm-to-add">To:</label>
-										<div class='input-group date' id='tterm-to-add'>
+										<div class='input-group date' id='tterm_to_add'>
 											<input type='text' name="tterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>

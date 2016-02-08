@@ -167,6 +167,7 @@ define([
 		getSchoolYearBySYUrl: '/server/php/SchoolYearInfo/getSchoolYearBySY.php',
 		getTermSchedPerSYUrl: '/server/php/SchoolYearInfo/getTermSchedPerSY.php',
 		updateTermSchedPerSYUrl: '/server/php/SchoolYearInfo/updateTermSchedPerSY.php',
+		updateSchoolYearUrl: '/server/php/SchoolYearInfo/updateSchoolYear.php',
 		getMaxTermUrl: '/server/php/SchoolYearInfo/getMaxTerm.php',
 		getMaxTermByYearUrl: '/server/php/SchoolYearInfo/getMaxTermByYear.php',
 		// end School Year

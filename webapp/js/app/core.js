@@ -229,21 +229,28 @@ function($, Backbone, Cookie, moment){
 			    return  false;
 			});
 			this.defaultVal = undefined;
-			$(document).on("click", ".top-drop select#schoolyear", function(e){
-				self.defaultVal = $('.top-drop select#schoolyear :selected').val();
+
+			this.renderMaxTerm();
+			this.renderYear();
+
+			$(document).on("click", ".top-drop select#schoolyearmain", function(e){
+				self.defaultVal = $('.top-drop select#schoolyearmain :selected').val();
 			});
 
-			$(document).on("change", ".top-drop select#schoolyear", function(e){
+			/*$(document).on("change", ".top-drop>select#schoolyear", function(e){
+				
+			});*/
+
+			$('.top-drop>select#schoolyearmain').change(function(e){
 				var action = confirm("Proceed on changing Shool Year and Term?");
 				if (action) {
 			   		self.selectTermByYear();
 			   	} else {
-			   		$('.top-drop select#schoolyear').val(self.defaultVal);
+			   		$('.top-drop select#schoolyearmain').val(self.defaultVal);
 			   	}
 			});
 
-			this.renderMaxTerm();
-			this.renderYear();
+
 
 		},
 	
@@ -473,7 +480,7 @@ function($, Backbone, Cookie, moment){
 					if(i==0) isYearExist = true;
 					if(isYearExist){
 						if($.inArray(r.start_sy, temp) === -1) temp.push(r.start_sy);
-						$('.top-drop select#schoolyear').append('<option value='+r.start_sy+'>'+r.start_sy+' - '+r.end_sy+'</option>');
+						$('.top-drop select#schoolyearmain').append('<option value='+r.start_sy+'>'+r.start_sy+' - '+r.end_sy+'</option>');
 					}
 				});
 				self.selectTermByYear();
@@ -499,7 +506,7 @@ function($, Backbone, Cookie, moment){
 		},
 
 		selectTermByYear: function(){
-			var year = $('.top-drop select#schoolyear :selected').val();
+			var year = $('.top-drop select#schoolyearmain :selected').val();
 			var req = new Array();
 			req.url = App.getMaxTermByYearUrl;
 			req.dataType = "JSON";

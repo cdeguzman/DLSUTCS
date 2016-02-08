@@ -6,6 +6,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			'submit #update' : 'submitFormUpdate',
 			'submit #add' : 'submitFormAdd',
 			'click #sylist option' : 'fillForm',
+			'click button#deleteYear' : 'deleteSchoolYear',
 		},
 
 		years: new Array(),
@@ -19,19 +20,20 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		render: function(){
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
-			$('#fterm-from').datetimepicker();
-			$('#fterm-to').datetimepicker();
-			$('#sterm-from').datetimepicker();
-			$('#sterm-to').datetimepicker();
-			$('#tterm-from').datetimepicker();
-			$('#tterm-to').datetimepicker();
 
-			$('#fterm-from-add').datetimepicker();
-			$('#fterm-to-add').datetimepicker();
-			$('#sterm-from-add').datetimepicker();
-			$('#sterm-to-add').datetimepicker();
-			$('#tterm-from-add').datetimepicker();
-			$('#tterm-to-add').datetimepicker();
+			$('.main #fterm_from_add').datetimepicker();
+			$('.main #fterm_to_add').datetimepicker();
+			$('.main #sterm_from_add').datetimepicker();
+			$('.main #sterm_to_add').datetimepicker();
+			$('.main #tterm_from_add').datetimepicker();
+			$('.main #tterm_to_add').datetimepicker();
+
+			$('#addSchoolYear #fterm_from_add').datetimepicker();
+			$('#addSchoolYear #fterm_to_add').datetimepicker();
+			$('#addSchoolYear #sterm_from_add').datetimepicker();
+			$('#addSchoolYear #sterm_to_add').datetimepicker();
+			$('#addSchoolYear #tterm_from_add').datetimepicker();
+			$('#addSchoolYear #tterm_to_add').datetimepicker();
 
 			this.renderYear();
 		},
@@ -63,21 +65,46 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			$('label[name="syId"]').text(fid+" - "+(parseInt(fid)+1));
 			$('input[name="syId"]').val(fid);
 
-			for (var i = 1; i <= 3; i++) {
-				var req = new Array();
-				req.url = App.getSchoolYearBySYUrl;
-				req.type = "GET"
-				req.dataType = "JSON";
-				req.data = {'start_sy': fid, 'term': i};
-				req.success = function(res){
-					_.each(res, function(r) { 
-						$('.main input[name="fterm_from_add"]').val(r.start_date);
-						$('.main input[name="fterm_to_add"]').val(r.end_date);
-						
-					});
-				}
-				Core.request(req);
+			
+			var req = new Array();
+			req.url = App.getSchoolYearBySYUrl;
+			req.type = "GET"
+			req.dataType = "JSON";
+			req.data = {'start_sy': fid, 'term': 1};
+			req.success = function(res){
+				_.each(res, function(r) { 
+					$('.main input[name="fterm_from_add"]').val(r.start_date);
+					$('.main input[name="fterm_to_add"]').val(r.end_date);
+				});
 			}
+			Core.request(req);
+
+			var req = new Array();
+			req.url = App.getSchoolYearBySYUrl;
+			req.type = "GET"
+			req.dataType = "JSON";
+			req.data = {'start_sy': fid, 'term': 2};
+			req.success = function(res){
+				_.each(res, function(r) { 
+					$('.main input[name="sterm_from_add"]').val(r.start_date);
+					$('.main input[name="sterm_to_add"]').val(r.end_date);
+				});
+			}
+			Core.request(req);
+
+			var req = new Array();
+			req.url = App.getSchoolYearBySYUrl;
+			req.type = "GET"
+			req.dataType = "JSON";
+			req.data = {'start_sy': fid, 'term': 3};
+			req.success = function(res){
+				_.each(res, function(r) { 
+					$('.main input[name="tterm_from_add"]').val(r.start_date);
+					$('.main input[name="tterm_to_add"]').val(r.end_date);
+				});
+			}
+			Core.request(req);
+			
 
 		},
 
@@ -118,6 +145,68 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 				alert("School Year already exists");
 			}
 			
+		},
+
+		submitFormUpdate: function() {
+			var $inputs = $('.main :input');
+			var values = {};
+			$inputs.each(function() {
+				values[this.name] = $(this).val();
+			});
+
+			values.fterm_from_add = Core.toYMD(values.fterm_from_add);
+			values.fterm_to_add = Core.toYMD(values.fterm_to_add);
+			values.sterm_from_add = Core.toYMD(values.sterm_from_add);
+			values.sterm_to_add = Core.toYMD(values.sterm_to_add);
+			values.tterm_from_add = Core.toYMD(values.tterm_from_add);
+			values.tterm_to_add = Core.toYMD(values.tterm_to_add);
+
+			var req = new Array();
+			req.url = App.updateSchoolYearUrl;
+			req.type = "POST";
+			req.data = values;
+			req.dataType = "JSON";
+			var self = this;
+			req.success = function(res){
+				if(res == 3){
+					alert("Success!");
+					self.renderYear();
+				}else{
+					alert("Error Occur!");
+				}
+			}
+			Core.request(req);
+			$('form')[0].reset();
+			
+		},
+
+		deleteSchoolYear: function(){
+			$('form')[0].reset();
+			$('label[name="syId"]').text("");
+			var id = $('select#sylist :selected').val();
+			if(id == undefined){
+				alert('No selected year.');
+				return false;
+			}
+
+			var action = confirm("Are you sure?");
+			if (action) {
+				var req = new Array();
+				req.url = App.deleteSchoolYearUrl;
+				req.type = "POST";
+				req.data = {'start_sy': id};
+				req.dataType = "JSON";
+				var self = this;
+				req.success = function(res){
+					if(res == 1){
+						alert("Success!");
+						self.renderYear();
+					}else{
+						alert("Error Occur!");
+					}
+				}
+				Core.request(req);
+			}
 		},
 
 		IfNotSyExist: function(year){
