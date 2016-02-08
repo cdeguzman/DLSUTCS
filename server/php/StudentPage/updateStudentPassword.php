@@ -6,11 +6,11 @@
 	 $secret_answer = $_POST["secret_answer"];
    	 $id = $_GET["id"];
     
-	 mysql_query("UPDATE student SET 
+	 $result = mysql_query("UPDATE student SET 
 	                 secret_password='$secret_password', 
 					 secret_question='$secret_question',
 					 secret_answer='$secret_answer'
 				  WHERE id='$id'");
-        
+    echo json_encode($result);
 
 ?>

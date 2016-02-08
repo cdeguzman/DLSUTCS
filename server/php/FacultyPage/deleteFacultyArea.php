@@ -3,6 +3,7 @@
   include("../connect.php");
    $id = $_GET["id"];
    
-   mysql_query("DELETE FROM faculty_area WHERE id='$id'");
+   $result = mysql_query("DELETE FROM faculty_area WHERE id='$id'");
    
+   echo json_encode($result);
 ?>

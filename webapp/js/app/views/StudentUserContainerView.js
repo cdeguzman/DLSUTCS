@@ -14,7 +14,8 @@ var StudentUserContainerView = Backbone.View.extend({
 		subViews: [],
 
 		initialize: function(){
-			var self = this;
+			this.userid = '201412345';
+			this.scode = '1';
 			this.render();
 		},
 
@@ -33,7 +34,9 @@ var StudentUserContainerView = Backbone.View.extend({
 			this.subViews.push(new UserInfoView({
 				el: "#userInfo",
 				model: App.userTabCategoryModel,
-				page: 'student'
+				page: 'student',
+				userid: this.userid,
+				scode: this.scode
 			}));
 			
 			this.subViews.push(new TableView({

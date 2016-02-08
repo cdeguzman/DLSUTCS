@@ -67,8 +67,12 @@ define([
 		getFacultyInfoUrl: '/server/php/FacultyPage/getFacultyInfo.php',
 		addAdviserRosterUrl: '/server/php/FacultyPage/addAdviserRoster.php',
 		addNewFacultyInfoUrl: '/server/php/FacultyPage/addNewFacultyInfo.php',
+		addFacultyClassSchedUrl: '/server/php/FacultyPage/addFacultyClassSched.php',
+		addFacultyAreaUrl: '/server/php/FacultyPage/addFacultyArea.php',
 		addPanelRosterUrl: '/server/php/FacultyPage/addPanelRoster.php',
 		deleteFacultyUrl: '/server/php/FacultyPage/deleteFaculty.php',
+		deleteFacultySchedUrl: '/server/php/FacultyPage/deleteFacultySched.php',
+		deleteFacultyAreaUrl: '/server/php/FacultyPage/deleteFacultyArea.php',
 		deleteThesisAdviserUrl: '/server/php/FacultyPage/deleteThesisAdviser.php',
 		getAdviserRosterUrl: '/server/php/FacultyPage/getAdviserRoster.php',
 		getAllFacultyUrl: '/server/php/FacultyPage/getAllFaculty.php',
@@ -76,9 +80,12 @@ define([
 		getFacultyByDeptUrl: '/server/php/FacultyPage/getFacultyByDept.php',
 		getFacultyClassSchedUrl: '/server/php/FacultyPage/getFacultyClassSched.php',
 		getFacultyPreferredDefSchedUrl: '/server/php/FacultyPage/getFacultyPreferredDefSched.php',
+		getFacultyPasswordUrl: '/server/php/FacultyPage/getFacultyPassword.php',
 		getPanelRosterUrl: '/server/php/FacultyPage/getPanelRoster.php',
 		getThesisAdviserUrl: '/server/php/FacultyPage/getThesisAdviser.php',
 		updateFacultyInfoUrl: '/server/php/FacultyPage/updateFacultyInfo.php',
+		updateFacultyAreaUrl: '/server/php/FacultyPage/updateFacultyArea.php',
+		updateFacultyPasswordUrl: '/server/php/FacultyPage/updateFacultyPassword.php',
 		// end FacultyPage Records
 
 		// Flowchart
@@ -166,14 +173,18 @@ define([
 		// Student
 		addNewEnrolledStudentInThesisUrl: '/server/php/StudentPage/addNewEnrolledStudentInThesis.php',
 		addNewStudentInfoUrl: '/server/php/StudentPage/addNewStudentInfo.php',
+		addStudentClassSchedUrl: '/server/php/StudentPage/addStudentClassSched.php',
 		deleteStudentUrl: '/server/php/StudentPage/deleteStudent.php',
+		deleteStudentSchedUrl: '/server/php/StudentPage/deleteStudentSched.php',
 		deleteStudentFromThesisEnrollmentUrl: '/server/php/StudentPage/deleteStudentFromThesisEnrollment.php',
 		getEnrolledStudentsUrl: '/server/php/StudentPage/getEnrolledStudents.php',
 		getStudentBySpecializationUrl: '/server/php/StudentPage/getStudentBySpecialization.php',
 		getStudentClassSchedUrl: '/server/php/StudentPage/getStudentClassSched.php',
 		getStudentInfoUrl: '/server/php/StudentPage/getStudentInfo.php',
 		getStudentThesisTitleUrl: '/server/php/StudentPage/getStudentThesisTitle.php',
+		getStudentPasswordUrl: '/server/php/StudentPage/getStudentPassword.php',
 		updateStudentInfoUrl: '/server/php/StudentPage/updateStudentInfo.php',
+		updateStudentPasswordUrl: '/server/php/StudentPage/updateStudentPassword.php',
 		// end Student
 
 		// SubArea
