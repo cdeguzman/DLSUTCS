@@ -283,7 +283,6 @@ define([
 		},
 
 		cleanView: function(){
-			console.log(this.views);
 			_.each(this.views, function(view){
 				view.close();
 			});

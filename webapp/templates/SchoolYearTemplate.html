@@ -4,7 +4,6 @@
 			<div class="panel-heading">School Year List:</div>
 			<div class="panel-body">
 				<select id="sylist" multiple class="faculty form-control">
-					<option></option>
 				</select>
 			</div>
 			<div style="padding-bottom: 10px;" class="row">
@@ -22,10 +21,11 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Schedule</div>
 			<div class="panel-body">
-				<form style="width:50%;margin:0 auto;" class="form">
+				<form style="width:50%;margin:0 auto;" class="form main">
 					<div class="form-group">
-						<label for="syId">School Year </label>
-						<label name="syId"><u>1980</u></label>
+						<label for="syId">School Year:  </label>
+						<label name="syId"></label>
+						<input type="hidden" name="syId">
 					</div>
 					<div class="row">
 						<div class="panel panel-default">
@@ -33,18 +33,18 @@
 							<div class="panel-body">
 								<div class="col-xs-12">
 									<div class="form-group">
-										<label for="fterm-from">from:</label>
-										<div class='input-group date' id='fterm-from'>
-											<input type='text' name="fterm-from" class="form-control max_width" />
+										<label for="fterm-from-add">from:</label>
+										<div class='input-group date' id='fterm-from-add'>
+											<input type='text' name="fterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="fterm-to">To:</label>
-										<div class='input-group date' id='fterm-to'>
-											<input type='text' name="fterm-to" class="form-control max_width" />
+										<label for="fterm-to-add">To:</label>
+										<div class='input-group date' id='fterm-to-add'>
+											<input type='text' name="fterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -61,18 +61,18 @@
 							<div class="panel-body">
 								<div class="col-xs-12">
 									<div class="form-group">
-										<label for="sterm-from">from:</label>
-										<div class='input-group date' id='sterm-from'>
-											<input type='text' name="sterm-from" class="form-control max_width" />
+										<label for="sterm-from-add">from:</label>
+										<div class='input-group date' id='sterm-from-add'>
+											<input type='text' name="sterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="sterm-to">To:</label>
-										<div class='input-group date' id='sterm-to'>
-											<input type='text' name="sterm-to" class="form-control max_width" />
+										<label for="sterm-to-add">To:</label>
+										<div class='input-group date' id='sterm-to-add'>
+											<input type='text' name="sterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -91,18 +91,18 @@
 							<div class="panel-body">
 								<div class="col-xs-12">
 									<div class="form-group">
-										<label for="tterm-from">from:</label>
-										<div class='input-group date' id='tterm-from'>
-											<input type='text' name="tterm-from" class="form-control max_width" />
+										<label for="tterm-from-add">from:</label>
+										<div class='input-group date' id='tterm-from-add'>
+											<input type='text' name="tterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="tterm-to">To:</label>
-										<div class='input-group date' id='tterm-to'>
-											<input type='text' name="tterm-to" class="form-control max_width" />
+										<label for="tterm-to-add">To:</label>
+										<div class='input-group date' id='tterm-to-add'>
+											<input type='text' name="tterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -135,8 +135,10 @@
 			<div class="modal-body">
 				<form id="add" style="width:50%;margin:0 auto;" class="form">
 					<div class="form-group">
-						<label for="syId">School Year </label>
-						<input type="text" class="form-control" name="syId" required>
+						<label for="">School Year </label>
+						<input type="text" class="form-control" name="start_sy" placeholder="from" pattern="[0-9]+" maxlength="4" minlength="4" required>
+						<br>
+						<input type="text" class="form-control" name="end_sy" placeholder="to" pattern="[0-9]+" maxlength="4" minlength="4" required>
 					</div>
 					<div class="row">
 						<div class="panel panel-default">
@@ -146,7 +148,7 @@
 									<div class="form-group">
 										<label for="fterm-from-add">from:</label>
 										<div class='input-group date' id='fterm-from-add'>
-											<input type='text' name="fterm-from-add" class="form-control" />
+											<input type='text' name="fterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -155,7 +157,7 @@
 									<div class="form-group">
 										<label for="fterm-to-add">To:</label>
 										<div class='input-group date' id='fterm-to-add'>
-											<input type='text' name="fterm-to-add" class="form-control" />
+											<input type='text' name="fterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -174,7 +176,7 @@
 									<div class="form-group">
 										<label for="sterm-from-add">from:</label>
 										<div class='input-group date' id='sterm-from-add'>
-											<input type='text' name="sterm-from-add" class="form-control" />
+											<input type='text' name="sterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -183,7 +185,7 @@
 									<div class="form-group">
 										<label for="sterm-to-add">To:</label>
 										<div class='input-group date' id='sterm-to-add'>
-											<input type='text' name="sterm-to-add" class="form-control" />
+											<input type='text' name="sterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -204,7 +206,7 @@
 									<div class="form-group">
 										<label for="tterm-from-add">from:</label>
 										<div class='input-group date' id='tterm-from-add'>
-											<input type='text' name="tterm-from-add" class="form-control" />
+											<input type='text' name="tterm_from_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -213,7 +215,7 @@
 									<div class="form-group">
 										<label for="tterm-to-add">To:</label>
 										<div class='input-group date' id='tterm-to-add'>
-											<input type='text' name="tterm-to-add" class="form-control" />
+											<input type='text' name="tterm_to_add" class="form-control" required/>
 											<span class="input-group-addon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
@@ -223,12 +225,11 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button id="name" type="submit" class="btn btn-default">Save changes</button>
-				</div>
-			</form>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-default">Save changes</button>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
