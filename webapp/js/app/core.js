@@ -96,7 +96,8 @@ function($, Backbone, Cookie, moment){
 			'SettingsTemplate',
 			'PasswordTemplate',
 			'custom_controls/MultiCheckSelectBoxTemplate',
-			'DRSTemplate'
+			'DRSTemplate',
+			'LoginTemplate'
 		],
 		templates: [],
 		loadedTemplateCount: 0,

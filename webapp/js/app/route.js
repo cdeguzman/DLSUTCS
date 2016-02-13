@@ -27,7 +27,8 @@ define([
 	'views/DefenseHistoryView',
 	'views/UpdateThesisGradeView',
 	'views/FacultyUserContainerView',
-	'views/StudentUserContainerView'
+	'views/StudentUserContainerView',
+	'views/LoginView'
 	], 
 
 	function(Backbone, HeaderView, 
@@ -35,15 +36,17 @@ define([
 		RoomRecordView, HolidayRecordView, AdministrationPositionRecordView, GeneralAreaRecordView, SubAreaRecordView, 
 		RankRecordView, CourseRecordView, CourseOfferingRecordView, FlowchartRecordView, GeneralScheduleView,
 		SchoolYearView, StudentScheduleView, AdviserRosterView, PanelRosterView, ThesisEnrollmentView, ThesisScheduleView, BarcodeView,
-		DefenseHistoryView, UpdateThesisGradeView, FacultyUserContainerView, StudentUserContainerView){
+		DefenseHistoryView, UpdateThesisGradeView, FacultyUserContainerView, StudentUserContainerView, LoginView){
 
 		var ApplicationRouter = Backbone.Router.extend({
 
 			views : [],
 
 			routes:{
-				"" : "home",
-				"/" : "home",
+				""	: "login",
+				"/"	: "login",
+				//"" : "home",
+				//"/" : "home",
 				"faculty" : "facultyRecordView",
 				"student" : "studentRecordView",
 				"thesis" : "thesisGroupView",
@@ -99,6 +102,13 @@ define([
 
 			this.loadView(new FooterView({
 				el: "#footer",
+			}));
+		},
+
+		login : function(){
+			this.loadHeaderFooterTemplate();
+			this.loadView(new LoginView({
+				el: "#contentContainer",
 			}));
 		},
 
