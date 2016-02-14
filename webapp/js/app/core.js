@@ -251,24 +251,27 @@ function($, Backbone, Cookie, moment){
 			   	}
 			});
 
-
+			this.destroySession();
 
 		},
 	
 		// function that create a cookie to establish a user session
 		createSession: function(session){
-		   Cookie.set('sessionCookie', session.id);
-		   Cookie.set('loggedInUserEmail', session.email);
-           if(session.isAdmin){
+		   Cookie.set('userid', session.id);
+		   Cookie.set('username', session.username);
+           if(session.role){
 			   Core.log.debug("Running in Admin Mode");
 			   Cookie.set('isAdmin', "true");
+			   if(session.role == "admin"){
+			   	 Cookie.set('role', session.role);
+			   }
            }
 		},
 
 		//call this to check if user session exists.
 		checkSession: function(){
 		   var isSessionValid = false; // if session exists
-		   if( Cookie.get('sessionCookie')!==undefined && Cookie.get('sessionCookie')!==null && Cookie.get('sessionCookie')!=="null"){
+		   if( Cookie.get('userid')!==undefined && Cookie.get('userid')!==null && Cookie.get('userid')!=="null"){
 		      // put additional checks for session here.
 		      isSessionValid = true;
 		   }
@@ -281,10 +284,10 @@ function($, Backbone, Cookie, moment){
 
 		//call this to destroy session
 		destroySession: function(){
-		   Cookie.remove('sessionCookie');
-		   Cookie.remove('loggedInUserEmail');
-		   Cookie.remove('patientColumnsVisibility');
+		   Cookie.remove('userid');
+		   Cookie.remove('username');
 		   Cookie.remove('isAdmin');
+		   Cookie.remove('role');
 		},
 
 		// unbinds and removes a view
@@ -529,7 +532,15 @@ function($, Backbone, Cookie, moment){
 
 		removeNonNumeric: function(string){
 			return string.replace(/[^0-9]+/g, '');
-		}
+		},
+
+		checkCredential: function(){
+			if(!this.checkSession()){
+				alert("Session Expired");
+				this.router.routeTo('/');
+			}
+			return false;
+		},
 	}
 	return Core;
 });

@@ -45,8 +45,7 @@ define([
 			routes:{
 				""	: "login",
 				"/"	: "login",
-				//"" : "home",
-				//"/" : "home",
+				"home"	: "home",
 				"faculty" : "facultyRecordView",
 				"student" : "studentRecordView",
 				"thesis" : "thesisGroupView",
@@ -86,7 +85,7 @@ define([
 
 		routeTo: function(route) {
 			var isRoutingToSamePlace = (route == Backbone.history.fragment);
-			if (isRoutingToSamePlace){
+			if (isRoutingToSamePlace) {
 				var path = eval("Core.router.routes."+route);
 				eval("this."+path+"()");
 			}else{
@@ -106,9 +105,12 @@ define([
 		},
 
 		login : function(){
-			this.loadHeaderFooterTemplate();
+			this.cleanView();
 			this.loadView(new LoginView({
 				el: "#contentContainer",
+			}));
+			this.loadView(new FooterView({
+				el: "#footer",
 			}));
 		},
 
@@ -117,6 +119,7 @@ define([
 			this.loadView(new HomeView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		facultyRecordView: function(){
@@ -125,6 +128,7 @@ define([
 				el: "#contentContainer",
 				model: App.facultyModel
 			}));
+			Core.checkCredential();
 		},
 
 		studentRecordView: function(){
@@ -132,6 +136,7 @@ define([
 			this.loadView(new StudentRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		thesisGroupView: function(){
@@ -139,6 +144,7 @@ define([
 			this.loadView(new ThesisGroupView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		roomRecordView: function(){
@@ -146,6 +152,7 @@ define([
 			this.loadView(new RoomRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		holidayRecordView: function(){
@@ -153,6 +160,7 @@ define([
 			this.loadView(new HolidayRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		administrationPositionRecordView: function(){
@@ -160,6 +168,7 @@ define([
 			this.loadView(new AdministrationPositionRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		generalAreaRecordView: function(){
@@ -167,6 +176,7 @@ define([
 			this.loadView(new GeneralAreaRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		subAreaRecordView: function(){
@@ -174,6 +184,7 @@ define([
 			this.loadView(new SubAreaRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		rankRecordView: function(){
@@ -181,6 +192,7 @@ define([
 			this.loadView(new RankRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		courseRecordView: function(){
@@ -188,13 +200,16 @@ define([
 			this.loadView(new CourseRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		courseOfferingRecordView: function(){
+			
 			this.loadHeaderFooterTemplate();
 			this.loadView(new CourseOfferingRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		flowchartRecordView: function(){
@@ -202,6 +217,7 @@ define([
 			this.loadView(new FlowchartRecordView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		generalScheduleView: function(){
@@ -209,6 +225,7 @@ define([
 			this.loadView(new GeneralScheduleView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		schoolYearView: function(){
@@ -216,6 +233,7 @@ define([
 			this.loadView(new SchoolYearView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		studentScheduleView: function(){
@@ -223,6 +241,7 @@ define([
 			this.loadView(new StudentScheduleView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		adviserRosterView: function(){
@@ -230,6 +249,7 @@ define([
 			this.loadView(new AdviserRosterView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		panelRosterView: function(){
@@ -237,13 +257,15 @@ define([
 			this.loadView(new PanelRosterView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
-		thesisEnrollmentView: function(){
+		thesisEnrollmentView: function(){	
 			this.loadHeaderFooterTemplate();
 			this.loadView(new ThesisEnrollmentView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		thesisScheduleView: function(){
@@ -251,13 +273,15 @@ define([
 			this.loadView(new ThesisScheduleView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
-		barcodeView: function(){
+		barcodeView: function(){	
 			this.loadHeaderFooterTemplate();
 			this.loadView(new BarcodeView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		defenseHistoryView: function(){
@@ -265,6 +289,7 @@ define([
 			this.loadView(new DefenseHistoryView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		updateThesisGradeView: function(){
@@ -272,6 +297,7 @@ define([
 			this.loadView(new UpdateThesisGradeView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 		
 		facultyUserView: function(){
@@ -279,6 +305,7 @@ define([
 			this.loadView(new FacultyUserContainerView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 		
 		studentUserView: function(){
@@ -286,6 +313,7 @@ define([
 			this.loadView(new StudentUserContainerView({
 				el: "#contentContainer",
 			}));
+			Core.checkCredential();
 		},
 
 		loadView: function(view){

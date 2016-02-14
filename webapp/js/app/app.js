@@ -15,6 +15,12 @@ define([
 	
 		/*API URL's*/
 
+		// Admin
+		getCredentialUrl: '/server/php/Admin/getCredential.php',
+		getCredential2Url: '/server/php/Admin/getCredential2.php',
+		getCredential3Url: '/server/php/Admin/getCredential3.php',
+		// end Admin
+
 		// Add Records
 		addDeptUrl: '/server/php/AddRecords/AddDept.php',
 		addGeneralAreaUrl: '/server/php/AddRecords/AddGeneralArea.php',
