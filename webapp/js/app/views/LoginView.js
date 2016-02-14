@@ -20,8 +20,13 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 
 		login: function(e){
 			Core.destroySession();
-			var form = $(e.currentTarget);
-			var data = form.serialize();
+
+			var $inputs = $('.form-signin :input');
+			var data = {};
+			$inputs.each(function() {
+				data[this.name] = $(this).val();
+			});
+
 
 			var req = new Array();
 			req.url = App.getCredentialUrl;
@@ -34,7 +39,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 					alert("Admin!");
 					var session = new Array();
 					session.id = res;
-					session.username = $('.form-signin').find('#username').val();
+					session.username = data.username;
 					session.role = "admin";
 					Core.createSession(session);
 					Core.router.routeTo("home");
@@ -58,7 +63,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 					alert("faculty!");
 					var session = new Array();
 					session.id = res;
-					session.username = $('.form-signin').find('#username').val();
+					session.username = data.username;
 					session.role = "faculty";
 					Core.createSession(session);
 					Core.router.routeTo("user/faculty");
@@ -82,7 +87,8 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 					alert("student!");
 					var session = new Array();
 					session.id = res;
-					session.username = $('.form-signin').find('#username').val();
+					session.username = data.username;
+					console.log(data.username)
 					session.role = "student";
 					Core.createSession(session);
 					Core.router.routeTo("user/student");

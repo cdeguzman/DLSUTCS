@@ -260,11 +260,11 @@ function($, Backbone, Cookie, moment){
 		   Cookie.set('userid', session.id);
 		   Cookie.set('username', session.username);
            if(session.role){
-			   Core.log.debug("Running in Admin Mode");
-			   Cookie.set('isAdmin', "true");
 			   if(session.role == "admin"){
-			   	 Cookie.set('role', session.role);
+			   	 Core.log.debug("Running in Admin Mode");
+			   	 Cookie.set('isAdmin', "true");
 			   }
+			   Cookie.set('role', session.role);
            }
 		},
 
@@ -288,6 +288,7 @@ function($, Backbone, Cookie, moment){
 		   Cookie.remove('username');
 		   Cookie.remove('isAdmin');
 		   Cookie.remove('role');
+		   this.router.routeTo('/');
 		},
 
 		// unbinds and removes a view
