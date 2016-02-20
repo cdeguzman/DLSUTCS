@@ -40,6 +40,16 @@ define(['jquery', 'backbone', 'underscore'], function($, Backbone){
 							       ["CTTHES0", "Virtual Design of a Low Rise Traction Elevator", "Gonzales, Emanuel A"]
 							]
 						}
+			        },
+			        {
+		        tableId: "UserListTable",
+		        tableData: {
+		        	cols: ["User ID", "Full Name", "User Role"],
+		        	rows: [
+		        		["123456789", "Juan Dela Cruz", "Faculty"],
+		        		["234567890", "Jose P. Rizal", "Student"],
+		        	]
+		        }
 			        }
 			],
 			titles: [

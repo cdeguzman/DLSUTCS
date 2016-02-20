@@ -132,6 +132,7 @@ define([
 		getSelectedThesisDetailsUrl: '/server/php/QueryRecords/getSelectedThesisDetails.php',
 		getSpecializationUrl: '/server/php/QueryRecords/getSpecialization.php',
 		getStudentListUrl: '/server/php/QueryRecords/getStudentList.php',
+		getStudentAndFacultyListUrl: '/server/php/QueryRecords/getStudentAndFacultyList.php',
 		getTermUrl: '/server/php/QueryRecords/getTerm.php',
 		getThesisGroupListUrl: '/server/php/QueryRecords/getThesisGroupList/php',
 		getThesisListurl: '/server/php/QueryRecords/getThesisList.php',
@@ -219,7 +220,14 @@ define([
 		updateThesisInfoUrl: '/server/php/ThesisInformation/updateThesisInfo.php',
 		// end ThesisInfo Records
 
-	
+		// DRS
+		getChatListUrl: '/server/php/Chat/getChatList.php',
+		getChatMemberUrl: '/server/php/Chat/getChatMember.php',
+		getConversationUrl: '/server/php/Chat/getConversation.php',
+		addChatUrl: '/server/php/Chat/addChat.php',
+		addChatMemberUrl: '/server/php/Chat/addChatMember.php',
+		addChatMembersUrl: '/server/php/Chat/addChatMembers.php',
+		addChatMessageUrl: '/server/php/Chat/addChatMessage.php',
 		/*Initialize site wide models*/
 		initializeModels: function(){
 			//Initialize Application Models

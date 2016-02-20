@@ -3,9 +3,10 @@ define(['jquery', 'backbone', 'bootstrap-dialog',
         'views/faculty/UserInfoView', 
         'views/faculty/TableView',
         'views/SearchView',
-        'views/DRSView'], 
+        'views/DRSView',
+        'jscookie'], 
 		function($, Backbone, BootstrapDialog, 
-				UserTabCategoryView, UserInfoView, TableView, SearchView, DRSView){
+				UserTabCategoryView, UserInfoView, TableView, SearchView, DRSView, Cookie){
 
 var FacultyUserContainerView = Backbone.View.extend({
 
@@ -14,7 +15,7 @@ var FacultyUserContainerView = Backbone.View.extend({
 		subViews: [],
 
 		initialize: function(){
-			this.userid = '97063932';
+			this.userid = Cookie.get('userid');
 			this.scode = '1';
 			this.render();
 		},
@@ -73,7 +74,9 @@ var FacultyUserContainerView = Backbone.View.extend({
 			}));
 			
 			this.subViews.push(new DRSView({
-				el: "#docRoute"
+				el: "#docRoute",
+				page: 'faculty',
+				userid: this.userid
 			}));
 
 		},
