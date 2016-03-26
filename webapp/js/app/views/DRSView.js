@@ -24,7 +24,16 @@ var DRSView = Backbone.View.extend({
 			this.isFaculty = options.page=='faculty';
 			this.userid = options.userid;
 			this.render();
+			var self = this;
 			$('#addedUserList').empty();
+			setInterval(function(){
+				var drs = $('#navTabs li a[href=#docRoute]').parent().hasClass('active');
+				if (drs) {
+					var id = $('#chatlist li.currentroom').data('id');
+					self.renderConversation(id);
+				}
+			}, 5000);
+			$('div#docRoute').css('overflow', 'hidden');
 		},
 
 		render: function(){
@@ -53,8 +62,9 @@ var DRSView = Backbone.View.extend({
 						</li>\
 					<% }); %>';
 					chatList.append(_.template(tmp)({chatList:res}));
-					var chatId = $('#chatlist li:first').data('id');
-					self.renderConversation(chatId);
+					var room = $('#chatlist li:first');
+					room.addClass('currentroom');
+					self.renderConversation(room.data('id'));
 				}
 			};
 			Core.request(req);
@@ -64,23 +74,29 @@ var DRSView = Backbone.View.extend({
 			var self = this;
 			var conversation = $('#conversation');
 			conversation.empty();
-			var req = {
+			$.ajax({
 				url: App.getConversationUrl,
+				type: 'GET',
 				dataType: 'JSON',
-				data: { chat_id: chatId },
+				data: {chat_id: chatId},
 				success: function(res) {
+					Core.log.debug("Success " + this.url);
 					var tmp = '<% _.each(conversation, function(r) { %>\
-						<div class="message bubble-<%= r.user_id==userid ? "right" : "left" %>">\
-							<label class="message-user"><%= r.user_name %></label>\
-							<label class="message-timestamp"><%= r.insert_timestamp %></label>\
-							<p><%= r.message %></p>\
-						</div>\
-					<% }); %>';
+							<div class="message bubble-<%= r.user_id==userid ? "right" : "left" %>">\
+								<label class="message-user"><%= r.user_name %></label>\
+								<label class="message-timestamp"><%= r.insert_timestamp %></label>\
+								<p><%= r.message %></p>\
+							</div>\
+						<% }); %>';
 					conversation.append(_.template(tmp)({conversation:res, userid:self.userid}));
 					$('#send').val(chatId);
+					$('#conversation').animate({scrollTop:$('#conversation').height()});
+				},
+				fail: function(res) {
+					Core.log.error("Request Timeout " + type + "-" + url);
+					Backbone.pubSub.trigger("requestTimeout", resp);
 				}
-			};
-			Core.request(req);
+			});
 		},
 
 		renderUserList: function(){
@@ -195,7 +211,10 @@ var DRSView = Backbone.View.extend({
 			e.preventDefault();
 			var $target = $(e.currentTarget);
 			var chatId = $target.attr('data-id');
+			this.chatId = chatId;
 			this.renderConversation(chatId);
+			$('#chatlist li').removeClass('currentroom');
+			$target.addClass('currentroom');
 		},
 
 		create: function(e){

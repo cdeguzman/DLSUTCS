@@ -8,5 +8,5 @@
 	mysql_query("INSERT INTO flowchart (name, description, specialization_code)
 	             VALUES ('$name', '$description', '$specialization_code')");
 				 
-   
+   echo json_encode(mysql_insert_id());
 ?>

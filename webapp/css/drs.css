@@ -262,4 +262,7 @@ p.chatmember::after {
   display: inline-block;
   content: "\2716";
 }
+
+li.currentroom {
+	background-color: olivedrab;
 }

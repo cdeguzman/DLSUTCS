@@ -4,7 +4,7 @@
    
   $id = $_GET["id"];
   
-  $removeCourseOffering = "DELETE FROM course_offering WHERE id = '$id'";
-  mysql_query($removeCourseOffering);
+  mysql_query("DELETE FROM course_offering WHERE id='$id'");
   
+  echo json_encode(mysql_affected_rows());
 ?> 

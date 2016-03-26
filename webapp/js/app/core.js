@@ -328,7 +328,7 @@ function($, Backbone, Cookie, moment){
 				return day + "-" + month + "-" + year;
 			}
 		},
-	
+
 		getDateToday: function(){
 		    var date = new Date();
 		    var currentMonth = date.getMonth();
@@ -536,12 +536,38 @@ function($, Backbone, Cookie, moment){
 		},
 
 		checkCredential: function(){
+			return;
 			if(!this.checkSession()){
 				alert("Session Expired");
 				this.router.routeTo('/');
 			}
 			return false;
 		},
+
+		getOrdinal: function(n) {
+			var s=["th","st","nd","rd"],
+			v=n%100;
+			return n+(s[(v-20)%10]||s[v]||s[0]);
+		},
+
+		parseDate: function(datetime) {
+			return datetime.substr(0,10).split("/").join("") || "";
+		},
+
+		parseTime: function(datetime) {
+			if (datetime.length == 0) return "";
+			var additional = datetime.substr(-2, datetime.length) == "PM" ? 12 : 0;
+			var time = datetime.substr(11, datetime.length - 14).split(":");
+			time[0] = parseInt(time[0]) + additional;
+			return time.join("");
+		},
+
+		getWeekAndDay: function(date) {
+			console.log(date);
+			var days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+			return this.getOrdinal(date.getWeekInYear()) + " " + days[date.getDay()-1];
+		},
+
 	}
 	return Core;
 });

@@ -4,15 +4,15 @@
 		<div class="row">
 			<div class="col-xs-4">
 				<div class="form-group">
-					<label for="facultyId">Day </label>
-					<select id="daylist" style="height: 177px;" id="currentrank" class="form-control max_width" multiple>
-						<option>Monday</option>
-						<option>Tuesday</option>
-						<option>Wensday</option>
-						<option>Thursday</option>
-						<option>Friday</option>
-						<option>Saturday</option>
-						<option>Sunday</option>
+					<label>Day</label>
+					<select id="daylist" style="height: 177px;" class="form-control max_width" multiple>
+						<option value="1">Monday</option>
+						<option value="2">Tuesday</option>
+						<option value="3">Wednesday</option>
+						<option value="4">Thursday</option>
+						<option value="5">Friday</option>
+						<option value="6">Saturday</option>
+						<option value="7">Sunday</option>
 					</select>
 				</div>
 			</div>
@@ -37,9 +37,7 @@
 							<div class="col-xs-6">
 								<div class="form-group">
 									<label for="time">Time </label>
-									<select id="time" class="form-control">
-										<option></option>
-									</select>
+									<input type="time" name="time" class="form-control" required>
 								</div>
 								<div class="form-group">
 									<button style=" width: 100%;" id="addTime" class="btn btn-default">Add Time</button>

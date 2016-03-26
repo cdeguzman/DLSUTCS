@@ -54,6 +54,7 @@ define([
 		deleteCourseOfferingUrl: '/server/php/CourseOfferingInfo/deleteCourseOffering.php',
 		deleteCourseOfferingSectionUrl: '/server/php/CourseOfferingInfo/deleteCourseOfferingSection.php',
 		getCourseSectionUrl: '/server/php/CourseOfferingInfo/getCourseSection.php',
+		getCourseOfferingListUrl: '/server/php/CourseOfferingInfo/getCourseOfferingList.php',
 		getSelectedCourseOfferingUrl: '/server/php/CourseOfferingInfo/getSelectedCourseOffering.php',
 		updateCourseOfferingUrl: '/server/php/CourseOfferingInfo/updateCourseOffering.php',
 		// end Course Offering
@@ -79,6 +80,8 @@ define([
 		deleteFacultyUrl: '/server/php/FacultyPage/deleteFaculty.php',
 		deleteFacultySchedUrl: '/server/php/FacultyPage/deleteFacultySched.php',
 		deleteFacultyAreaUrl: '/server/php/FacultyPage/deleteFacultyArea.php',
+		deleteAdviserRosterUrl: '/server/php/FacultyPage/deleteAdviserRoster.php',
+		deletePanelRosterUrl: '/server/php/FacultyPage/deletePanelRoster.php',
 		deleteThesisAdviserUrl: '/server/php/FacultyPage/deleteThesisAdviser.php',
 		getAdviserRosterUrl: '/server/php/FacultyPage/getAdviserRoster.php',
 		getAllFacultyUrl: '/server/php/FacultyPage/getAllFaculty.php',
@@ -89,6 +92,7 @@ define([
 		getFacultyPasswordUrl: '/server/php/FacultyPage/getFacultyPassword.php',
 		getPanelRosterUrl: '/server/php/FacultyPage/getPanelRoster.php',
 		getThesisAdviserUrl: '/server/php/FacultyPage/getThesisAdviser.php',
+		getFacultyStatusListUrl: '/server/php/FacultyPage/getFacultyStatusList.php',
 		updateFacultyInfoUrl: '/server/php/FacultyPage/updateFacultyInfo.php',
 		updateFacultyAreaUrl: '/server/php/FacultyPage/updateFacultyArea.php',
 		updateFacultyPasswordUrl: '/server/php/FacultyPage/updateFacultyPassword.php',
@@ -97,13 +101,15 @@ define([
 		// Flowchart
 		addCourseToFlowchartUrl: '/server/php/FlowchartInfo/addCourseToFlowchart.php',
 		addFlowchartUrl: '/server/php/FlowchartInfo/addFlowchart.php',
+		addFlowchartPrerequisiteUrl: '/server/php/FlowchartInfo/addFlowchartPrerequisite.php',
 		deleteCourseFromFlowchartUrl: '/server/php/FlowchartInfo/deleteCourseFromFlowchart.php',
 		deleteFlowchartUrl: '/server/php/FlowchartInfo/deleteFlowchart.php',
 		deletePrereqCourseFromFlowchartUrl: '/server/php/FlowchartInfo/deletePrereqCourseFromFlowchart.php',
-		getCourseFromFlowchartUrl: '/server/php/FlowchartInfo/getCourseFromFlowchart.php',
+		getCoursesFromFlowchartUrl: '/server/php/FlowchartInfo/getCoursesFromFlowchart.php',
 		getFlowchartListUrl: '/server/php/FlowchartInfo/getFlowchartList.php',
 		getPrereqFlowchartCourseUrl: '/server/php/FlowchartInfo/getPrereqFlowchartCourse.php',
 		getSelectedFlowchartUrl: '/server/php/FlowchartInfo/getSelectedFlowchart.php',
+		updateFlowchartUrl: '/server/php/FlowchartInfo/updateFlowchart.php',
 		// end Flowchart
 
 		// General Area
@@ -121,6 +127,7 @@ define([
 		// end Holiday
 
 		// Query Records
+		getAdviserRosterListUrl: '/server/php/QueryRecords/getAdviserRosterList.php',
 		getCourseListUrl: '/server/php/QueryRecords/getCourseList.php',
 		getDeptListUrl: '/server/php/QueryRecords/getDeptList.php',
 		getFacAdminPositionUrl: '/server/php/QueryRecords/getFacAdminPosition.php',
@@ -128,6 +135,7 @@ define([
 		getFacultyListUrl: '/server/php/QueryRecords/getFacultyList.php',
 		getGenAreaListUrl: '/server/php/QueryRecords/getGenAreaList.php',
 		getPhaseUrl: '/server/php/QueryRecords/getPhase.php',
+		getPanelRosterListUrl: '/server/php/QueryRecords/getPanelRosterList.php',
 		getSchoolYearUrl: '/server/php/QueryRecords/getSchoolYear.php',
 		getSelectedThesisDetailsUrl: '/server/php/QueryRecords/getSelectedThesisDetails.php',
 		getSpecializationUrl: '/server/php/QueryRecords/getSpecialization.php',
@@ -165,6 +173,7 @@ define([
 		deleteGenSchedUrl: '/server/php/ScheduleInfo/deleteGenSched.php',
 		getGenSchedDayUrl: '/server/php/ScheduleInfo/getGenSchedDay.php',
 		getGenSchedTimeUrl: '/server/php/ScheduleInfo/getGenSchedTime.php',
+		getTimeListUrl: '/server/php/ScheduleInfo/getTimeList.php',
 		// end Schedule
 
 		// School Year

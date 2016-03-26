@@ -6,12 +6,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		templateName: 'StudentScheduleTemplate',
 
 		initialize: function(){
-			var self = this;
 			this.render();
-			var self = this;
-			$("#mainContainer").on("click", "button#deleteFaculty", function(e){
-				self.showDeleteDialog();
-			});
 		},
 
 		render: function(){
@@ -21,6 +16,29 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			$('#currsched-date-to').datetimepicker();
 			$('#prefsched-date-from').datetimepicker();
 			$('#prefsched-date-to').datetimepicker();
+
+			this.renderCourses();
+		},
+
+		renderCourses: function(e){
+			var req = {
+				url: App.getCourseListUrl,
+				dataType: 'JSON',
+				success:function(res){
+					var courses = $('#courses');
+					courses.empty();
+					courses.append('<option>All</option>');
+					var tmp = '<% _.each(courses, function(course) { %>\
+							<option><%= course.code %></option>\
+						<% }); %>';
+					courses.append(_.template(tmp)({courses:res}));
+				}
+			};
+			Core.request(req);
+		},
+
+		renderStudents: function(){
+			
 		},
 
 		cleanUpEvents: function(){

@@ -1,7 +1,7 @@
 <?php
   include("../connect.php");
     
-      $select_info = mysql_query("SELECT id, lname, fname, mi  
+      $select_info = mysql_query("SELECT id, lname, fname, mi, department_code, faculty_status_code
                                     FROM  faculty
 									ORDER BY lname");
  	 $list_info = array();

@@ -3,7 +3,7 @@
   include("../connect.php");
     $code = $_GET["code"];
 	$id = $_GET["id"];
-     $select_course = mysql_query("SELECT course_code, start_sy, end_sy, term, date_of_regular_defense_deliverable, time_of_regular_defense_deliverable,
+     $select_course = mysql_query("SELECT id, course_code as code, start_sy, end_sy, term, date_of_regular_defense_deliverable, time_of_regular_defense_deliverable,
 	                               location_of_regular_defense_deliverable, start_date_of_regular_defense, end_date_of_regular_defense,
 								   date_of_redefense_deliverable, time_of_redefense_deliverable, location_of_redefense_deliverable,
 								   start_date_of_redefense, end_date_of_redefense, date_of_outstanding_defense_deliverable, time_of_outstanding_defense_deliverable,

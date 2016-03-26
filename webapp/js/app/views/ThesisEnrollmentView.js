@@ -6,17 +6,36 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		templateName: 'ThesisEnrollmentTemplate',
 
 		initialize: function(){
-			var self = this;
 			this.render();
-			var self = this;
-			$("#mainContainer").on("click", "button#deleteFaculty", function(e){
-				self.showDeleteDialog();
-			});
 		},
 
 		render: function(){
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
+		},
+
+		renderSpecializations: function(){
+
+		},
+
+		renderFlowcharts: function(){
+
+		},
+
+		renderCourses: function(){
+
+		},
+
+		renderSections: function(){
+
+		},
+
+		renderStudents: function(){
+
+		},
+
+		renderClasses: function(){
+
 		},
 
 		cleanUpEvents: function(){

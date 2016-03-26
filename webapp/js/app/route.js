@@ -204,10 +204,9 @@ define([
 		},
 
 		courseOfferingRecordView: function(){
-			
 			this.loadHeaderFooterTemplate();
 			this.loadView(new CourseOfferingRecordView({
-				el: "#contentContainer",
+				el: "#contentContainer"
 			}));
 			Core.checkCredential();
 		},

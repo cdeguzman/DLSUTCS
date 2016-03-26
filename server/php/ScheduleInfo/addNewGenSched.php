@@ -7,6 +7,7 @@
 	
 	mysql_query("INSERT INTO general_schedule (day, start_time)
 	             VALUES ('$day', '$start_time')");
-				 
+
+  echo json_encode(mysql_insert_id());
    
 ?>

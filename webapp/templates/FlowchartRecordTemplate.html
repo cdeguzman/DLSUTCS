@@ -9,10 +9,10 @@
 			</div>
 			<div style="padding-bottom: 10px;" class="row">
 				<div class="col-xs-6">
-					<button style=" width: 100%;"  data-target="#addFlowchart" data-toggle="modal" class="btn btn-default">Add Flowchart</button>
+					<button style=" width: 100%;" data-target="#addflowchart" data-toggle="modal" class="btn btn-default">Add Flowchart</button>
 				</div>
 				<div class="col-xs-6">
-					<button style=" width: 100%;" id="deleteFlowchart" class="btn btn-default">Remove Flowchart</button>
+					<button style=" width: 100%;" id="deleteflowchart" class="btn btn-default">Remove Flowchart</button>
 				</div>
 			</div>
 		</div>
@@ -25,23 +25,25 @@
 				<div class="panel-body">
 					<form id="general" class="form">
 						<div class="form-group">
-							<label for="facultyId">Flowchart Version: </label>
-							<label name="facultyId"><u>1</u></label>
+							<label for="version">Flowchart Version: </label>
+							<label name="version"><u>1</u></label>
+							<input type="hidden" name="id" value="" required>
 						</div>
 						<div class="form-group">
 							<label for="specialization">Specialization: </label>
 							<label name="specialization"><u>CSE</u></label>
+							<input type="hidden" name="specialization_code" value="" required>
 						</div>
 						<div class="form-group">
-							<label for="firstname">Name</label>
-							<input type="text" class="form-control" name="firstname" required>
+							<label for="name">Name</label>
+							<input type="text" class="form-control" name="name" required>
 						</div>
 						<div class="form-group">
-							<label for="middlename">Description</label>
-							<input type="text" class="form-control" name="firstname" required>
+							<label for="description">Description</label>
+							<input type="text" class="form-control" name="description" required>
 						</div>
 						<div class="form-group">
-							<button id="update" type="submit" class="btn btn-default">Update Changes</button>
+							<button type="submit" class="btn btn-default">Update Changes</button>
 						</div>
 					</form>
 				</div>
@@ -62,9 +64,9 @@
 								</div>
 								<div style="text-align: center;" class="col-xs-2">
 									<br>
-									<button id="add">>>></button>
+									<button id="addFlowchartCourse"><<<</button>
 									<br><br>
-									<button id="remove"><<<</button>
+									<button id="removeFlowchartCourse">>>></button>
 								</div>
 								<div class="col-xs-5">
 									<select multiple id="courses" class="form-control">
@@ -80,7 +82,6 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">Pre-requisite</div>
 						<div class="panel-body">
-							<form class="form">
 								<div class="form-group">
 									<div class="row">
 										<div class="col-xs-5">
@@ -90,9 +91,9 @@
 										</div>
 										<div style="text-align: center;" class="col-xs-2">
 											<br>
-											<button id="add">>>></button>
+											<button id="addFlowchartPrereq"><<<</button>
 											<br><br>
-											<button id="remove"><<<</button>
+											<button id="removeFlowchartPrereq">>>></button>
 										</div>
 										<div class="col-xs-5">
 											<select multiple id="prerequisite" class="form-control">
@@ -110,23 +111,18 @@
 	</div>
 </div>
 
-
-<div class="modal fade" id="addFlowchart">
+<div class="modal fade" id="addflowchart">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Add Faculty Record</h4>
+				<h4 class="modal-title">Add Flowchart Record</h4>
 			</div>
 			<form id="add" class="form">
 				<div style="width:50%; margin:0 auto;" class="modal-body">
 					<div class="form-group">
-						<label for="flowchartversion">Flowchart Version: </label>
-						<input type="text" class="form-control" name="flowchartversion" required>
-					</div>
-					<div class="form-group">
 						<label for="specialization">Specialization: </label>
-						<select name="specialization" class="form-control">
+						<select name="specialization_code" class="form-control">
 							<option>Computer Technology</option>
 							<option>Computer Science</option>
 						</select>
@@ -142,7 +138,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button id="save" type="submit" class="btn btn-default">Save changes</button>
+					<button type="submit" class="btn btn-default">Save changess</button>
 				</div>
 			</form>
 		</div>

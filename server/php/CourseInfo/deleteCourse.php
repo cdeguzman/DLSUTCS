@@ -7,4 +7,5 @@
   $removeCourse = "DELETE FROM course WHERE id = '$id'";
   mysql_query($removeCourse);
   
+  echo mysql_affected_rows();
 ?> 

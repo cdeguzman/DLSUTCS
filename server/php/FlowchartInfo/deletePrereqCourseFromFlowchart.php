@@ -3,6 +3,7 @@
   include("../connect.php");
   $id = $_GET["id"];
      
-   mysql_query("DELETE FROM flowchart_prerequisite WHERE id='$id');
-				
+   mysql_query("DELETE FROM flowchart_prerequisite WHERE id='$id'");
+
+echo json_encode(mysql_affected_rows());
 ?>
