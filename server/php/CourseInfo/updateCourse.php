@@ -1,5 +1,4 @@
 <?php
-echo json_encode($_POST);
   //This php code is for updating a course
   include("../connect.php");
     $code = $_POST["code"];
@@ -23,7 +22,7 @@ echo json_encode($_POST);
 	$deadline_of_deliverable_week = $_POST["deadline_of_deliverable_week"];
 
 	
-    mysql_query($query = "UPDATE course SET name='$name', description='$description', unit='$unit', phase_code='$phase_code', 
+    mysql_query("UPDATE course SET name='$name', description='$description', unit='$unit', phase_code='$phase_code', 
 	             department_code='$department_code', start_regular_defense_week='$start_regular_defense_week',
 		         end_regular_defense_week='$end_regular_defense_week', regular_defense_minute='$regular_defense_minute', 
 				 regular_defense_applicable='$regular_defense_applicable', start_redefense_week='$start_redefense_week', 
@@ -33,5 +32,5 @@ echo json_encode($_POST);
 				 deadline_of_deliverable_week='$deadline_of_deliverable_week'
 				 WHERE code='$code'");
 
-// echo json_encode($query);
+echo json_encode(mysql_affected_rows());
 ?>

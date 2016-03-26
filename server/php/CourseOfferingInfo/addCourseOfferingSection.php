@@ -7,8 +7,8 @@
    $course_code = $_POST["course_code"];
    $section = $_POST["section"];
    
-   mysql_query($q = "INSERT INTO course_offering_section (start_sy, end_sy, term, course_code, section)
+   mysql_query("INSERT INTO course_offering_section (start_sy, end_sy, term, course_code, section)
                 VALUES ('$start_sy', '$end_sy', '$term', '$course_code', '$section')");
 
-   echo json_encode($q);
+   echo json_encode(mysql_affected_rows());
 ?>
