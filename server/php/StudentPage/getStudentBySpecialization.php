@@ -3,7 +3,7 @@
   include("../connect.php");
     $specialization_code = $_GET["specialization_code"];
     
-        $select_student = mysql_query("SELECT lname, ',' ,fname, mi FROM student
+        $select_student = mysql_query("SELECT id, CONCAT(lname, ', ', fname, ' ', mi) as student_name FROM student
   									   WHERE specialization_code = '$specialization_code'");
         $list_student = array();
         while($fetch_student = mysql_fetch_assoc($select_student)){

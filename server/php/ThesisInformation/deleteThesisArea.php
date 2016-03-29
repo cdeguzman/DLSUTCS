@@ -7,4 +7,5 @@
   $removeThesisArea = "DELETE FROM thesis_area WHERE id = '$id'";
   mysql_query($removeThesisArea);
   
+  echo mysql_affected_rows();
 ?> 

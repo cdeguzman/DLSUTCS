@@ -32,7 +32,7 @@ define([
 		// end Add Records
 
 		// Admin Position
-		addFacAdminPositionUrl: '/server/php/AdminPosition/addFacAdminPosition.php',
+		addFacAdminPositionUrl: '/server/php/AdminPosition/AddFacAdminPosition.php',
 		deleteAdminPosUrl: '/server/php/AdminPosition/deleteAdminPos.php',
 		getAdminPosByFacultyUrl: '/server/php/AdminPosition/getAdminPosByFaculty.php',
 		getAdminPositionListUrl: '/server/php/AdminPosition/getAdminPositionList.php',
@@ -90,6 +90,7 @@ define([
 		getFacultyClassSchedUrl: '/server/php/FacultyPage/getFacultyClassSched.php',
 		getFacultyPreferredDefSchedUrl: '/server/php/FacultyPage/getFacultyPreferredDefSched.php',
 		getFacultyPasswordUrl: '/server/php/FacultyPage/getFacultyPassword.php',
+		getFacultySchedulesUrl: '/server/php/FacultyPage/getFacultySchedules.php',
 		getPanelRosterUrl: '/server/php/FacultyPage/getPanelRoster.php',
 		getThesisAdviserUrl: '/server/php/FacultyPage/getThesisAdviser.php',
 		getFacultyStatusListUrl: '/server/php/FacultyPage/getFacultyStatusList.php',
@@ -182,6 +183,7 @@ define([
 		getSchoolYearListUrl: '/server/php/SchoolYearInfo/getSchoolYearList.php',
 		getSchoolYearBySYUrl: '/server/php/SchoolYearInfo/getSchoolYearBySY.php',
 		getTermSchedPerSYUrl: '/server/php/SchoolYearInfo/getTermSchedPerSY.php',
+		getDistinctSchoolYearUrl: '/server/php/SchoolYearInfo/getDistinctSchoolYear.php',
 		updateTermSchedPerSYUrl: '/server/php/SchoolYearInfo/updateTermSchedPerSY.php',
 		updateSchoolYearUrl: '/server/php/SchoolYearInfo/updateSchoolYear.php',
 		getMaxTermUrl: '/server/php/SchoolYearInfo/getMaxTerm.php',
@@ -201,6 +203,7 @@ define([
 		getStudentInfoUrl: '/server/php/StudentPage/getStudentInfo.php',
 		getStudentThesisTitleUrl: '/server/php/StudentPage/getStudentThesisTitle.php',
 		getStudentPasswordUrl: '/server/php/StudentPage/getStudentPassword.php',
+		getStudentSchedulesUrl: '/server/php/StudentPage/getStudentSchedules.php',
 		updateStudentInfoUrl: '/server/php/StudentPage/updateStudentInfo.php',
 		updateStudentPasswordUrl: '/server/php/StudentPage/updateStudentPassword.php',
 		// end Student
@@ -223,6 +226,7 @@ define([
 		getThesisAreaUrl: '/server/php/ThesisInformation/getThesisArea.php',
 		getThesisGroupInfoUrl: '/server/php/ThesisInformation/getThesisGroupInfo.php',
 		getThesisProponentsv2Url: '/server/php/ThesisInformation/getThesisProponent.php',
+		getThesisWithAdviserUrl: '/server/php/ThesisInformation/getThesisWithAdviser.php',
 		updateThesisAdviserUrl: '/server/php/ThesisInformation/updateThesisAdviser.php',
 		updateThesisAreaUrl: '/server/php/ThesisInformation/updateThesisArea.php',
 		updateThesisGradeUrl: '/server/php/ThesisInformation/updateThesisGrade.php',

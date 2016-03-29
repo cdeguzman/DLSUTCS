@@ -6,15 +6,22 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 			'submit #update' : 'submitFormUpdate',
 			'submit #add' : 'submitFormAdd',
 			'focus input' : function(e) {  $(e.currentTarget).removeClass('error') },
-			'click .main #facultyList option' : 'fillForm',
+			'change #facultyList' : 'fillForm',
 			'change .main #facultyDepartment' : 'refreshFacultyList',
 			'click button#deleteFaculty' : 'deleteFaculty',
+			'click button#addArea': 'addArea',
+			'click button#removeArea': 'removeArea',
+			'click button#increase': 'increasePercentage',
+			'click button#decrease': 'decreasePercentage',
+			'click button#add': 'addSchedule',
+			'click button#remove': 'removeSchedule'
 		},
 
 		templateName: 'FacultyRecordTemplate',
 
 		initialize: function(){
 			this.render();
+			this.clearViews();
 		},
 
 		render: function(){
@@ -30,7 +37,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 		},
 
 		refreshFacultyList: function(){
-			$('form')[0].reset();
+			this.clearViews();
 			var dep = $('select#facultyDepartment :selected').val();
 
 			if(dep == "all") {
@@ -102,7 +109,12 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 		},
 
 		fillForm: function(){
+			var self = this;
 			var fid = $('.main #facultyList :selected').val();
+			if (fid == undefined) {
+				this.clearViews();
+				return;
+			}
 			var req = new Array();
 			req.url = App.getFacultyInfoUrl;
 			req.type = "GET"
@@ -122,9 +134,173 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 					$('.main input[name="title"]').val(r.title);
 					$('.main input[name="password"]').val(r.secret_password);
 					$('.main input[name="sms"]').val(r.text_no);
+					self.renderCurrentAreas();
+					self.renderSchedules();
 				});
 			}
 			Core.request(req);
+		},
+
+		renderCurrentAreas: function(){
+			var self = this;
+			var id = $('#facultyList option:selected').val();
+			var req = {
+				url: App.getFacultyAreaUrl,
+				data: {fid:id},
+				type: 'GET',
+				dataType: 'JSON',
+				success: function(res) {
+					var tmp = '<% _.each(areas, function(r) { %>\
+						<option value="<%= r.code %>" data-level="<%= r.level %>" data-facultyareaid="<%= r.fa_id %>"><%= r.name + "(" + r.level + ")" %></option>\
+					<% }); %>';
+					$('#areas').html(_.template(tmp)({areas:res}));
+					self.renderAreas();
+				}
+			};
+			Core.request(req);
+		},
+
+		renderAreas: function(){
+			var req = {
+				url: App.getSubAreaListUrl,
+				type: 'GET',
+				dataType: 'JSON',
+				success: function(res) {
+					var areaids = $('#areas option').map(function(){
+						return $(this).val();
+					});
+					var tmp = '<% _.each(areas, function(r) { %>\
+						<%if(_.contains(areaids, r.code)) return;%>\
+									<option value="<%= r.code %>"><%= r.name %></option>\
+								<% }); %>';
+					$('#get-areas').html(_.template(tmp)({areas:res,areaids:areaids}));
+				}
+			}
+			Core.request(req);
+		},
+
+		increasePercentage: function(){
+			var selected = $('#areas option:selected');
+			var areaid = selected.val();
+			if (areaid == undefined) return;
+
+			var arealevel = selected.data('level');
+			var facultyareaid = selected.data('facultyareaid');
+			var facultyid = $('#facultyList option:selected').val();
+			if (arealevel != 100) {
+				arealevel += 10;
+				var self = this;
+				var req = {
+					url: App.updateFacultyAreaUrl,
+					data: {
+						id: facultyareaid,
+						faculty_id: facultyid,
+						area_level: arealevel,
+						area_code: areaid
+					},
+					type: 'POST',
+					dataType: 'JSON',
+					success: function(res) {
+						self.renderCurrentAreas();
+					}
+				}
+				Core.request(req);
+			}
+		},
+
+		decreasePercentage: function(){
+			var selected = $('#areas option:selected');
+			var areaid = selected.val();
+			if (areaid == undefined) return;
+
+			var arealevel = selected.data('level');
+			var facultyareaid = selected.data('facultyareaid');
+			var facultyid = $('#facultyList option:selected').val();
+			if (arealevel != 10) {
+				arealevel-=10;
+				var self = this;
+				var req = {
+					url: App.updateFacultyAreaUrl,
+					data: {
+						id: facultyareaid,
+						faculty_id: facultyid,
+						area_level: arealevel,
+						area_code: areaid
+					},
+					type: 'POST',
+					dataType: 'JSON',
+					success: function(res) {
+						self.renderCurrentAreas();
+					}
+				}
+				Core.request(req);
+			}
+		},
+
+		renderSchedules: function(){
+			var facultyid = $('#facultyList option:selected').val();
+			if (facultyid == undefined) return;
+
+			var schedulecode = 1;
+			var schoolyear = $('#schoolyear option:selected');
+			var startsy = schoolyear.data('start');
+			var endsy = startsy + 1;
+			var term = $('#term').val();
+			var self = this;
+			var req = {
+				url: App.getFacultySchedulesUrl,
+				dataType: 'JSON',
+				data: {
+					startsy: startsy,
+					endsy: endsy,
+					term: term,
+					facultyid: facultyid,
+					schedulecode: schedulecode
+				},
+				success:function(res){
+					var template = '<% _.each(schedules, function(r){ %>\
+						<option value="<%- r.id %>"><%- Core.getDay(parseInt(r.day)-1) + "(" + r.start_time + "-" + r.end_time + ")"%></option>\
+					<% }); %>';
+					$('#currentschedlist').html(_.template(template)({schedules:res}));
+				}
+			};
+			Core.request(req);
+		},
+
+		addSchedule: function(){
+
+		},
+
+		removeSchedule: function(){
+			var id = $('#currentschedlist option:selected').val();
+			if (id == undefined) return;
+
+			var action = confirm('Are you sure?');
+			if (!action) return;
+
+			var self = this;
+			var req = {
+				url: App.deleteFacultySchedUrl,
+				dataType: 'JSON',
+				data: {
+					id: id
+				},
+				success:function(res){
+					self.renderSchedules();
+				}
+			};
+			Core.request(req);
+		},
+
+		clearViews: function(){
+			var update = $('#update');
+			update[0].reset();
+			update.find('input[name=facultyId]').val('');
+			update.find('label[name=facultyIdDummy]').text('');
+			$('#areas').empty();
+			$('#get-areas').empty();
+			$('#schedule')[0].reset();
+			$('#currentschedlist').empty();
 		},
 
 		submitFormUpdate: function(e){
@@ -197,6 +373,47 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'underscore', 'bootstrap', 'da
 				}
 				Core.request(req);
 			}
+		},
+
+		addArea: function(){
+			var areaid = $('#get-areas option:selected').val();
+			var facultyid = $('#facultyList option:selected').val();
+			if (areaid == undefined || facultyid == undefined) return;
+
+			var self = this;
+			var req = {
+				url: App.addFacultyAreaUrl,
+				type: 'POST',
+				dataType: 'JSON',
+				data: {
+					faculty_id: facultyid,
+					area_code: areaid,
+					area_level: 10
+				},
+				success:function(res){
+					self.renderCurrentAreas();
+				}
+			};
+			Core.request(req);
+		},
+
+		removeArea: function(){
+			var facultyareaid = $('#areas option:selected').data('facultyareaid');
+			if (facultyareaid == undefined) return;
+
+			var self = this;
+			var request = {
+				url: App.deleteFacultyAreaUrl,
+				dataType: 'JSON',
+				data: {
+					id: facultyareaid
+				},
+				success:function(res){
+					console.log(res);
+					self.renderCurrentAreas();
+				}
+			};
+			Core.request(request);
 		},
 
 		cleanUpEvents: function(){

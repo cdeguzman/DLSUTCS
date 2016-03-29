@@ -9,5 +9,7 @@
   
   mysql_query("INSERT INTO thesis_proponent (thesis_id, student_id, start_sy, end_sy, term)
                VALUES ('$thesis_id', '$student_id', '$start_sy', '$end_sy', '$term')");
+
+  echo json_encode(mysql_insert_id());
 	
 ?> 

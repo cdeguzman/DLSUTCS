@@ -16,4 +16,6 @@
                        final_abstract='$final_abstract', description='$description', start_sy='$start_sy', end_sy='$end_sy',
                        start_term='$start_term', end_term='$end_term'
 				WHERE id='$id'");
+
+   echo json_encode(mysql_affected_rows());
 ?>

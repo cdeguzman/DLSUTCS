@@ -85,6 +85,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog', 'un
 				}
 				
 	  		}
+	  		console.log(req);
 			Core.request(req);
 
 			$('form#add')[0].reset();

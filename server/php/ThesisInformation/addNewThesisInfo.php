@@ -20,5 +20,5 @@
 						
    mysql_query("INSERT_INTO thesis_adviser (thesis_id, faculty_id, start_sy, term) VALUES ('$id', '$faculty_id', '$start_sy', '$start_term')");
  	 
-   
+   echo json_encode(mysql_insert_id());
 ?>

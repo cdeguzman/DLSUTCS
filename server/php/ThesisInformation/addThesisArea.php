@@ -8,4 +8,5 @@
   mysql_query("INSERT INTO thesis_area (thesis_id, area_code, area_level)
                VALUES ('$thesis_id', '$area_code', '$area_level')");
 	
+  echo mysql_insert_id();
 ?> 

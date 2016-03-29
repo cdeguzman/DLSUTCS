@@ -3,7 +3,7 @@
   include("../connect.php");
     $thesis_id = $_GET["thesis_id"];
     
-        $select_thesisArea = mysql_query("SELECT a.name FROM area a, thesis_area ta
+        $select_thesisArea = mysql_query("SELECT ta.id, ta.thesis_id, ta.area_code, ta.area_level, a.name FROM area a, thesis_area ta
                                        WHERE a.code = ta.area_code AND ta.thesis_id = '$thesis_id'
   									   ORDER BY a.name");
         $list_thesisArea = array();

@@ -37,7 +37,7 @@ var ClassScheduleView = Backbone.View.extend({
 					var tmp = '<% _.each(scheduleList, function(r) { %>\
 						<tr data-id="<%= r.id %>">\
 							<td><%- Core.formatTime(r.start_time) %>-<%- Core.formatTime(r.end_time) %></td>\
-							<td><%- r.day %></td>\
+							<td><%- Core.getDay(r.day) %></td>\
 							<td><%- r.description %></td>\
 							<td><button class="btn btn-danger" data-id="<%= r.id %>"><span class="glyphicon glyphicon-remove icon-white""></span></button></td>\
 						</tr>\
@@ -81,7 +81,7 @@ var ClassScheduleView = Backbone.View.extend({
 			var start = $('input[name=starttime]').val();
 			var end = $('input[name=endtime]').val();
 			var desc = $('input[name=description]').val();
-			var startsy = $('#schoolyear').val();
+			var startsy = $('#schoolyearmain').val();
 			var endsy = parseInt(startsy)+1;
 			var term = $('#term').val();
 			var data = {
@@ -106,6 +106,7 @@ var ClassScheduleView = Backbone.View.extend({
 					self.renderScheduleList();
 				}
 			}
+			console.log(req);
 			Core.request(req);
 			$('#addschedule')[0].reset();
 		},

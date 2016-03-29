@@ -15,6 +15,6 @@
   $secret_password = $_POST["password"];
   
   $status = mysql_query("INSERT INTO student (id, lname, fname, mi, email, text_no, contact_no, flowchart_version, specialization_code, notify_thru_text, secret_password)
-               VALUES ('$id','$lname','$fname','$mi','$email','$text_no','$contact_no','$flowchart_version','$specialization_code','$notify_thru_text','$secret_password'");
+               VALUES ('$id','$lname','$fname','$mi','$email','$text_no','$contact_no','$flowchart_version','$specialization_code','$notify_thru_text','$secret_password')");
   echo $status;
 ?> 

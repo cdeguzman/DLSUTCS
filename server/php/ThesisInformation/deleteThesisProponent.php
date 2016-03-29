@@ -7,4 +7,5 @@
   $removeThesisProponent = "DELETE FROM thesis_proponent WHERE id = '$id'";
   mysql_query($removeThesisProponent);
   
+  echo json_encode(mysql_affected_rows());
 ?> 

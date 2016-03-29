@@ -4,7 +4,7 @@
 		<div class="panel-body">
 			<form id="thesisgroup" class="form">
 				<div class="row">
-					<label for="years">Display thesis group form the following school year: </label>
+					<label for="years">Display thesis group from the following school year: </label>
 					<select id="years" class="form-control">
 						
 					</select>
@@ -39,20 +39,20 @@
 			<form id="update" class="form">
 				<div class="row">
 					<div class="form-group">
-						<label for="thesisId">Thesis Group ID: </label>
-						<label name="thesisId"></label>
+						<label for="thesisid">Thesis Group ID: </label>
+						<label name="thesisid"></label>
 					</div>
 					<div class="form-group">
-						<label for="thesistitle">Title: </label>
-						<input type="text" class="form-control max_width" name="thesistitle" required>
+						<label for="primary_name">Title: </label>
+						<input type="text" class="form-control max_width" name="primary_name" required>
 					</div>
 					<div class="form-group">
-						<label for="subthesistitle">Secondary Title: </label>
-						<input type="text" class="form-control max_width" name="subthesistitle" required>
+						<label for="secondary_name">Secondary Title: </label>
+						<input type="text" class="form-control max_width" name="secondary_name" required>
 					</div>
 					<div class="form-group">
-						<label for="thesisdescription">Description: </label>
-						<input type="text" class="form-control max_width" name="thesisdescription" required>
+						<label for="description">Description: </label>
+						<input type="text" class="form-control max_width" name="description" required>
 					</div>
 					<div class="form-group">
 						<div class="row">
@@ -67,8 +67,8 @@
 								</select>
 							</div>
 							<div class="col-xs-4 no_padding">
-								<label for="adviser">Adviser: </label>
-								<select name="adviser" class="form-control" >
+								<label for="faculty_id">Adviser: </label>
+								<select name="faculty_id" class="form-control" >
 								</select>
 							</div>
 						</div>
@@ -77,11 +77,13 @@
 				<div class="row">
 					<div class="col-xs-6">
 						<label for="proposalabstract">Proposal Abstract: </label>
+						<input type="hidden" name="proposal_abstract" required>
 						<select style="min-width: 100%;" name="proposalabstract" class="form-control" multiple>
 						</select>
 					</div>
 					<div class="col-xs-6">
 						<label for="finalabstract">Final Abstract: </label>
+						<input type="hidden" name="final_abstract" required>
 						<select style="min-width: 100%;" name="finalabstract" class="form-control" multiple>
 						</select>
 					</div>
@@ -101,29 +103,28 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">Proponents</div>
 		<div class="panel-body">
-			<form id="proponents" class="form">
+			<form id="proponentform" class="form">
 				<div class="form-group">
 					<div class="row">
 						<div class="col-xs-5">
-							<label for="get-areofspecialization"></label>
-							<select multiple name="areofspecialization" class="form-control max_width">
+							<select multiple id="proponents" class="form-control max_width">
 								<option>Basic Computer Science Concepts(10)</option>
 								<option>Basic Electronics(10)</option>
 							</select>
 						</div>
 						<div style="text-align: center;" class="col-xs-2">
 							<br>
-							<button id="add" type="submit"> >> </button>
+							<button id="addproponents" type="submit"> << </button>
 							<br><br>
-							<button id="remove" type="submit"> << </button>
+							<button id="removeproponents" type="submit"> >> </button>
 						</div>
 						<div class="col-xs-5">
-							<label for="get-areofspecialization">Display student form the following specialization: </label>
-							<select id="get-areofspecialization" class="form-control max_width">
+							<label>Display student from the following specialization: </label>
+							<select id="specializations" class="form-control max_width">
 								<option>All</option>
 							</select>
 							<br>
-							<select multiple name="get-areofspecialization" class="form-control max_width">
+							<select multiple id="students" class="form-control max_width">
 								<option>Algorithms and Complexity</option>
 								<option>Architecture and Organization</option>
 								<option>Computational Science</option>
@@ -155,23 +156,23 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">Related Area</div>
 		<div class="panel-body">
-			<form id="relatedarea" class="form">
+			<form class="form">
 				<div class="form-group">
 					<div class="row">
 						<div class="col-xs-5">
-							<select multiple name="relatedArea" class="form-control max_width">
+							<select multiple id="thesisareas" class="form-control max_width">
 								<option>Basic Computer Science Concepts(10)</option>
 								<option>Basic Electronics(10)</option>
 							</select>
 						</div>
 						<div style="text-align: center;" class="col-xs-2">
 							<br>
-							<button id="add"> >> </button>
+							<button id="addthesisarea"> << </button>
 							<br><br>
-							<button id="remove"> << </button>
+							<button id="removethesisarea"> >> </button>
 						</div>
 						<div class="col-xs-5">
-							<select multiple name="get-relatedArea" class="form-control max_width">
+							<select multiple id="areas" class="form-control max_width">
 								<option>Algorithms and Complexity</option>
 								<option>Architecture and Organization</option>
 								<option>Computational Science</option>
@@ -216,42 +217,32 @@
 					<div class="row">
 						<div class="row">
 							<div class="col-xs-6">
-								<label for="thesisID">Thesis Group ID: </label>
-								<label name="thesisID"><u>12345678</u></label>
+								<label for="thesisiddummy">Thesis Group ID: </label>
+								<label name="thesisiddummy"><u>12345678</u></label>
+								<input type="hidden" name="id" required>
+								<input type="hidden" name="proposal_abstract" required>
+								<input type="hidden" name="final_abstract" required>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="thesistitle">Title: </label>
-							<input type="text" class="form-control max_width" name="thesistitle" required>
+							<label for="primary_name">Title: </label>
+							<input type="text" class="form-control max_width" name="primary_name" required>
 						</div>
 						<div class="form-group">
-							<label for="subthesistitle">Secondary Title: </label>
-							<input type="text" class="form-control max_width" name="subthesistitle" required>
+							<label for="secondary_name">Secondary Title: </label>
+							<input type="text" class="form-control max_width" name="secondary_name" required>
 						</div>
 						<div class="form-group">
-							<label for="thesisdescription">Description: </label>
-							<input type="text" class="form-control max_width" name="thesisdescription" required>
+							<label for="description">Description: </label>
+							<input type="text" class="form-control max_width" name="description" required>
 						</div>
 						<div class="form-group">
-							<label for="adviser">Adviser: </label>
-							<select name="adviser" class="form-control" >
+							<label for="faculty_id">Adviser: </label>
+							<select name="faculty_id" class="form-control" >
 								<option>Ballon, Alexie E</option>
 							</select>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							<label for="proposalabstract">Proposal Abstract: </label>
-							<select style="min-width: 100%;" name="proposalabstract" class="form-control" multiple>
-							</select>
-						</div>
-						<div class="col-xs-6">
-							<label for="finalabstract">Final Abstract: </label>
-							<select style="min-width: 100%;" name="finalabstract" class="form-control" multiple>
-							</select>
-						</div>
-					</div>
-
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

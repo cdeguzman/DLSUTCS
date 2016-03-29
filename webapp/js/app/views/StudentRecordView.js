@@ -6,7 +6,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'bootstrap', 'datePicker' ], f
 			'submit #update' : 'submitFormUpdate',
 			'submit #add' : 'submitFormAdd',
 			'focus input' : function(e) {  $(e.currentTarget).removeClass('error') },
-			'click #studentList option' : 'fillForm',
+			'change #studentList' : 'fillForm',
 			'change .main #student_specialization' : 'refreshStudentList',
 			'click button#deleteStudent' : 'deleteStudent',
 		},
@@ -49,7 +49,7 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'bootstrap', 'datePicker' ], f
 			var self = this;
 			req.success = function(res){
 				var tmp = '<% _.each(studentList, function(r) { %>\
-							<option value="<%- r.id %>"><%- r.lname+", "+r.fname+" "+r.mi %></option>\
+							<option value="<%- r.id %>"><%- r.student_name %></option>\
 						<% }); %>';
 				$('.main #studentList').append(_.template(tmp)({studentList:res}));
 	  		}
@@ -108,12 +108,17 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'bootstrap', 'datePicker' ], f
 		},
 
 		fillForm: function(){
-			var id = $('#studentList :selected').val();
+			var id = $('#studentList option:selected').val();
+			if (id == undefined) {
+				this.clearViews();
+				return;
+			}
 			var req = new Array();
 			req.url = App.getStudentInfoUrl;
 			req.type = "GET"
 			req.data = {'id': id};
 			req.dataType = "JSON";
+			var self = this;
 			req.success = function(res){
 				_.each(res, function(r) { 
 					$('.main label[name="studentIdDummy"]').text(r.id);
@@ -128,12 +133,50 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'bootstrap', 'datePicker' ], f
 					$('.main select[name="flowchart"]').val(r.flowchart_version);
 					$('.main select[name="specialization"]').val(r.specialization_code);
 				});
+				self.renderSchedules();
 	  		}
 			Core.request(req);
 		},
 
-		getThesisInfo: function(){
+		renderSchedules: function(){
+			var studentid = $('#studentList option:selected').val();
+			var schedulecode = 1;
+			var schoolyear = $('#schoolyear option:selected');
+			var startsy = schoolyear.data('start');
+			var endsy = startsy + 1;
+			var term = $('#term').val();
+			var self = this;
+			var req = {
+				url: App.getStudentSchedulesUrl,
+				dataType: 'JSON',
+				data: {
+					startsy: startsy,
+					endsy: endsy,
+					term: term,
+					studentid: studentid,
+					schedulecode: schedulecode
+				},
+				success:function(res){
+					var template = '<% _.each(schedules, function(r){ %>\
+						<option value="<%- r.id %>"><%- Core.getDay(parseInt(r.day)-1) + "(" + r.start_time + "-" + r.end_time + ")"%></option>\
+					<% }); %>';
+					$('#schedules').html(_.template(template)({schedules:res}));
+				}
+			};
+			Core.request(req);
+		},
 
+		clearViews: function(){
+			var update = $('#update');
+			update[0].reset();
+			update.find('input[name=studentId]').val('');
+			update.find('label[name=studentIdDummy]').text('');
+			$('#scheduleform')[0].reset();
+			$('#schedules').empty();
+		},
+
+		renderThesisHistory: function(){
+			
 		},
 
 		submitFormUpdate: function(e){
@@ -172,11 +215,11 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'bootstrap', 'datePicker' ], f
 				if(res == 1){
 					alert("Success!");
 					self.renderStudentList();
-					$('#addStudent').modal('hide');
 				}else{
 					alert("Error Occur!");
 				}
 				$('form')[0].reset();
+				$('#addStudent').modal('hide');
 			}
 			Core.request(req);
 		},
