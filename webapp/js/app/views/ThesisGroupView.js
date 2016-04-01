@@ -4,17 +4,21 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 
 		events: {
 			'change #years': 'renderThesisGroups',
-			'change #group': 'fillForm',
+			'change #group': 'renderThesisGroup',
 			'change #specializations': 'renderProponents',
 			'submit #add': 'addThesisGroup',
 			'submit #update': 'updateThesisGroup',
+			'click button#remove': 'removeThesisGroup',
 			'click button#addproponents': 'addProponents',
 			'click button#removeproponents': 'deleteProponents',
 			'click button#addthesisarea': 'addThesisArea',
 			'click button#removethesisarea': 'removeThesisArea',
 			'click button#increase': 'increase',
-			'click button#decrease': 'decrease'
+			'click button#decrease': 'decrease',
+			'show.bs.modal #addThesisGroup': 'showAddForm',
 		},
+
+
 
 		templateName: 'ThesisGroupTemplate',
 
@@ -25,12 +29,6 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		render: function(){
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
-			$('#currsched-date-from').datetimepicker();
-			$('#currsched-date-to').datetimepicker();
-
-			$('#prefsched-date-from').datetimepicker();
-			$('#prefsched-date-to').datetimepicker();
-			this.cleanViews();
 			this.renderSchoolyears();
 			this.renderFaculties();
 		},
@@ -52,7 +50,6 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		},
 
 		renderThesisGroups: function(){
-			this.cleanViews();
 			var selected = $('#years option:selected').val();
 			if (selected == undefined) return;
 
@@ -60,6 +57,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			var sy1 = schoolyear[0];
 			var sy2 = schoolyear[1];
 
+			var self = this;
 	  	var req = {
 	  		url: App.getThesisListurl,
 	  		dataType: 'JSON',
@@ -72,15 +70,45 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 									<option value="<%- r.id %>"><%- r.primary_name %></option>\
 								<% }); %>';
 					$('#group').html(_.template(tmp)({thesisList:res}));
+					self.clearView();
 	  		}
 	  	};
 			Core.request(req);
 		},
 
-		fillForm: function(){
+		clearView: function(){
+			var form = $('#update');
+			form[0].reset();
+			form.find('select[name=schoolyear]').empty();
+			form.find('select[name=termcompleted]').empty();
+			form.find('select[name=adviser]').empty();
+			form.find('select[name=proposalabstract]').empty();
+			form.find('select[name=finalabstract]').empty();
+			$('#proponents').empty();
+			$('#specializations').empty();
+			$('#students').empty();
+			$('#thesisareas').empty();
+			$('#areas').empty();
+		},
+
+		renderFaculties: function(){
+			var req = {
+				url: App.getFacultyListUrl,
+				dataType: 'JSON',
+				success:function(res){
+					var template = '<% _.each(faculties, function(faculty){ %>\
+						<option value="<%- faculty.id %>"><%- faculty.lname + ", " + faculty.fname + " " + faculty.mi %></option>\
+					<% }); %>';
+					$('select[name=faculty_id]').html(_.template(template)({faculties:res}));
+				}
+			};
+			Core.request(req);
+		},
+
+		renderThesisGroup: function(){
 			var id = $('#group option:selected').val();
 			if (id == undefined) {
-				this.cleanViews();
+				this.clearView();
 				return;
 			}
 			var self = this;
@@ -102,7 +130,6 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 					$('.main select[name="finalabstract"]').append('<option value='+r.final_abstract+'>'+r.final_abstract+'</option>');
 				});
 				self.renderSpecializations();
-				self.renderThesisAreas();
 	  	};
 			Core.request(req);
 		},
@@ -116,7 +143,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 				var tmp = '<% _.each(specializations, function(r) { %>\
 								<option value="<%- r.code %>"><%- r.name %></option>\
 							<% }); %>';
-				$('#specializations').html('<option value="all">All</option>');
+				$('#specializations').html('<option value="all">[all]</option>');
 				$('#specializations').append(_.template(tmp)({specializations:res}));
 				self.renderProponents();
 	  	};
@@ -153,6 +180,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			var code = $('#specializations option:selected').val();
 			if (code == undefined) return;
 
+			var self = this;
 			var req = {
 				url: App.getStudentListUrl,
 				dataType: 'JSON',
@@ -168,10 +196,10 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 						<option value="<%= r.id %>"><%= r.lname + ", " + r.fname + " " + r.mi %></option>\
 					<% }); %>';
 					$('#students').html(_.template(template)({students:filter}));
+					self.renderThesisAreas();
 				}
 			};
 			Core.request(req);
-
 		},
 
 		renderThesisAreas: function(){
@@ -214,6 +242,12 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 				}
 			}
 			Core.request(req);
+		},
+
+		showAddForm: function(e){
+			var form = $('#add');
+			form[0].reset();
+			form.find('input[name=id]').val(this.generateThesisId());
 		},
 
 		addThesisArea: function(){
@@ -320,49 +354,6 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			}
 		},
 
-		generaterSchoolYear: function(){
-			$('.main #years').empty();
-			var firstYear = 1999;
-			var lastYear = ((new Date).getFullYear()+1);
-			var max = lastYear - firstYear;
-			for(var i=0; i<max; i++) {
-				var start = firstYear;
-				var end = ++firstYear;
-			    $('.main #years').prepend('<option value='+start+','+end+'>'+start+" - "+end+'</option>');
-			}
-		},
-
-		cleanViews: function(){
-			var update = $('#update');
-			if (update != undefined) {
-				update[0].reset();
-				update.find('select[name=schoolyear]').empty();
-				update.find('select[name=termcompleted]').empty();
-				update.find('select[name=adviser]').empty();
-				update.find('select[name=proposalabstract]').empty();
-				update.find('select[name=finalabstract]').empty();
-			}
-			$('#proponents').empty();
-			$('#specializations').empty();
-			$('#students').empty();
-			$('#thesisareas').empty();
-			$('#areas').empty();
-		},
-
-		renderFaculties: function(){
-			var req = {
-				url: App.getFacultyListUrl,
-				dataType: 'JSON',
-				success:function(res){
-					var template = '<% _.each(faculties, function(faculty){ %>\
-						<option value="<%- faculty.id %>"><%- faculty.lname + ", " + faculty.fname + " " + faculty.mi %></option>\
-					<% }); %>';
-					$('select[name=faculty_id]').html(_.template(template)({faculties:res}));
-				}
-			};
-			Core.request(req);
-		},
-
 		addThesisGroup: function(e){
 			e.preventDefault();
 			var form = $(e.currentTarget);
@@ -381,12 +372,32 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 				type: 'POST',
 				data: data.join("&"),
 				success:function(res){
-					$('form#add')[0].reset();
 					$('#addThesisGroup').modal('hide');
 					self.renderThesisGroups();
 				}
 			};
 			Core.request(req);
+		},
+
+		generateThesisId: function(){
+			var startsy = $('#schoolyear option:selected').data('start');
+			var term = $('#term option:selected').val();
+			var suffix = "000";
+			var id = startsy + term + suffix;
+			var req = {
+				url: App.getGroupCountUrl,
+				dataType: 'JSON',
+				loadTemplate: true,
+				data: {
+					startsy: startsy,
+					term: term
+				},
+				success: function(res){
+					id = parseInt(id) + parseInt(res.count) + 1;
+				}
+			};
+			Core.request(req);
+			return id;
 		},
 
 		updateThesisGroup: function(e){
@@ -400,13 +411,49 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			data.push("start_term=" + term[0]);
 			data.push("end_term=" + term[0]);
 			data.push("id=" + $('#update label[name=thesisid]').text());
+			data.push("thesis_id=" + $('#update label[name=thesisid]').text());
+			var self = this;
 			var req = {
 				url: App.updateThesisInfoUrl,
 				type: 'POST',
 				dataType: 'JSON',
 				data: data.join("&"),
 				success:function(res){
+					self.updateThesisAdviser(data.join("&"));
+				}
+			};
+			Core.request(req);
+		},
+
+		updateThesisAdviser: function(data){
+			var req = {
+				url: App.updateThesisAdviserUrl,
+				type: 'POST',
+				dataType: 'JSON',
+				data: data,
+				success: function(res){
 					console.log(res);
+					alert('Successfully update!');
+				}
+			};
+			Core.request(req);
+		},
+
+		removeThesisGroup: function(e){
+			e.preventDefault();
+			var id = $('#group option:selected').val();
+			if (id == undefined) return;
+
+			var self = this;
+			var req = {
+				url: App.deleteThesisUrl,
+				type: 'POST',
+				dataType: 'JSON',
+				data: {
+					id: id
+				},
+				success: function(res){
+					self.renderThesisGroups();
 				}
 			};
 			Core.request(req);

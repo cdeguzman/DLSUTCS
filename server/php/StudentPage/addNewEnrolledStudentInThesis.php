@@ -11,6 +11,6 @@
 	
     mysql_query("INSERT INTO thesis_enrollment (course_code, section, student_id, start_sy, end_sy, term, enrollment_code)
                  VALUES	('$course_code', '$section', '$student_id', '$start_sy', '$end_sy', '$term', '$enrollment_code')");
-	 
-   
+
+echo mysql_insert_id();
 ?>

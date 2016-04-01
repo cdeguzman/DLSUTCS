@@ -4,7 +4,7 @@
    
   $id = $_POST["id"];
   
-  $removeThesis = "DELETE FROM thesis WHERE id = '$id'";
-  mysql_query($removeThesis);
+  mysql_query("DELETE FROM thesis WHERE id='$id'");
   
+echo mysql_affected_rows();
 ?> 

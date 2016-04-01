@@ -4,5 +4,6 @@
    $id = $_GET["id"];
    
    mysql_query("DELETE FROM thesis_enrollment WHERE id='$id'");
-				
+
+echo mysql_affected_rows();
 ?>

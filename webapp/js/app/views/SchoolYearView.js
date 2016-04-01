@@ -5,7 +5,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		events: {
 			'submit #update' : 'submitFormUpdate',
 			'submit #add' : 'submitFormAdd',
-			'click #sylist option' : 'fillForm',
+			'change #sylist' : 'fillForm',
 			'click button#deleteYear' : 'deleteSchoolYear',
 		},
 
@@ -20,57 +20,44 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		render: function(){
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
-
-			$('.main #fterm_from_add').datetimepicker();
-			$('.main #fterm_to_add').datetimepicker();
-			$('.main #sterm_from_add').datetimepicker();
-			$('.main #sterm_to_add').datetimepicker();
-			$('.main #tterm_from_add').datetimepicker();
-			$('.main #tterm_to_add').datetimepicker();
-
-			$('#addSchoolYear #fterm_from_add').datetimepicker();
-			$('#addSchoolYear #fterm_to_add').datetimepicker();
-			$('#addSchoolYear #sterm_from_add').datetimepicker();
-			$('#addSchoolYear #sterm_to_add').datetimepicker();
-			$('#addSchoolYear #tterm_from_add').datetimepicker();
-			$('#addSchoolYear #tterm_to_add').datetimepicker();
-
+			$('.date').datetimepicker({
+				format:'YYYY-MM-DD'
+			});
 			this.renderYear();
 		},
 
 		renderYear: function(){
-			$('#sylist').empty();
-			var req = new Array();
-			req.url = App.getSchoolYearListUrl;
-			req.dataType = "JSON";
-			var self = this;
-			var temp = new Array();
-			req.success = function(res){
-				$.each(res, function(i, r) {
-					var isYearExist = ($.inArray(r.start_sy, temp) === -1);
-					if(i==0) isYearExist = true;
-					if(isYearExist){
-						if($.inArray(r.start_sy, temp) === -1) temp.push(r.start_sy);
-						self.years.push(r.start_sy);
-						$('#sylist').append('<option value='+r.start_sy+'>'+r.start_sy+' - '+r.end_sy+'</option>');
-					}
-				});
-			}
+			var req = {
+				url: App.getDistinctSchoolYearUrl,
+				dataType: 'JSON',
+				success: function(res){
+					var template = '<% _.each(schoolyears, function(sy){ %>\
+						<option><%=sy.schoolyear%></option>\
+					<% }); %>';
+					$('#sylist').html(_.template(template)({schoolyears:res}));
+				}
+			};
 			Core.request(req);
 		},
 
 		fillForm: function(){
-			var fid = $(' #sylist :selected').val();
-
-			$('label[name="syId"]').text(fid+" - "+(parseInt(fid)+1));
-			$('input[name="syId"]').val(fid);
+			var schoolyear = $('#sylist option:selected').val();
+			if (schoolyear == undefined) {
+				$('form')[0].reset();
+				$('#update label[name=syId]').text('');
+				$('.date').data('DateTimePicker').clear();
+				return;
+			}
+			$('label[name="syId"]').text(schoolyear);
+			var startsy = schoolyear.split(" - ")[0];
+			$('input[name="syId"]').val(startsy);
 
 			
 			var req = new Array();
 			req.url = App.getSchoolYearBySYUrl;
 			req.type = "GET"
 			req.dataType = "JSON";
-			req.data = {'start_sy': fid, 'term': 1};
+			req.data = {'start_sy': startsy, 'term': 1};
 			req.success = function(res){
 				_.each(res, function(r) { 
 					$('.main input[name="fterm_from_add"]').val(r.start_date);
@@ -83,7 +70,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			req.url = App.getSchoolYearBySYUrl;
 			req.type = "GET"
 			req.dataType = "JSON";
-			req.data = {'start_sy': fid, 'term': 2};
+			req.data = {'start_sy': startsy, 'term': 2};
 			req.success = function(res){
 				_.each(res, function(r) { 
 					$('.main input[name="sterm_from_add"]').val(r.start_date);
@@ -96,7 +83,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			req.url = App.getSchoolYearBySYUrl;
 			req.type = "GET"
 			req.dataType = "JSON";
-			req.data = {'start_sy': fid, 'term': 3};
+			req.data = {'start_sy': startsy, 'term': 3};
 			req.success = function(res){
 				_.each(res, function(r) { 
 					$('.main input[name="tterm_from_add"]').val(r.start_date);
@@ -104,109 +91,84 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 				});
 			}
 			Core.request(req);
-			
 
 		},
 
-		submitFormAdd: function() {
-			var $inputs = $('#addSchoolYear :input');
-			var values = {};
-			$inputs.each(function() {
-				values[this.name] = $(this).val();
-			});
+		submitFormAdd: function(e) {
+			var form = $('#add');
+			var startsy = form.find('input[name=start_sy]').val();
+			var endsy = parseInt(startsy) + 1;
+			var schoolyear = startsy + " - " + endsy;
 
-			values.fterm_from_add = Core.toYMD(values.fterm_from_add);
-			values.fterm_to_add = Core.toYMD(values.fterm_to_add);
-			values.sterm_from_add = Core.toYMD(values.sterm_from_add);
-			values.sterm_to_add = Core.toYMD(values.sterm_to_add);
-			values.tterm_from_add = Core.toYMD(values.tterm_from_add);
-			values.tterm_to_add = Core.toYMD(values.tterm_to_add);
+			var schoolyears = $('#sylist option').map(function(r){return $(this).val();});
 
-			
-			if(this.IfNotSyExist(values.start_sy)){
-				var req = new Array();
-				req.url = App.addNewSchoolYearUrl;
-				req.type = "POST";
-				req.data = values;
-				req.dataType = "JSON";
-				var self = this;
-				req.success = function(res){
-					if(res == 3){
-						alert("Success!");
-						self.renderYear();
-						$('#addSchoolYear').modal('hide');
-					}else{
-						alert("Error Occur!");
-					}
-				}
-				Core.request(req);
-				$('form')[0].reset();
-			}else{
-				alert("School Year already exists");
+			if (_.contains(schoolyears, schoolyear)) {
+				alert('Schoolyear already exists: ' + schoolyear);
+				return;
 			}
-			
+
+			var data = form.serialize().concat("&end_sy=" + endsy);
+			var self = this;
+			var req = {
+				url: App.addNewSchoolYearUrl,
+				type: 'POST',
+				dataType: 'JSON',
+				data: data,
+				success: function(res){
+					form[0].reset();
+					$('.date').data('DateTimePicker').clear();
+					$('#addSchoolYear').modal('hide');
+					self.renderYear();
+				}
+			};
+			Core.request(req);
 		},
 
-		submitFormUpdate: function() {
-			var $inputs = $('.main :input');
-			var values = {};
-			$inputs.each(function() {
-				values[this.name] = $(this).val();
-			});
+		submitFormUpdate: function(e) {
+			e.preventDefault();
+			var form = $(e.currentTarget);
+			var data = form.serialize();
 
-			values.fterm_from_add = Core.toYMD(values.fterm_from_add);
-			values.fterm_to_add = Core.toYMD(values.fterm_to_add);
-			values.sterm_from_add = Core.toYMD(values.sterm_from_add);
-			values.sterm_to_add = Core.toYMD(values.sterm_to_add);
-			values.tterm_from_add = Core.toYMD(values.tterm_from_add);
-			values.tterm_to_add = Core.toYMD(values.tterm_to_add);
+			var self = this;
+			var req = {
+				url: App.updateSchoolYearUrl,
+				type: 'POST',
+				dataType: 'JSON',
+				data: data,
+				success: function(res){
+					form[0].reset();
+					$('#update label[name=syId]').text('');
+					$('.date').data('DateTimePicker').clear();
+					self.renderYear();
+				}
+			};
+			Core.request(req);
+		},
+
+		deleteSchoolYear: function(){
+			var schoolyear = $('#sylist option:selected').val();
+			if (schoolyear == undefined) return;
+
+			var startsy = schoolyear.split(" - ")[0];
+			var action = confirm("Are you sure?");
+			if (!action) return;
 
 			var req = new Array();
-			req.url = App.updateSchoolYearUrl;
+			req.url = App.deleteSchoolYearUrl;
 			req.type = "POST";
-			req.data = values;
+			req.data = {'start_sy': startsy};
 			req.dataType = "JSON";
 			var self = this;
 			req.success = function(res){
-				if(res == 3){
-					alert("Success!");
+				if(res == 1){
+					$('#update')[0].reset();
+					$('#update label[name=syId]').text('');
 					self.renderYear();
 				}else{
 					alert("Error Occur!");
 				}
 			}
 			Core.request(req);
-			$('form')[0].reset();
-			
-		},
-
-		deleteSchoolYear: function(){
-			$('form')[0].reset();
-			$('label[name="syId"]').text("");
-			var id = $('select#sylist :selected').val();
-			if(id == undefined){
-				alert('No selected year.');
-				return false;
-			}
-
-			var action = confirm("Are you sure?");
-			if (action) {
-				var req = new Array();
-				req.url = App.deleteSchoolYearUrl;
-				req.type = "POST";
-				req.data = {'start_sy': id};
-				req.dataType = "JSON";
-				var self = this;
-				req.success = function(res){
-					if(res == 1){
-						alert("Success!");
-						self.renderYear();
-					}else{
-						alert("Error Occur!");
-					}
-				}
-				Core.request(req);
-			}
 		},
 
 		IfNotSyExist: function(year){

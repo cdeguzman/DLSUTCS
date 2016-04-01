@@ -14,7 +14,6 @@ define([
 		],
 	
 		/*API URL's*/
-
 		// Admin
 		getCredentialUrl: '/server/php/Admin/getCredential.php',
 		getCredential2Url: '/server/php/Admin/getCredential2.php',
@@ -43,7 +42,7 @@ define([
 		// Course info
 		addNewCourseUrl: '/server/php/CourseInfo/addNewCourse.php',
 		deleteCourseUrl: '/server/php/CourseInfo/deleteCourse.php',
-		getCourseListUrl: '/server/php/CourseInfo/getCourseList.php',
+		getCourseListUrl2: '/server/php/CourseInfo/getCourseList.php',
 		getSelectedCourseUrl: '/server/php/CourseInfo/getSelectedCourse.php',
 		updateCourseUrl: '/server/php/CourseInfo/updateCourse.php',
 		// end Course Info
@@ -227,6 +226,7 @@ define([
 		getThesisGroupInfoUrl: '/server/php/ThesisInformation/getThesisGroupInfo.php',
 		getThesisProponentsv2Url: '/server/php/ThesisInformation/getThesisProponent.php',
 		getThesisWithAdviserUrl: '/server/php/ThesisInformation/getThesisWithAdviser.php',
+		getGroupCountUrl: '/server/php/ThesisInformation/getGroupCount.php',
 		updateThesisAdviserUrl: '/server/php/ThesisInformation/updateThesisAdviser.php',
 		updateThesisAreaUrl: '/server/php/ThesisInformation/updateThesisArea.php',
 		updateThesisGradeUrl: '/server/php/ThesisInformation/updateThesisGrade.php',

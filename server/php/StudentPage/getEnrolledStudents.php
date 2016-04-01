@@ -8,7 +8,7 @@
 	$section = $_GET["section"];
 	$course_code = $_GET["course_code"];
 	
-     $select_enrolledStudents = mysql_query("SELECT CONCAT(s.lname, ', ', s.fname, ' ', s.mi) as studentName 
+     $select_enrolledStudents = mysql_query("SELECT te.id, CONCAT(s.lname, ', ', s.fname, ' ', s.mi) as studentName 
 	                                         FROM student s, thesis_enrollment te
 	                                         WHERE s.id = te.student_id AND start_sy='$start_sy' AND end_sy='$end_sy' 
 											 AND term='$term' AND enrollment_code='$enrollment_code' AND section='$section'

@@ -215,14 +215,9 @@
 			<form id="add" class="form">
 				<div class="modal-body">
 					<div class="row">
-						<div class="row">
-							<div class="col-xs-6">
-								<label for="thesisiddummy">Thesis Group ID: </label>
-								<label name="thesisiddummy"><u>12345678</u></label>
-								<input type="hidden" name="id" required>
-								<input type="hidden" name="proposal_abstract" required>
-								<input type="hidden" name="final_abstract" required>
-							</div>
+						<div class="form-group">
+							<label for="id">Thesis Group ID: </label>
+							<input type="text" class="form-control max_width" name="id" readonly required>
 						</div>
 						<div class="form-group">
 							<label for="primary_name">Title: </label>
@@ -246,7 +241,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button id="save" type="submit" class="btn btn-default">Save changes</button>
+					<button type="submit" class="btn btn-default">Save changes</button>
 				</div>
 			</form>
 		</div>
