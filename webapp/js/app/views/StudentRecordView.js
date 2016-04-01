@@ -107,6 +107,10 @@ define(['jquery', 'backbone', 'bootstrap-dialog', 'bootstrap', 'datePicker' ], f
 			Core.request(req);
 		},
 
+		renderThesisHistories: function(){
+			
+		},
+
 		fillForm: function(){
 			var id = $('#studentList option:selected').val();
 			if (id == undefined) {

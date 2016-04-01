@@ -8,6 +8,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		events: {
 			'change #coursetobetakenlist': 'renderSections',
 			'change #sectionlist': 'renderEnrolledStudents',
+			'change #classlist': 'renderThesisTitle',
 			'click button#enrollstudent, button#enroll': 'enrollStudent',
 			'click button#unenroll': 'unenrollStudent'
 		},
@@ -108,6 +109,9 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 		},
 
 		renderEnrolledStudents: function(){
+			$('#defenseverdict u').text('');
+			$('#thesistitle u').text('');
+			$('#unofficialgrade u').text('');
 			var self = this;
 			var startsy = $('#schoolyear option:selected').data('start');
 			var endsy = parseInt(startsy) + 1;
@@ -130,7 +134,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 				success: function(res){
 					var target = $('#classlist');
 					var template = '<% _.each(students, function(s){ %>\
-						<option value="<%=s.id%>"><%=s.studentName%></option>\
+						<option data-studentid="<%=s.student_id%>"value="<%=s.id%>"><%=s.studentName%></option>\
 					<% }); %>';
 					target.html(_.template(template)({students:res}));
 					self.renderStudents();
@@ -154,6 +158,31 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 						<option value="<%=r.id%>"><%=r.lname + ", " + r.fname + " " + r.mi%></option>\
 					<% }); %>';
 					target.html(_.template(tmp)({students:unenrolled}));
+				}
+			};
+			Core.request(req);
+		},
+
+		renderThesisTitle: function(e){
+			e.preventDefault();
+			var studentid = $('#classlist option:selected').data('studentid');
+			if (studentid == undefined) {
+				$('#thesistitle u').text('');
+				return;
+			}
+			var req = {
+				url: App.getStudentThesisTitleUrl,
+				dataType: 'JSON',
+				data: {
+					sid: studentid,
+					start_sy: $('#schoolyear option:selected').data('start'),
+					end_sy: $('#schoolyear option:selected').data('end'),
+					term: $('#term option:selected').val()
+				},
+				success: function(res){
+					_.each(res, function(r){
+						$('#thesistitle u').text(r.primary_name + "(" + r.secondary_name + ")");
+					});
 				}
 			};
 			Core.request(req);

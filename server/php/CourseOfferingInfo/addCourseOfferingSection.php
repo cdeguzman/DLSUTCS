@@ -10,5 +10,5 @@
    mysql_query("INSERT INTO course_offering_section (start_sy, end_sy, term, course_code, section)
                 VALUES ('$start_sy', '$end_sy', '$term', '$course_code', '$section')");
 
-   echo json_encode(mysql_affected_rows());
+   echo mysql_insert_id();
 ?>

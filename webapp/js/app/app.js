@@ -203,6 +203,7 @@ define([
 		getStudentThesisTitleUrl: '/server/php/StudentPage/getStudentThesisTitle.php',
 		getStudentPasswordUrl: '/server/php/StudentPage/getStudentPassword.php',
 		getStudentSchedulesUrl: '/server/php/StudentPage/getStudentSchedules.php',
+		getEnrolledStudentsByCourseUrl: '/server/php/StudentPage/getEnrolledStudentsByCourse.php',
 		updateStudentInfoUrl: '/server/php/StudentPage/updateStudentInfo.php',
 		updateStudentPasswordUrl: '/server/php/StudentPage/updateStudentPassword.php',
 		// end Student

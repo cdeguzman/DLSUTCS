@@ -18,8 +18,6 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			'show.bs.modal #addThesisGroup': 'showAddForm',
 		},
 
-
-
 		templateName: 'ThesisGroupTemplate',
 
 		initialize: function(){
@@ -30,7 +28,7 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			var template = _.template(Core.templates[this.templateName]);
 			this.$el.html(template());
 			this.renderSchoolyears();
-			this.renderFaculties();
+			this.renderAdvisers();
 		},
 
 		renderSchoolyears: function(){
@@ -91,15 +89,15 @@ define(['jquery', 'backbone', 'bootstrap', 'datePicker', 'bootstrap-dialog'], fu
 			$('#areas').empty();
 		},
 
-		renderFaculties: function(){
+		renderAdvisers: function(){
 			var req = {
-				url: App.getFacultyListUrl,
+				url: App.getAdviserRosterListUrl,
 				dataType: 'JSON',
 				success:function(res){
-					var template = '<% _.each(faculties, function(faculty){ %>\
-						<option value="<%- faculty.id %>"><%- faculty.lname + ", " + faculty.fname + " " + faculty.mi %></option>\
+					var template = '<% _.each(advisers, function(adviser){ %>\
+						<option value="<%- adviser.faculty_id %>"><%- adviser.faculty_name %></option>\
 					<% }); %>';
-					$('select[name=faculty_id]').html(_.template(template)({faculties:res}));
+					$('select[name=faculty_id]').html(_.template(template)({advisers:res}));
 				}
 			};
 			Core.request(req);
